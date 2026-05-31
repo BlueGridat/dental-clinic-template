@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "siteTitle": "Lume Dental - Advanced Dental Care",
+    "description": "Advanced dental care with a gentle touch. Book your appointment today.",
+    "siteUrl": "https://lumedental.com",
+    "ogImage": "/images/og.jpg",
+    "favicon": "/favicon.ico"
+  },
+  "brand": {
+    "name": "Lume Dental",
+    "logoText": "Lume Dental",
+    "logoIcon": "tooth",
+    "logoImage": "",
+    "colors": {
+      "primary": "#131C15",
+      "accent": "#A9EAF7",
+      "surface": "#F4F5F7",
+      "white": "#FFFFFF",
+      "text": "#131C15",
+      "textMuted": "#6B7280"
+    },
+    "fonts": { "heading": "Unbounded", "body": "Inter" }
+  },
+  "contact": {
+    "phone": "+1 (212) 555-7483",
+    "email": "hello@lumedental.com",
+    "address": "245 Madison Avenue, Suite 1203, New York, NY 10016",
+    "workingHours": [
+      { "days": "Monday - Friday", "hours": "9AM - 9PM" },
+      { "days": "Saturday, Sunday", "hours": "10AM - 6PM" }
+    ]
+  },
+  "nav": {
+    "links": [
+      { "label": "Services", "href": "#services" },
+      { "label": "Doctors", "href": "#doctors" },
+      { "label": "Pricing", "href": "#pricing" },
+      { "label": "About us", "href": "#about" },
+      { "label": "Contacts", "href": "#contacts" }
+    ],
+    "cta": { "label": "Book an Appointment", "href": "#book" }
+  },
+  "hero": {
+    "heading": "Your Perfect Smile Starts with Lume Dental",
+    "subtitle": "Advanced dental care with a gentle touch. Book your appointment today.",
+    "image": "/images/hero.jpg",
+    "cta": { "label": "Book an Appointment", "href": "#book" }
+  },
+  "services": {
+    "tag": "Our Services",
+    "heading": "Services You Need",
+    "description": "From preventive care to advanced cosmetic and restorative treatments, we provide a full range of dental services tailored to your needs.",
+    "cta": { "label": "Explore All Services", "href": "#services" },
+    "items": [
+      { "title": "Cosmetic Dentistry", "icon": "/images/svc-cosmetic.png", "features": ["Teeth Whitening", "Veneers", "Smile Makeovers"], "href": "#" },
+      { "title": "Implants & Prosthetics", "icon": "/images/svc-implants.png", "features": ["Dental Implant", "Dentures"], "href": "#" },
+      { "title": "Restorative", "icon": "/images/svc-restorative.png", "features": ["Fillings", "Crowns", "Bridges"], "href": "#" }
+    ]
+  },
+  "about": {
+    "tag": "About us",
+    "heading": "Expertise you can trust",
+    "image": "/images/about-doctor.jpg",
+    "rating": { "value": "4.8/5", "label": "Patient rate", "stars": 4 },
+    "badge": "Expert Hands",
+    "stats": [
+      { "value": "20+", "label": "certified specialists" },
+      { "value": "50+", "label": "advanced procedures offered" },
+      { "value": "15", "label": "years in practice" },
+      { "value": "99%", "label": "patient satisfaction rate" }
+    ]
+  },
+  "appointmentBanner": {
+    "heading": "Book Your Appointment in Minutes",
+    "description": "Brighter, healthier smile - schedule your visit with us today.",
+    "image": "/images/appointment.jpg",
+    "cta": { "label": "Book an Appointment", "href": "#book" }
+  },
+  "team": {
+    "tag": "Our Doctors",
+    "heading": "Experts You Trust",
+    "description": "Each of our dentists, hygienists, and specialists brings years of expertise and advanced training.",
+    "filters": ["All", "Dentists", "Surgeons", "Orthodontists"],
+    "doctors": [
+      { "name": "Austin Camacho", "role": "Surgeon", "category": "Surgeons", "image": "/images/dr-austin.jpg" },
+      { "name": "Fletcher Morse", "role": "Dentist", "category": "Dentists", "image": "/images/dr-fletcher.jpg" },
+      { "name": "Aysha Hayes", "role": "Orthodontist", "category": "Orthodontists", "image": "/images/dr-aysha.jpg" }
+    ]
+  },
+  "whyChooseUs": {
+    "tag": "WHY CHOOSE US",
+    "heading": "About Lume Dental Clinic",
+    "intro": [
+      "At Lume Dental, we believe that a healthy smile is a gateway to confidence and well-being.",
+      "Our team of experienced dentists and hygienists use the latest technology to provide top-quality dental care in a comfortable and welcoming environment."
+    ],
+    "sideText": "Whether you need routine cleanings, cosmetic enhancements, or advanced procedures, we are here to help you achieve the smile of your dreams.",
+    "items": [
+      { "icon": "tools", "title": "State-of-the-art equipment", "text": "We use the latest advancements in dental technology to provide precise, effective care.", "highlight": false },
+      { "icon": "heart-hands", "title": "Experienced & caring professionals", "text": "Our team of dentists, hygienists, and specialists brings years of expertise and a passion for patient care.", "highlight": false },
+      { "icon": "tooth", "title": "Pain-free, stress-free treatments", "text": "We understand that dental visits can be stressful, which is why we prioritize comfort.", "highlight": true },
+      { "icon": "user-check", "title": "Personalized approach for every patient", "text": "Every smile is unique, and so is every treatment plan.", "highlight": false }
+    ]
+  },
+  "testimonials": {
+    "tag": "Reviews",
+    "heading": "Smiles That Speak for Themselves",
+    "subheading": "Here's what our happy patients have to say about their experience with us.",
+    "items": [
+      { "quote": "The team made me feel completely at ease and my smile has never looked better.", "name": "Jordan Lee", "rating": 5, "image": "/images/patient-1.jpg" },
+      { "quote": "Painless, professional, and genuinely caring from start to finish.", "name": "Maria Gomez", "rating": 5, "image": "/images/patient-2.jpg" }
+    ]
+  },
+  "faq": {
+    "tag": "FAQ",
+    "heading": "Get clear answers to your questions",
+    "video": "/images/faq-video.jpg",
+    "cta": { "label": "Learn more", "href": "#" },
+    "items": [
+      { "q": "How often should I visit the dentist?", "a": "We recommend a check-up and professional cleaning every 6 months, though your dentist may suggest more frequent visits based on your oral health." },
+      { "q": "Are dental treatments painful?", "a": "Modern techniques and anesthesia keep treatments comfortable and virtually pain-free." },
+      { "q": "Do you offer dental implants?", "a": "Yes, we provide full implant solutions with digital planning." },
+      { "q": "Do you treat children?", "a": "Absolutely - we have dedicated pediatric care." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Your confident smile starts here",
+    "description": "Schedule your consultation and let our experienced team create a treatment plan designed just for you.",
+    "form": { "nameLabel": "Your name", "phoneLabel": "Your phone", "submitLabel": "Book an Appointment" }
+  },
+  "footer": {
+    "columns": [
+      { "title": "About", "links": [{ "label": "About Clinic", "href": "#" }, { "label": "Our Doctors", "href": "#" }, { "label": "Technology", "href": "#" }, { "label": "Reviews", "href": "#" }] },
+      { "title": "Services", "links": [{ "label": "Cosmetic Dentistry", "href": "#" }, { "label": "Implants & Prosthetics", "href": "#" }, { "label": "Restorative", "href": "#" }, { "label": "Orthodontics", "href": "#" }] },
+      { "title": "Legal", "links": [{ "label": "Privacy policy", "href": "#" }, { "label": "Term of use", "href": "#" }, { "label": "Cookie policy", "href": "#" }] }
+    ],
+    "wordmark": "Lume Dental",
+    "copyright": "© 2026 Lume Dental. All rights reserved"
+  },
+  "integrations": { "formEndpoint": "" }
+}

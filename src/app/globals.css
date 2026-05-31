@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #131c15;
+  --color-accent: #a9eaf7;
+  --color-surface: #f4f5f7;
+  --color-white: #ffffff;
+  --color-text: #131c15;
+  --color-text-muted: #6b7280;
+  --font-heading: "Unbounded", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: color-mix(in srgb, var(--color-accent) 28%, var(--color-surface));
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.container-page {
+  width: min(100% - 40px, 1320px);
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: clamp(44px, 7vw, 86px);
+}
+
+.site-shell {
+  width: min(100% - 28px, 1480px);
+  margin: 34px auto;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--color-surface);
+  box-shadow: 0 24px 70px rgb(19 28 21 / 0.1);
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .container-page {
+    width: min(100% - 28px, 1320px);
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
