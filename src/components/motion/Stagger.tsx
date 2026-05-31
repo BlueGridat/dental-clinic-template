@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useReducedMotionSafe } from "@/lib/motion";
+import { motionTokens, useReducedMotionSafe } from "@/lib/motion";
 
 export function Stagger({ children, className }: { children: React.ReactNode; className?: string }) {
   const reduced = useReducedMotionSafe();
@@ -13,7 +13,7 @@ export function Stagger({ children, className }: { children: React.ReactNode; cl
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+      variants={{ hidden: {}, show: { transition: { staggerChildren: motionTokens.stagger } } }}
     >
       {children}
     </motion.div>
@@ -28,8 +28,8 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } }
+        hidden: { opacity: 0, y: motionTokens.offset.y },
+        show: { opacity: 1, y: 0, transition: { duration: motionTokens.duration.base, ease: motionTokens.ease } }
       }}
     >
       {children}

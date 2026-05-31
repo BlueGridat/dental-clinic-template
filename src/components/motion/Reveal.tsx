@@ -1,13 +1,13 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { useReducedMotionSafe } from "@/lib/motion";
+import { motionTokens, useReducedMotionSafe } from "@/lib/motion";
 
 const variants: Record<string, Variants> = {
-  "fade-up": { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } },
+  "fade-up": { hidden: { opacity: 0, y: motionTokens.offset.y }, show: { opacity: 1, y: 0 } },
   fade: { hidden: { opacity: 0 }, show: { opacity: 1 } },
-  "scale-in": { hidden: { opacity: 0, scale: 0.96 }, show: { opacity: 1, scale: 1 } },
-  "blur-in": { hidden: { opacity: 0, filter: "blur(12px)", y: 12 }, show: { opacity: 1, filter: "blur(0px)", y: 0 } }
+  "scale-in": { hidden: { opacity: 0, scale: motionTokens.offset.scaleFrom }, show: { opacity: 1, scale: 1 } },
+  "blur-in": { hidden: { opacity: 0, filter: `blur(${motionTokens.offset.blur}px)`, y: motionTokens.offset.tinyY }, show: { opacity: 1, filter: "blur(0px)", y: 0 } }
 };
 
 export function Reveal({
@@ -34,7 +34,7 @@ export function Reveal({
       initial="hidden"
       whileInView="show"
       viewport={{ once, margin: "-80px" }}
-      transition={{ duration: 0.55, ease: "easeOut", delay }}
+      transition={{ duration: motionTokens.duration.base, ease: motionTokens.ease, delay }}
     >
       {children}
     </motion.div>

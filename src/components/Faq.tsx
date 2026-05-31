@@ -4,12 +4,14 @@ import Image from "next/image";
 import { ChevronDown, Play } from "lucide-react";
 import { useState } from "react";
 import type { FaqConfig } from "@/config/types";
+import { useT } from "@/i18n/LocaleProvider";
 import { cx, fallbackImage, safeArray } from "@/lib/utils";
 import { ArrowButton, SectionHeading } from "./ui";
 
 export function Faq({ faq }: { faq: FaqConfig }) {
   const [openIndex, setOpenIndex] = useState(0);
   const items = safeArray(faq?.items);
+  const tr = useT();
 
   return (
     <section className="section-pad pt-0">
@@ -20,17 +22,17 @@ export function Faq({ faq }: { faq: FaqConfig }) {
             {items.map((item, index) => {
               const open = openIndex === index;
               return (
-                <div key={item.q} className="rounded-[1.5rem] bg-[var(--color-white)] p-2 shadow-sm">
+                <div key={tr(item.q)} className="rounded-[1.5rem] bg-[var(--color-white)] p-2 shadow-sm">
                   <button
                     type="button"
                     className="focus-ring flex w-full items-center justify-between gap-4 rounded-[1.2rem] px-5 py-4 text-left font-heading font-bold"
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? -1 : index)}
                   >
-                    <span>{item.q}</span>
+                    <span>{tr(item.q)}</span>
                     <ChevronDown className={cx("size-5 shrink-0 transition", open && "rotate-180")} />
                   </button>
-                  {open ? <p className="px-5 pb-5 text-sm leading-7 text-[var(--color-text-muted)]">{item.a}</p> : null}
+                  {open ? <p className="px-5 pb-5 text-sm leading-7 text-[var(--color-text-muted)]">{tr(item.a)}</p> : null}
                 </div>
               );
             })}

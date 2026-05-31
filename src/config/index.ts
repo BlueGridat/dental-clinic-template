@@ -1,5 +1,5 @@
 import rawConfig from "../../clinicConfig.json";
-import type { ClinicConfig, EffectsConfig, MobileConfig } from "./types";
+import type { ClinicConfig, EffectsConfig, Locale, MobileConfig } from "./types";
 
 export const clinicConfig = rawConfig as ClinicConfig;
 
@@ -28,12 +28,26 @@ export const defaultMobile: Required<MobileConfig> = {
   showCallButton: true
 };
 
+export const defaultI18n = {
+  defaultLocale: "de" as Locale,
+  locales: ["de", "en"] as Locale[],
+  labels: { de: "DE", en: "EN" } as Record<Locale, string>
+};
+
 export function getEffectsConfig(config: ClinicConfig = clinicConfig): Required<EffectsConfig> {
   return { ...defaultEffects, ...(config.effects ?? {}) };
 }
 
 export function getMobileConfig(config: ClinicConfig = clinicConfig): Required<MobileConfig> {
   return { ...defaultMobile, ...(config.mobile ?? {}) };
+}
+
+export function getI18nConfig(config: ClinicConfig = clinicConfig) {
+  return {
+    defaultLocale: config.i18n?.defaultLocale ?? defaultI18n.defaultLocale,
+    locales: config.i18n?.locales ?? defaultI18n.locales,
+    labels: { ...defaultI18n.labels, ...(config.i18n?.labels ?? {}) }
+  };
 }
 
 export function getGoogleFontUrl(config: ClinicConfig = clinicConfig) {

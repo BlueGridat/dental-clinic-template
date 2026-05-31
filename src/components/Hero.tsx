@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { clinicConfig, getEffectsConfig } from "@/config";
 import type { ContactConfig, HeroConfig } from "@/config/types";
+import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 import { MotionReveal } from "./MotionReveal";
@@ -17,6 +18,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
   const enabled = getEffectsConfig(clinicConfig).heroParallax;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
+  const tr = useT();
   const px = useSpring(useMotionValue(0), { stiffness: 120, damping: 18 });
   const py = useSpring(useMotionValue(0), { stiffness: 120, damping: 18 });
   const cardX = useTransform(px, (value) => value * -8);
@@ -44,18 +46,18 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
         <MotionReveal className="flex flex-col justify-between gap-8 px-2 py-4 sm:px-6 lg:px-8 lg:py-10">
           <div className="space-y-6">
             <h1 className="font-heading max-w-4xl text-[clamp(3rem,7.1vw,6.25rem)] font-bold leading-[0.98] tracking-normal text-[var(--color-text)]">
-              {hero?.heading || "Dental care for confident smiles"}
+              {tr(hero?.heading) || "Dental care for confident smiles"}
             </h1>
-            <p className="max-w-xl text-base font-medium leading-7 text-[var(--color-text)] sm:text-lg">{hero?.subtitle || ""}</p>
+            <p className="max-w-xl text-base font-medium leading-7 text-[var(--color-text)] sm:text-lg">{tr(hero?.subtitle)}</p>
           </div>
 
           <motion.div className="grid gap-4 sm:grid-cols-[0.9fr_1fr]" style={enabled && !reduced && pointerFine ? { x: cardX, y: cardY } : undefined}>
             <article className="rounded-[2rem] bg-[var(--color-surface)] p-5">
-              <h2 className="mb-4 text-lg font-bold">Working Hours</h2>
+              <h2 className="mb-4 text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
               <dl className="grid gap-2.5">
                 {safeArray(contact?.workingHours).map((item) => (
-                  <div key={`${item.days}-${item.hours}`} className="flex items-center justify-between gap-4 text-sm">
-                    <dt className="font-medium">{item.days}</dt>
+                <div key={`${tr(item.days)}-${item.hours}`} className="flex items-center justify-between gap-4 text-sm">
+                  <dt className="font-medium">{tr(item.days)}</dt>
                     <dd className="font-semibold text-[var(--color-primary)]">{item.hours}</dd>
                   </div>
                 ))}
@@ -66,8 +68,8 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
             </article>
 
             <article className="flex min-h-44 flex-col items-center justify-center rounded-[2rem] bg-[var(--color-accent)] p-6 text-center">
-              <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || "Book"} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />
-              <h2 className="text-xl font-bold leading-tight">{hero?.cta?.label || "Book an Appointment"}</h2>
+              <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || { de: "Termin buchen", en: "Book" }} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />
+              <h2 className="text-xl font-bold leading-tight">{tr(hero?.cta?.label) || "Book an Appointment"}</h2>
             </article>
           </motion.div>
         </MotionReveal>

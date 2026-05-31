@@ -1,3 +1,6 @@
+export type Locale = "de" | "en";
+export type Localized<T = string> = T | Partial<Record<Locale, T>>;
+
 export interface ClinicConfig {
   meta: MetaConfig;
   brand: BrandConfig;
@@ -16,11 +19,12 @@ export interface ClinicConfig {
   integrations: IntegrationsConfig;
   effects?: EffectsConfig;
   mobile?: MobileConfig;
+  i18n?: I18nConfig;
 }
 
 export interface MetaConfig {
-  siteTitle: string;
-  description: string;
+  siteTitle: Localized;
+  description: Localized;
   siteUrl?: string;
   ogImage: string;
   favicon: string;
@@ -28,7 +32,7 @@ export interface MetaConfig {
 
 export interface BrandConfig {
   name: string;
-  logoText: string;
+  logoText: Localized;
   logoIcon: string;
   logoImage: string;
   colors: {
@@ -53,12 +57,12 @@ export interface ContactConfig {
 }
 
 export interface WorkingHour {
-  days: string;
+  days: Localized;
   hours: string;
 }
 
 export interface LinkItem {
-  label: string;
+  label: Localized;
   href: string;
 }
 
@@ -68,127 +72,127 @@ export interface NavConfig {
 }
 
 export interface HeroConfig {
-  heading: string;
-  subtitle: string;
+  heading: Localized;
+  subtitle: Localized;
   image: string;
   cta: LinkItem;
 }
 
 export interface ServicesConfig {
-  tag: string;
-  heading: string;
-  description: string;
+  tag: Localized;
+  heading: Localized;
+  description: Localized;
   cta: LinkItem;
   items: ServiceItem[];
 }
 
 export interface ServiceItem {
-  title: string;
+  title: Localized;
   icon: string;
-  features: string[];
+  features: Localized[];
   href: string;
 }
 
 export interface AboutConfig {
-  tag: string;
-  heading: string;
+  tag: Localized;
+  heading: Localized;
   image: string;
   rating: {
     value: string;
-    label: string;
+    label: Localized;
     stars: number;
   };
-  badge: string;
+  badge: Localized;
   stats: StatItem[];
 }
 
 export interface StatItem {
   value: string;
-  label: string;
+  label: Localized;
 }
 
 export interface AppointmentBannerConfig {
-  heading: string;
-  description: string;
+  heading: Localized;
+  description: Localized;
   image: string;
   cta: LinkItem;
 }
 
 export interface TeamConfig {
-  tag: string;
-  heading: string;
-  description: string;
-  filters: string[];
+  tag: Localized;
+  heading: Localized;
+  description: Localized;
+  filters: Localized[];
   doctors: DoctorItem[];
 }
 
 export interface DoctorItem {
   name: string;
-  role: string;
-  category: string;
+  role: Localized;
+  category: Localized;
   image: string;
 }
 
 export interface WhyChooseUsConfig {
-  tag: string;
-  heading: string;
-  intro: string[];
-  sideText: string;
+  tag: Localized;
+  heading: Localized;
+  intro: Localized[];
+  sideText: Localized;
   items: WhyChooseUsItem[];
 }
 
 export interface WhyChooseUsItem {
   icon: string;
-  title: string;
-  text: string;
+  title: Localized;
+  text: Localized;
   highlight: boolean;
 }
 
 export interface TestimonialsConfig {
-  tag: string;
-  heading: string;
-  subheading: string;
+  tag: Localized;
+  heading: Localized;
+  subheading: Localized;
   items: TestimonialItem[];
 }
 
 export interface TestimonialItem {
-  quote: string;
+  quote: Localized;
   name: string;
   rating: number;
   image: string;
 }
 
 export interface FaqConfig {
-  tag: string;
-  heading: string;
+  tag: Localized;
+  heading: Localized;
   video: string;
   cta: LinkItem;
   items: FaqItem[];
 }
 
 export interface FaqItem {
-  q: string;
-  a: string;
+  q: Localized;
+  a: Localized;
 }
 
 export interface FinalCtaConfig {
-  heading: string;
-  description: string;
+  heading: Localized;
+  description: Localized;
   form: {
-    nameLabel: string;
-    phoneLabel: string;
-    submitLabel: string;
+    nameLabel: Localized;
+    phoneLabel: Localized;
+    submitLabel: Localized;
   };
 }
 
 export interface FooterConfig {
   columns: FooterColumn[];
-  wordmark: string;
-  copyright: string;
+  wordmark: Localized;
+  copyright: Localized;
 }
 
 export interface FooterColumn {
-  title: string;
+  title: Localized;
   links: LinkItem[];
 }
 
@@ -210,4 +214,10 @@ export interface MobileConfig {
   stickyBookingBar?: boolean;
   fullscreenMenu?: boolean;
   showCallButton?: boolean;
+}
+
+export interface I18nConfig {
+  defaultLocale?: Locale;
+  locales?: Locale[];
+  labels?: Partial<Record<Locale, string>>;
 }

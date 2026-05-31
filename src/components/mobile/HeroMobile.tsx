@@ -4,19 +4,21 @@ import Image from "next/image";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import type { ContactConfig, HeroConfig } from "@/config/types";
+import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { TodayClock } from "../TodayClock";
 
 export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: ContactConfig }) {
   const [open, setOpen] = useState(false);
+  const tr = useT();
 
   return (
     <section className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
         <h1 className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]">
-          {hero?.heading || "Dental care for confident smiles"}
+          {tr(hero?.heading) || "Dental care for confident smiles"}
         </h1>
-        <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{hero?.subtitle || ""}</p>
+        <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
 
         <div className="relative mt-5 aspect-[1.42] overflow-hidden rounded-[1.5rem] bg-[var(--color-accent)]">
           <Image src={fallbackImage(hero?.image)} alt="" fill priority className="object-cover" sizes="100vw" />
@@ -24,11 +26,11 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
 
         <div className="mt-4 grid grid-cols-[1fr_0.92fr] gap-3">
           <article className="rounded-[1.35rem] bg-[var(--color-surface)] p-4">
-            <h2 className="text-lg font-bold">Working Hours</h2>
+            <h2 className="text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
             <dl className="mt-3 grid gap-2 text-sm leading-5">
               {safeArray(contact?.workingHours).map((item) => (
-                <div key={`${item.days}-compact`} className="grid gap-0.5">
-                  <dt>{item.days}</dt>
+                <div key={`${tr(item.days)}-compact`} className="grid gap-0.5">
+                  <dt>{tr(item.days)}</dt>
                   <dd className="font-semibold">{item.hours}</dd>
                 </div>
               ))}
@@ -39,7 +41,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
             <span className="mb-4 grid size-14 place-items-center rounded-full bg-[var(--color-white)]">
               <ArrowUpRight className="size-5" />
             </span>
-            {hero?.cta?.label || "Book"}
+            {tr(hero?.cta?.label) || "Book"}
           </a>
         </div>
 
@@ -51,8 +53,8 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
           {open ? (
             <div className="mt-2 rounded-3xl bg-[var(--color-surface)] p-4 text-sm">
               {safeArray(contact?.workingHours).map((item) => (
-                <div key={`${item.days}-expanded`} className="flex justify-between gap-4 py-2">
-                  <span>{item.days}</span>
+                <div key={`${tr(item.days)}-expanded`} className="flex justify-between gap-4 py-2">
+                  <span>{tr(item.days)}</span>
                   <strong>{item.hours}</strong>
                 </div>
               ))}

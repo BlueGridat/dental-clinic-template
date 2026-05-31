@@ -9,12 +9,15 @@ import type { BrandConfig, ContactConfig, NavConfig } from "@/config/types";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { ArrowButton } from "./ui";
 import { MobileMenu } from "./mobile/MobileMenu";
+import { LanguageToggle } from "./LanguageToggle";
+import { useT } from "@/i18n/LocaleProvider";
 
 export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavConfig; contact: ContactConfig }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const links = safeArray(nav?.links);
   const reactive = getEffectsConfig(clinicConfig).reactiveNavbar;
+  const tr = useT();
 
   useEffect(() => {
     if (!reactive) return;
@@ -42,19 +45,20 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
               <Stethoscope className="size-5" aria-hidden="true" />
             )}
           </span>
-          <span className="hidden text-base font-bold md:inline">{brand.logoText || brand.name}</span>
+          <span className="hidden text-base font-bold md:inline">{tr(brand.logoText) || brand.name}</span>
         </Link>
 
         <div className="hidden items-center gap-10 lg:flex">
           {links.map((link) => (
-            <Link key={`${link.label}-${link.href}`} href={link.href || "#"} className="focus-ring group relative rounded-full text-sm font-semibold text-[var(--color-text)] transition hover:text-[var(--color-text-muted)]">
-              {link.label}
+            <Link key={`${tr(link.label)}-${link.href}`} href={link.href || "#"} className="focus-ring group relative rounded-full text-sm font-semibold text-[var(--color-text)] transition hover:text-[var(--color-text-muted)]">
+              {tr(link.label)}
               <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-[var(--color-accent)] transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <LanguageToggle />
           <ArrowButton href={nav?.cta?.href || "#book"} label={nav?.cta?.label || "Book"} />
         </div>
 
@@ -64,7 +68,7 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label="Toggle menu"
+          aria-label={tr({ de: "Menü öffnen", en: "Toggle menu" })}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
