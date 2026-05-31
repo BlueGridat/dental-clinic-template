@@ -30,7 +30,7 @@ export function Footer({ footer, contact, brand }: { footer: FooterConfig; conta
             ))}
           </div>
         </div>
-        <p className="mt-12 break-words font-heading text-[clamp(3rem,13vw,10rem)] font-bold leading-none text-white/10">{footer?.wordmark || brand?.name}</p>
+        <p className="mt-12 break-words font-heading text-[clamp(2.4rem,13vw,10rem)] font-bold leading-none text-white/10">{footer?.wordmark || brand?.name}</p>
         <div className="mt-8 border-t border-white/10 pt-6 text-sm text-white/60">{footer?.copyright}</div>
       </div>
     </footer>

@@ -29,20 +29,20 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
   }, [reactive]);
 
   return (
-    <header className="sticky top-0 z-50 bg-[var(--color-surface)]/90 px-0 pt-4 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent px-0 pt-[calc(12px+env(safe-area-inset-top))] md:sticky md:bg-[var(--color-surface)]/90 md:pt-4 md:backdrop-blur-xl">
       <div className="container-page relative">
         <div className="absolute inset-x-5 -bottom-px h-px origin-left scale-x-[var(--scroll-progress,0)] bg-[var(--color-accent)]" />
       </div>
-      <nav className={`container-page flex items-center justify-between gap-4 rounded-[1.7rem] bg-[var(--color-white)] px-4 transition-all duration-300 sm:px-5 ${scrolled ? "min-h-14 shadow-lg shadow-black/10" : "min-h-16 shadow-sm"}`} aria-label="Primary navigation">
+      <nav className={`container-page flex items-center justify-between gap-4 rounded-[1.7rem] bg-transparent px-0 transition-all duration-300 md:bg-[var(--color-white)] md:px-5 ${scrolled ? "min-h-14 md:shadow-lg md:shadow-black/10" : "min-h-16 md:shadow-sm"}`} aria-label="Primary navigation">
         <Link href="#" className="focus-ring flex items-center gap-3 rounded-full">
-          <span className={`grid place-items-center rounded-full bg-[var(--color-surface)] text-[var(--color-primary)] transition-all duration-300 ${scrolled ? "size-9" : "size-10"}`}>
+          <span className={`grid place-items-center rounded-full bg-[var(--color-white)] text-[var(--color-primary)] shadow-sm transition-all duration-300 md:bg-[var(--color-surface)] md:shadow-none ${scrolled ? "size-9" : "size-10"}`}>
             {brand.logoImage ? (
               <Image src={fallbackImage(brand.logoImage)} width={28} height={28} alt="" />
             ) : (
               <Stethoscope className="size-5" aria-hidden="true" />
             )}
           </span>
-          <span className="text-base font-bold">{brand.logoText || brand.name}</span>
+          <span className="hidden text-base font-bold md:inline">{brand.logoText || brand.name}</span>
         </Link>
 
         <div className="hidden items-center gap-10 lg:flex">
@@ -60,7 +60,7 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
 
         <button
           type="button"
-          className="focus-ring grid size-11 place-items-center rounded-full bg-[var(--color-white)] lg:hidden"
+          className="focus-ring grid size-12 place-items-center rounded-full bg-[var(--color-white)] shadow-sm lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-controls="mobile-menu"

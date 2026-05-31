@@ -33,7 +33,7 @@ export function FinalCta({ finalCta, integrations, contact }: { finalCta: FinalC
 
   return (
     <section id="book" className="container-page pb-16">
-      <div className="relative overflow-hidden rounded-[2rem] bg-[var(--color-primary)] p-7 text-[var(--color-white)] sm:p-10 lg:p-14">
+      <div className="relative overflow-hidden rounded-[2rem] bg-[var(--color-primary)] p-5 text-[var(--color-white)] sm:p-10 lg:p-14">
         <div className="absolute right-8 top-8 hidden rounded-[1.4rem] bg-[var(--color-accent)] px-5 py-4 font-heading text-xl font-bold text-[var(--color-primary)] md:block">
           24h
         </div>
@@ -41,9 +41,9 @@ export function FinalCta({ finalCta, integrations, contact }: { finalCta: FinalC
           Smile consult
         </div>
         <div className="relative max-w-4xl">
-          <h2 className="font-heading text-4xl font-bold leading-tight md:text-6xl">{finalCta?.heading || "Book your visit"}</h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">{finalCta?.description || ""}</p>
-          <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid gap-3 rounded-[1.5rem] bg-[var(--color-white)] p-3 sm:grid-cols-[1fr_1fr_auto]">
+          <h2 className="font-heading text-3xl font-bold leading-tight md:text-6xl">{finalCta?.heading || "Book your visit"}</h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/75 md:mt-5 md:text-lg md:leading-8">{finalCta?.description || ""}</p>
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-7 grid gap-3 rounded-[1.5rem] bg-[var(--color-white)] p-3 sm:grid-cols-[1fr_1fr_auto] md:mt-8">
             <label className="sr-only" htmlFor="booking-name">{finalCta?.form?.nameLabel || "Name"}</label>
             <input
               id="booking-name"
@@ -58,7 +58,7 @@ export function FinalCta({ finalCta, integrations, contact }: { finalCta: FinalC
               placeholder={finalCta?.form?.phoneLabel || "Phone"}
               {...register("phone", { required: true })}
             />
-            <button type="submit" disabled={formState.isSubmitting} className="focus-ring min-h-14 rounded-full bg-[var(--color-primary)] px-6 font-bold text-[var(--color-white)] disabled:opacity-70">
+            <button type="submit" disabled={formState.isSubmitting} className="focus-ring min-h-14 rounded-full bg-[var(--color-primary)] px-6 font-bold text-[var(--color-white)] active:scale-[0.98] disabled:opacity-70">
               {formState.isSubmitting ? "Sending..." : finalCta?.form?.submitLabel || "Book"}
             </button>
           </form>
