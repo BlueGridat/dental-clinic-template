@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cx } from "@/lib/utils";
+import { MagneticButton } from "./motion/MagneticButton";
 
 export function Tag({ children }: { children: React.ReactNode }) {
   return (
@@ -46,28 +49,30 @@ export function ArrowButton({
   ariaLabel?: string;
 }) {
   return (
-    <Link
-      href={href || "#"}
-      aria-label={ariaLabel || label}
-      className={cx(
-        "focus-ring inline-flex min-h-12 items-center gap-3 rounded-full px-5 py-2.5 text-sm font-bold transition hover:-translate-y-0.5",
-        variant === "dark"
-          ? "bg-[var(--color-primary)] text-[var(--color-white)]"
-          : "bg-[var(--color-white)] text-[var(--color-primary)]",
-        className
-      )}
-    >
-      <span>{label}</span>
-      <span
+    <MagneticButton className="inline-flex">
+      <Link
+        href={href || "#"}
+        aria-label={ariaLabel || label}
         className={cx(
-          "grid size-8 place-items-center rounded-full",
-          variant === "dark" ? "bg-[var(--color-white)] text-[var(--color-primary)]" : "bg-[var(--color-primary)] text-[var(--color-white)]"
+          "focus-ring group inline-flex min-h-12 items-center gap-3 rounded-full px-5 py-2.5 text-sm font-bold transition duration-300 ease-out hover:-translate-y-0.5",
+          variant === "dark"
+            ? "bg-[var(--color-primary)] text-[var(--color-white)]"
+            : "bg-[var(--color-white)] text-[var(--color-primary)]",
+          className
         )}
-        aria-hidden="true"
       >
-        <ArrowUpRight className="size-4" />
-      </span>
-    </Link>
+        <span>{label}</span>
+        <span
+          className={cx(
+            "grid size-8 place-items-center rounded-full transition duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:rotate-12",
+            variant === "dark" ? "bg-[var(--color-white)] text-[var(--color-primary)]" : "bg-[var(--color-primary)] text-[var(--color-white)]"
+          )}
+          aria-hidden="true"
+        >
+          <ArrowUpRight className="size-4" />
+        </span>
+      </Link>
+    </MagneticButton>
   );
 }
 

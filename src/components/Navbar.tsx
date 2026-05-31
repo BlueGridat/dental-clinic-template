@@ -3,20 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, Stethoscope, X } from "lucide-react";
-import { useState } from "react";
-import type { BrandConfig, NavConfig } from "@/config/types";
+import { useEffect, useState } from "react";
+import { clinicConfig, getEffectsConfig } from "@/config";
+import type { BrandConfig, ContactConfig, NavConfig } from "@/config/types";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { ArrowButton } from "./ui";
+import { MobileMenu } from "./mobile/MobileMenu";
 
-export function Navbar({ brand, nav }: { brand: BrandConfig; nav: NavConfig }) {
+export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavConfig; contact: ContactConfig }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const links = safeArray(nav?.links);
+  const reactive = getEffectsConfig(clinicConfig).reactiveNavbar;
+
+  useEffect(() => {
+    if (!reactive) return;
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.style.setProperty("--scroll-progress", `${max > 0 ? window.scrollY / max : 0}`);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [reactive]);
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--color-surface)]/90 px-0 pt-4 backdrop-blur-xl">
-      <nav className="container-page flex min-h-16 items-center justify-between gap-4 rounded-[1.7rem] bg-[var(--color-white)] px-4 shadow-sm sm:px-5" aria-label="Primary navigation">
+      <div className="container-page relative">
+        <div className="absolute inset-x-5 -bottom-px h-px origin-left scale-x-[var(--scroll-progress,0)] bg-[var(--color-accent)]" />
+      </div>
+      <nav className={`container-page flex items-center justify-between gap-4 rounded-[1.7rem] bg-[var(--color-white)] px-4 transition-all duration-300 sm:px-5 ${scrolled ? "min-h-14 shadow-lg shadow-black/10" : "min-h-16 shadow-sm"}`} aria-label="Primary navigation">
         <Link href="#" className="focus-ring flex items-center gap-3 rounded-full">
-          <span className="grid size-10 place-items-center rounded-full bg-[var(--color-surface)] text-[var(--color-primary)]">
+          <span className={`grid place-items-center rounded-full bg-[var(--color-surface)] text-[var(--color-primary)] transition-all duration-300 ${scrolled ? "size-9" : "size-10"}`}>
             {brand.logoImage ? (
               <Image src={fallbackImage(brand.logoImage)} width={28} height={28} alt="" />
             ) : (
@@ -28,8 +47,9 @@ export function Navbar({ brand, nav }: { brand: BrandConfig; nav: NavConfig }) {
 
         <div className="hidden items-center gap-10 lg:flex">
           {links.map((link) => (
-            <Link key={`${link.label}-${link.href}`} href={link.href || "#"} className="focus-ring rounded-full text-sm font-semibold text-[var(--color-text)] transition hover:text-[var(--color-text-muted)]">
+            <Link key={`${link.label}-${link.href}`} href={link.href || "#"} className="focus-ring group relative rounded-full text-sm font-semibold text-[var(--color-text)] transition hover:text-[var(--color-text-muted)]">
               {link.label}
+              <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-[var(--color-accent)] transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </div>
@@ -50,20 +70,7 @@ export function Navbar({ brand, nav }: { brand: BrandConfig; nav: NavConfig }) {
         </button>
       </nav>
 
-      {open ? (
-        <div id="mobile-menu" className="container-page pb-5 lg:hidden">
-          <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-            <div className="grid gap-2">
-              {links.map((link) => (
-                <Link key={`${link.label}-mobile`} href={link.href || "#"} onClick={() => setOpen(false)} className="focus-ring rounded-2xl px-4 py-3 font-semibold">
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            <ArrowButton className="mt-3 w-full justify-center" href={nav?.cta?.href || "#book"} label={nav?.cta?.label || "Book"} />
-          </div>
-        </div>
-      ) : null}
+      <MobileMenu open={open} onClose={() => setOpen(false)} nav={nav} contact={contact} />
     </header>
   );
 }

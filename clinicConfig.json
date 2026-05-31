@@ -137,5 +137,19 @@
     "wordmark": "Lume Dental",
     "copyright": "© 2026 Lume Dental. All rights reserved"
   },
-  "integrations": { "formEndpoint": "" }
+  "integrations": { "formEndpoint": "" },
+  "effects": {
+    "magneticButtons": true,
+    "spotlightCards": true,
+    "tiltImages": true,
+    "heroParallax": true,
+    "statCountUp": true,
+    "customCursor": false,
+    "reactiveNavbar": true
+  },
+  "mobile": {
+    "stickyBookingBar": true,
+    "fullscreenMenu": true,
+    "showCallButton": true
+  }
 }

@@ -1,13 +1,45 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { clinicConfig, getEffectsConfig } from "@/config";
 import type { ContactConfig, HeroConfig } from "@/config/types";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 import { MotionReveal } from "./MotionReveal";
 import { TodayClock } from "./TodayClock";
+import { TiltCard } from "./motion/TiltCard";
 import { ArrowButton } from "./ui";
 
 export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConfig }) {
+  const ref = useRef<HTMLElement>(null);
+  const enabled = getEffectsConfig(clinicConfig).heroParallax;
+  const reduced = useReducedMotionSafe();
+  const pointerFine = usePointerFine();
+  const px = useSpring(useMotionValue(0), { stiffness: 120, damping: 18 });
+  const py = useSpring(useMotionValue(0), { stiffness: 120, damping: 18 });
+  const cardX = useTransform(px, (value) => value * -8);
+  const cardY = useTransform(py, (value) => value * -6);
+  const imageX = useTransform(px, (value) => value * 10);
+  const imageY = useTransform(py, (value) => value * 8);
+
   return (
-    <section className="container-page pb-8 pt-4 lg:pb-12">
+    <section
+      ref={ref}
+      className="container-page hidden pb-8 pt-4 md:block lg:pb-12"
+      onMouseMove={(event) => {
+        if (!enabled || reduced || !pointerFine) return;
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return;
+        px.set((event.clientX - rect.left) / rect.width - 0.5);
+        py.set((event.clientY - rect.top) / rect.height - 0.5);
+      }}
+      onMouseLeave={() => {
+        px.set(0);
+        py.set(0);
+      }}
+    >
       <div className="grid gap-5 rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm lg:grid-cols-[1fr_0.95fr] lg:p-6">
         <MotionReveal className="flex flex-col justify-between gap-8 px-2 py-4 sm:px-6 lg:px-8 lg:py-10">
           <div className="space-y-6">
@@ -17,7 +49,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
             <p className="max-w-xl text-base font-medium leading-7 text-[var(--color-text)] sm:text-lg">{hero?.subtitle || ""}</p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-[0.9fr_1fr]">
+          <motion.div className="grid gap-4 sm:grid-cols-[0.9fr_1fr]" style={enabled && !reduced && pointerFine ? { x: cardX, y: cardY } : undefined}>
             <article className="rounded-[2rem] bg-[var(--color-surface)] p-5">
               <h2 className="mb-4 text-lg font-bold">Working Hours</h2>
               <dl className="grid gap-2.5">
@@ -37,12 +69,16 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
               <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || "Book"} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />
               <h2 className="text-xl font-bold leading-tight">{hero?.cta?.label || "Book an Appointment"}</h2>
             </article>
-          </div>
+          </motion.div>
         </MotionReveal>
 
-        <MotionReveal className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] bg-[var(--color-accent)] sm:min-h-[620px]">
-          <Image src={fallbackImage(hero?.image)} alt="" fill priority className="object-cover" sizes="(min-width: 1024px) 48vw, 100vw" />
-        </MotionReveal>
+        <TiltCard className="relative">
+          <MotionReveal className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] bg-[var(--color-accent)] sm:min-h-[620px]">
+            <motion.div className="absolute -inset-3" style={enabled && !reduced && pointerFine ? { x: imageX, y: imageY } : undefined}>
+              <Image src={fallbackImage(hero?.image)} alt="" fill priority className="object-cover" sizes="(min-width: 1024px) 48vw, 100vw" />
+            </motion.div>
+          </MotionReveal>
+        </TiltCard>
       </div>
     </section>
   );

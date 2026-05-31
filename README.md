@@ -20,6 +20,7 @@ Open `http://localhost:3000`.
 5. Change `brand.fonts.heading` and `brand.fonts.body` to load different Google Fonts.
 6. Set `meta.siteUrl` to the deployed domain for Open Graph images.
 7. Set `integrations.formEndpoint` to a form service URL when available.
+8. Tune `effects` and `mobile` flags to enable or disable motion and mobile behavior.
 
 When `integrations.formEndpoint` is empty, the booking form falls back to a `mailto:` link using `contact.email`.
 
@@ -30,6 +31,30 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 - `src/config/index.ts` imports and type-checks the JSON, builds Google Fonts URLs, and injects CSS custom properties.
 - `src/app/layout.tsx` applies theme CSS variables to `:root`, so colors and typography update from JSON.
 - Section components receive config data through props and do not hardcode clinic-specific values.
+- Desktop and mobile use the same config data but can render different layouts. Mobile-specific components live in `src/components/mobile`.
+
+## Motion And Mobile Flags
+
+`clinicConfig.json` includes two optional blocks. If a key is missing, the app uses safe defaults.
+
+```json
+"effects": {
+  "magneticButtons": true,
+  "spotlightCards": true,
+  "tiltImages": true,
+  "heroParallax": true,
+  "statCountUp": true,
+  "customCursor": false,
+  "reactiveNavbar": true
+},
+"mobile": {
+  "stickyBookingBar": true,
+  "fullscreenMenu": true,
+  "showCallButton": true
+}
+```
+
+Pointer effects automatically disable for coarse pointers and `prefers-reduced-motion: reduce`. The custom cursor is off by default.
 
 ## Image Swapping
 
@@ -51,13 +76,13 @@ Recommended sizes are at least 1200px wide for hero/banner images, 700px wide fo
 The landing page includes:
 
 1. Navbar
-2. Hero with working-hours card and live clock
-3. Services
+2. Desktop hero with parallax cards and mobile hero with image overlay
+3. Services desktop grid and mobile swipe carousel
 4. Stats / expertise
 5. Appointment banner
 6. Filterable doctor carousel
 7. Why choose us
-8. Testimonials
+8. Testimonials desktop grid and mobile swipe carousel
 9. FAQ accordion
 10. Final CTA booking form
 11. Footer

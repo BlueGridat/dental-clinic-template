@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Fallbacks only. Runtime values are injected from clinicConfig.json in layout.tsx. */
   --color-primary: #131c15;
   --color-accent: #a9eaf7;
   --color-surface: #f4f5f7;
@@ -80,4 +81,37 @@ img {
 
 .focus-ring:focus-visible {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 260ms ease-out;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-accent) 42%, transparent), transparent 58%);
+}
+
+.spotlight-card-enabled:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.snap-x-cards {
+  scroll-snap-type: x mandatory;
+  cursor: grab;
+}
+
+.snap-x-cards > * {
+  scroll-snap-align: start;
 }

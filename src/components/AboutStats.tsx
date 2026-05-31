@@ -2,6 +2,8 @@ import Image from "next/image";
 import type { AboutConfig } from "@/config/types";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { MotionReveal } from "./MotionReveal";
+import { Stagger, StaggerItem } from "./motion/Stagger";
+import { CountUpValue } from "./CountUpValue";
 import { RatingStars, SectionHeading } from "./ui";
 
 export function AboutStats({ about }: { about: AboutConfig }) {
@@ -10,14 +12,14 @@ export function AboutStats({ about }: { about: AboutConfig }) {
       <div className="container-page grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <MotionReveal className="space-y-8">
           <SectionHeading tag={about?.tag} title={about?.heading || "Expertise you can trust"} />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <Stagger className="grid gap-4 sm:grid-cols-2">
             {safeArray(about?.stats).map((stat) => (
-              <div key={`${stat.value}-${stat.label}`} className="rounded-[2rem] bg-[var(--color-white)] p-6 shadow-sm">
-                <p className="font-heading text-4xl font-bold">{stat.value}</p>
+              <StaggerItem key={`${stat.value}-${stat.label}`} className="rounded-[2rem] bg-[var(--color-white)] p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
+                <p className="font-heading text-4xl font-bold"><CountUpValue value={stat.value} /></p>
                 <p className="mt-3 text-sm font-semibold leading-6 text-[var(--color-text-muted)]">{stat.label}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </MotionReveal>
         <MotionReveal className="relative mx-auto w-full max-w-xl">
           <div className="aspect-square overflow-hidden rounded-full bg-[var(--color-accent)] p-4">

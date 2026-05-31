@@ -1,6 +1,5 @@
 import rawConfig from "../../clinicConfig.json";
-import type { CSSProperties } from "react";
-import type { ClinicConfig } from "./types";
+import type { ClinicConfig, EffectsConfig, MobileConfig } from "./types";
 
 export const clinicConfig = rawConfig as ClinicConfig;
 
@@ -13,21 +12,28 @@ const fallbackColors: ClinicConfig["brand"]["colors"] = {
   textMuted: "#6B7280"
 };
 
-export function getThemeStyle(config: ClinicConfig = clinicConfig): CSSProperties {
-  const colors = { ...fallbackColors, ...(config.brand?.colors ?? {}) };
-  const heading = config.brand?.fonts?.heading || "Unbounded";
-  const body = config.brand?.fonts?.body || "Inter";
+export const defaultEffects: Required<EffectsConfig> = {
+  magneticButtons: true,
+  spotlightCards: true,
+  tiltImages: true,
+  heroParallax: true,
+  statCountUp: true,
+  customCursor: false,
+  reactiveNavbar: true
+};
 
-  return {
-    "--color-primary": colors.primary,
-    "--color-accent": colors.accent,
-    "--color-surface": colors.surface,
-    "--color-white": colors.white,
-    "--color-text": colors.text,
-    "--color-text-muted": colors.textMuted,
-    "--font-heading": `"${heading}", sans-serif`,
-    "--font-body": `"${body}", sans-serif`
-  } as CSSProperties;
+export const defaultMobile: Required<MobileConfig> = {
+  stickyBookingBar: true,
+  fullscreenMenu: true,
+  showCallButton: true
+};
+
+export function getEffectsConfig(config: ClinicConfig = clinicConfig): Required<EffectsConfig> {
+  return { ...defaultEffects, ...(config.effects ?? {}) };
+}
+
+export function getMobileConfig(config: ClinicConfig = clinicConfig): Required<MobileConfig> {
+  return { ...defaultMobile, ...(config.mobile ?? {}) };
 }
 
 export function getGoogleFontUrl(config: ClinicConfig = clinicConfig) {

@@ -14,6 +14,8 @@ export interface ClinicConfig {
   finalCta: FinalCtaConfig;
   footer: FooterConfig;
   integrations: IntegrationsConfig;
+  effects?: EffectsConfig;
+  mobile?: MobileConfig;
 }
 
 export interface MetaConfig {
@@ -192,4 +194,20 @@ export interface FooterColumn {
 
 export interface IntegrationsConfig {
   formEndpoint: string;
+}
+
+export interface EffectsConfig {
+  magneticButtons?: boolean;
+  spotlightCards?: boolean;
+  tiltImages?: boolean;
+  heroParallax?: boolean;
+  statCountUp?: boolean;
+  customCursor?: boolean;
+  reactiveNavbar?: boolean;
+}
+
+export interface MobileConfig {
+  stickyBookingBar?: boolean;
+  fullscreenMenu?: boolean;
+  showCallButton?: boolean;
 }
