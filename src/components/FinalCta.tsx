@@ -44,9 +44,9 @@ export function FinalCta({
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const tr = useT();
   const form = finalCta?.form;
-  const requiredError = tr(form?.requiredError) || tr({ de: "Bitte füllen Sie dieses Feld aus.", en: "Please complete this field." });
-  const privacyError = tr(form?.privacyError) || tr({ de: "Bitte stimmen Sie der Datenschutzerklärung zu.", en: "Please accept the privacy policy." });
-  const invalidEmailError = tr(form?.invalidEmailError) || tr({ de: "Bitte geben Sie eine gültige E-Mail-Adresse ein.", en: "Please enter a valid email address." });
+  const requiredError = tr(form?.requiredError) || tr({ de: "Bitte füllen Sie dieses Feld aus, damit wir uns verlässlich melden können.", en: "Please complete this field so we can reply reliably." });
+  const privacyError = tr(form?.privacyError) || tr({ de: "Bitte bestätigen Sie die Verarbeitung Ihrer Anfrage.", en: "Please confirm that we may process your request." });
+  const invalidEmailError = tr(form?.invalidEmailError) || tr({ de: "Bitte geben Sie eine gültige E-Mail-Adresse ein oder lassen Sie das Feld frei.", en: "Please enter a valid email address or leave this field empty." });
   const {
     register,
     handleSubmit,
@@ -83,17 +83,17 @@ export function FinalCta({
         });
         if (!response.ok) throw new Error(`Form endpoint returned ${response.status}`);
       } else {
-        const subject = encodeURIComponent(tr({ de: "Terminanfrage", en: "Appointment request" }));
+        const subject = encodeURIComponent(tr({ de: "Anfrage für ein ruhiges Erstgespräch", en: "Request for a calm first consultation" }));
         const body = encodeURIComponent(
           [
-            `Name: ${values.name}`,
-            `Phone: ${values.phone}`,
-            `Email: ${values.email || "-"}`,
-            `Preferred date: ${values.date || "-"}`,
-            `Preferred time: ${values.time || "-"}`,
-            `Service: ${values.service || "-"}`,
-            `Callback: ${values.callback ? "yes" : "no"}`,
-            `Message: ${values.message || "-"}`
+            `${tr({ de: "Name", en: "Name" })}: ${values.name}`,
+            `${tr({ de: "Telefon", en: "Phone" })}: ${values.phone}`,
+            `${tr({ de: "E-Mail", en: "Email" })}: ${values.email || "-"}`,
+            `${tr({ de: "Wunschtermin", en: "Preferred date" })}: ${values.date || "-"}`,
+            `${tr({ de: "Wunschzeit", en: "Preferred time" })}: ${values.time || "-"}`,
+            `${tr({ de: "Anliegen", en: "Concern" })}: ${values.service || "-"}`,
+            `${tr({ de: "Rückruf", en: "Callback" })}: ${values.callback ? tr({ de: "ja", en: "yes" }) : tr({ de: "nein", en: "no" })}`,
+            `${tr({ de: "Nachricht", en: "Message" })}: ${values.message || "-"}`
           ].join("\n")
         );
         window.location.href = `mailto:${contact?.email || ""}?subject=${subject}&body=${body}`;
@@ -118,7 +118,7 @@ export function FinalCta({
               {form?.badgePrimary ? <span className="rounded-[1.2rem] bg-[var(--color-accent)] px-5 py-3 font-heading text-lg font-bold text-[var(--color-primary)]">{tr(form.badgePrimary)}</span> : null}
               {form?.badgeSecondary ? <span className="rounded-full bg-[var(--color-white)] px-5 py-3 text-sm font-bold text-[var(--color-primary)]">{tr(form.badgeSecondary)}</span> : null}
             </div>
-            <h2 className="font-heading text-[clamp(2.35rem,6vw,5.2rem)] font-bold leading-tight">{tr(finalCta?.heading) || "Book your visit"}</h2>
+            <h2 className="font-heading text-[clamp(2.35rem,6vw,5.2rem)] font-bold leading-tight">{tr(finalCta?.heading) || tr({ de: "Beginnen Sie mit einem ruhigen Erstgespräch", en: "Start with a calm first consultation" })}</h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 md:text-lg md:leading-8">{tr(finalCta?.description)}</p>
           </div>
 
@@ -126,7 +126,7 @@ export function FinalCta({
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label htmlFor="booking-name" className="mb-2 block text-sm font-bold">
-                  {tr(form?.nameLabel) || "Name"}
+                  {tr(form?.nameLabel) || tr({ de: "Ihr Name", en: "Your name" })}
                 </label>
                 <input id="booking-name" className={`${fieldClass} ${errors.name ? errorClass : ""}`} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "booking-name-error" : undefined} {...register("name", { required: requiredError })} />
                 <FieldError id="booking-name-error" message={errors.name?.message} />
@@ -134,7 +134,7 @@ export function FinalCta({
 
               <div>
                 <label htmlFor="booking-phone" className="mb-2 block text-sm font-bold">
-                  {tr(form?.phoneLabel) || "Phone"}
+                  {tr(form?.phoneLabel) || tr({ de: "Telefonnummer", en: "Phone number" })}
                 </label>
                 <input id="booking-phone" type="tel" className={`${fieldClass} ${errors.phone ? errorClass : ""}`} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "booking-phone-error" : undefined} {...register("phone", { required: requiredError })} />
                 <FieldError id="booking-phone-error" message={errors.phone?.message} />
@@ -142,7 +142,7 @@ export function FinalCta({
 
               <div>
                 <label htmlFor="booking-email" className="mb-2 block text-sm font-bold">
-                  {tr(form?.emailLabel) || "Email"}
+                  {tr(form?.emailLabel) || tr({ de: "E-Mail (optional)", en: "Email (optional)" })}
                 </label>
                 <input id="booking-email" type="email" className={`${fieldClass} ${errors.email ? errorClass : ""}`} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "booking-email-error" : undefined} {...register("email", { pattern: { value: /^\S+@\S+\.\S+$/, message: invalidEmailError } })} />
                 <FieldError id="booking-email-error" message={errors.email?.message} />
@@ -150,10 +150,10 @@ export function FinalCta({
 
               <div>
                 <label htmlFor="booking-service" className="mb-2 block text-sm font-bold">
-                  {tr(form?.serviceLabel) || "Service"}
+                  {tr(form?.serviceLabel) || tr({ de: "Anliegen", en: "Concern" })}
                 </label>
                 <select id="booking-service" className={fieldClass} {...register("service")}>
-                  <option value="">{tr(form?.selectPlaceholder) || tr({ de: "Leistung auswählen", en: "Select a service" })}</option>
+                  <option value="">{tr(form?.selectPlaceholder) || tr({ de: "Anliegen auswählen", en: "Select a concern" })}</option>
                   {safeArray(services?.items).map((service) => (
                     <option key={tr(service.title)} value={tr(service.title)}>
                       {tr(service.title)}
@@ -164,14 +164,14 @@ export function FinalCta({
 
               <div>
                 <label htmlFor="booking-date" className="mb-2 block text-sm font-bold">
-                  {tr(form?.dateLabel) || "Preferred date"}
+                  {tr(form?.dateLabel) || tr({ de: "Wunschtermin", en: "Preferred date" })}
                 </label>
                 <input id="booking-date" type="date" className={fieldClass} {...register("date")} />
               </div>
 
               <div>
                 <label htmlFor="booking-time" className="mb-2 block text-sm font-bold">
-                  {tr(form?.timeLabel) || "Preferred time"}
+                  {tr(form?.timeLabel) || tr({ de: "Wunschzeit", en: "Preferred time" })}
                 </label>
                 <input id="booking-time" type="time" className={fieldClass} {...register("time")} />
               </div>
@@ -179,36 +179,36 @@ export function FinalCta({
 
             <div>
               <label htmlFor="booking-message" className="mb-2 block text-sm font-bold">
-                {tr(form?.messageLabel) || "Message"}
+                {tr(form?.messageLabel) || tr({ de: "Was sollten wir vorab wissen? (optional)", en: "What should we know beforehand? (optional)" })}
               </label>
               <textarea id="booking-message" rows={4} className={`${fieldClass} min-h-28 resize-y rounded-[1.4rem] py-3`} {...register("message")} />
             </div>
 
             <label className="flex min-h-12 min-w-0 items-start gap-3 rounded-[1.2rem] bg-[var(--color-surface)] px-4 py-3 text-sm font-semibold">
               <input type="checkbox" className="mt-0.5 size-5 shrink-0 accent-[var(--color-primary)]" aria-invalid={Boolean(errors.privacy)} aria-describedby={errors.privacy ? "booking-privacy-error" : undefined} {...register("privacy", { required: privacyError })} />
-              <span>{tr(form?.privacyConsentLabel) || "I agree to the privacy policy."}</span>
+              <span>{tr(form?.privacyConsentLabel) || tr({ de: "Ich stimme zu, dass meine Angaben zur Bearbeitung der Terminanfrage verwendet werden.", en: "I agree that my details may be used to handle this appointment request." })}</span>
             </label>
             <FieldError id="booking-privacy-error" message={errors.privacy?.message} />
 
             <label className="flex min-h-12 min-w-0 items-center gap-3 rounded-[1.2rem] bg-[var(--color-surface)] px-4 py-3 text-sm font-bold">
               <input type="checkbox" className="size-5 shrink-0 accent-[var(--color-primary)]" {...register("callback")} />
-              <span>{tr(form?.callbackLabel) || "Request a callback"}</span>
+              <span>{tr(form?.callbackLabel) || tr({ de: "Bitte rufen Sie mich zur Abstimmung zurück", en: "Please call me to coordinate" })}</span>
             </label>
 
             <button type="submit" disabled={isSubmitting} className="focus-ring inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 font-bold text-[var(--color-white)] transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70">
               {isSubmitting ? <Loader2 className="size-5 animate-spin" aria-hidden="true" /> : null}
-              {isSubmitting ? tr(form?.loadingLabel) || tr({ de: "Wird gesendet...", en: "Sending..." }) : tr(form?.submitLabel) || "Book"}
+              {isSubmitting ? tr(form?.loadingLabel) || tr({ de: "Anfrage wird vorbereitet...", en: "Preparing request..." }) : tr(form?.submitLabel) || tr({ de: "Erstgespräch anfragen", en: "Request a first consultation" })}
             </button>
 
             {submitState === "success" ? (
               <p className="flex items-start gap-2 rounded-[1.2rem] bg-green-50 px-4 py-3 text-sm font-semibold text-green-800" role="status">
                 <CheckCircle2 className="mt-0.5 size-4 shrink-0" />
-                {tr(form?.successMessage) || tr({ de: "Danke, Ihre Anfrage wurde vorbereitet.", en: "Thank you, your request has been prepared." })}
+                {tr(form?.successMessage) || tr({ de: "Danke. Ihre Anfrage ist vorbereitet, und wir melden uns mit einem ruhigen nächsten Schritt.", en: "Thank you. Your request is ready, and we will reply with a calm next step." })}
               </p>
             ) : null}
             {submitState === "error" ? (
               <p className="rounded-[1.2rem] bg-red-50 px-4 py-3 text-sm font-semibold text-red-800" role="alert">
-                {tr(form?.errorMessage) || tr({ de: "Leider konnte die Anfrage nicht gesendet werden. Bitte versuchen Sie es erneut.", en: "We could not send the request. Please try again." })}
+                {tr(form?.errorMessage) || tr({ de: "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.", en: "The request could not be sent right now. Please try again or call us." })}
               </p>
             ) : null}
           </form>

@@ -14,7 +14,7 @@ export function Testimonials({ testimonials }: { testimonials: TestimonialsConfi
   return (
     <section className="section-pad hidden pt-0 md:block">
       <div className="container-page">
-        <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || "Patient reviews"} description={testimonials?.subheading} align="center" />
+        <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || { de: "Was ruhige Behandlung verändert", en: "What calm care changes" }} description={testimonials?.subheading} align="center" />
         <Stagger className="mt-10 grid gap-5 md:grid-cols-2">
           {safeArray(testimonials?.items).map((item) => (
             <StaggerItem key={`${item.name}-${tr(item.quote)}`}>

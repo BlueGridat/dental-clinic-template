@@ -32,7 +32,7 @@ export function SectionHeading({
   return (
     <div className={cx("space-y-5", align === "center" && "mx-auto max-w-3xl text-center")}>
       {tag ? <Tag>{tr(tag)}</Tag> : null}
-      <h2 className="font-heading max-w-full text-[clamp(2rem,8vw,3rem)] font-bold leading-[1.05] text-[var(--color-text)] [overflow-wrap:anywhere] md:text-5xl">
+      <h2 className="font-heading min-w-0 max-w-full text-[clamp(1.7rem,7vw,2.3rem)] font-bold leading-[1.08] text-[var(--color-text)] [overflow-wrap:anywhere] md:text-5xl md:leading-[1.05]">
         {tr(title)}
       </h2>
       {description ? <p className="text-base leading-7 text-[var(--color-text-muted)] md:text-lg">{tr(description)}</p> : null}

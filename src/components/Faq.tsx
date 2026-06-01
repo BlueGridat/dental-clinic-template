@@ -37,7 +37,7 @@ export function Faq({ faq }: { faq: FaqConfig }) {
               );
             })}
           </div>
-          <ArrowButton href={faq?.cta?.href || "#"} label={faq?.cta?.label || "Learn more"} className="mt-7" />
+          <ArrowButton href={faq?.cta?.href || "#book"} label={faq?.cta?.label || { de: "Frage im Erstgespräch klären", en: "Ask at your first consultation" }} className="mt-7" />
         </div>
         <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] bg-[var(--color-white)] p-3 shadow-sm">
           <Image src={fallbackImage(faq?.video)} alt="" fill className="object-cover p-3" sizes="(min-width: 1024px) 45vw, 100vw" />

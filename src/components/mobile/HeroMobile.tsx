@@ -15,10 +15,10 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
   return (
     <section className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-        <p className="font-heading max-w-full text-[clamp(2.05rem,9.2vw,2.85rem)] font-bold leading-[1.04] text-[var(--color-text)]" role="presentation" aria-hidden="true">
-          {tr(hero?.heading) || "Dental care for confident smiles"}
+        <p className="font-heading max-w-full text-[clamp(1.85rem,8vw,2.45rem)] font-bold leading-[1.06] text-[var(--color-text)] [overflow-wrap:anywhere]" role="presentation" aria-hidden="true">
+          {tr(hero?.heading) || tr({ de: "Zahnmedizin, die Ihnen die Sorge nimmt", en: "Dental care that helps you feel at ease" })}
         </p>
-        <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
+        <p className="mt-4 max-w-full text-base font-medium leading-7 text-[var(--color-text)] [overflow-wrap:anywhere]">{tr(hero?.subtitle)}</p>
 
         <div className="relative mt-5 aspect-[1.42] overflow-hidden rounded-[1.5rem] bg-[var(--color-accent)]">
           <Image src={fallbackImage(hero?.image)} alt={tr(hero?.heading) || "Dental clinic hero image"} fill priority className="object-cover" sizes="100vw" />
@@ -41,7 +41,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
             <span className="mb-4 grid size-14 place-items-center rounded-full bg-[var(--color-white)]">
               <ArrowUpRight className="size-5" />
             </span>
-            {tr(hero?.cta?.label) || "Book"}
+            {tr(hero?.cta?.label) || tr({ de: "Erstgespräch anfragen", en: "Request a first consultation" })}
           </a>
         </div>
 

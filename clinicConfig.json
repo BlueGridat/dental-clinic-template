@@ -1,12 +1,12 @@
 {
   "meta": {
     "siteTitle": {
-      "de": "Lume Dental - Moderne Zahnmedizin",
-      "en": "Lume Dental - Advanced Dental Care"
+      "de": "Lume Dental - Ruhige Zahnmedizin in Wien",
+      "en": "Lume Dental - Calm Dental Care in Vienna"
     },
     "description": {
-      "de": "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
-      "en": "Advanced dental care with a gentle touch. Book your appointment today."
+      "de": "Ruhige, transparente Zahnmedizin in Wien. Wir erklären jeden Schritt, nehmen Ihre Sorge ernst und planen Ihren Termin ohne Druck.",
+      "en": "Calm, transparent dental care in Vienna. We explain each step, take your concerns seriously, and plan your visit without pressure."
     },
     "siteUrl": "https://lumedental.com",
     "ogImage": "/images/og.jpg",
@@ -61,35 +61,35 @@
     },
     "ratingValue": "4.8/5",
     "reviewCount": {
-      "de": "1.200+ Bewertungen",
-      "en": "1,200+ reviews"
+      "de": "1.200+ ruhige Erfahrungen",
+      "en": "1,200+ calm patient experiences"
     },
     "openNowLabel": {
-      "de": "Heute geöffnet",
+      "de": "Heute für Sie da",
       "en": "Open today"
     },
     "sinceLabel": {
       "de": "Seit 2011 in Wien",
-      "en": "Serving Vienna since 2011"
+      "en": "In Vienna since 2011"
     },
     "credentials": [
       {
-        "de": "DSGVO-konforme Betreuung",
-        "en": "GDPR-compliant care"
+        "de": "Behandlung mit klarer Erklärung",
+        "en": "Care with clear explanations"
       },
       {
-        "de": "Digitale Diagnostik",
-        "en": "Digital diagnostics"
+        "de": "Digitale Planung, wenn sie hilft",
+        "en": "Digital planning where it helps"
       },
       {
-        "de": "Zertifizierte Spezialist:innen",
-        "en": "Certified specialists"
+        "de": "Sanfte Betreuung für Angstpatient:innen",
+        "en": "Gentle care for anxious patients"
       }
     ],
     "directionsCta": {
       "label": {
-        "de": "Route planen",
-        "en": "Get directions"
+        "de": "Ruhig ankommen",
+        "en": "Plan your visit"
       },
       "href": "https://www.google.com/maps/search/?api=1&query=Mariahilfer+Stra%C3%9Fe+88A+1060+Wien"
     }
@@ -134,47 +134,47 @@
     ],
     "cta": {
       "label": {
-        "de": "Termin buchen",
-        "en": "Book an Appointment"
+        "de": "Beratung anfragen",
+        "en": "Request a consultation"
       },
       "href": "#book"
     }
   },
   "hero": {
     "heading": {
-      "de": "Ihr perfektes Lächeln beginnt bei Lume Dental",
-      "en": "Your Perfect Smile Starts with Lume Dental"
+      "de": "Zahnmedizin, die Ihnen die Sorge nimmt",
+      "en": "Dental care that helps you feel at ease"
     },
     "subtitle": {
-      "de": "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
-      "en": "Advanced dental care with a gentle touch. Book your appointment today."
+      "de": "Bei Lume Dental in Wien nehmen wir uns Zeit, erklären jeden Schritt verständlich und planen Behandlungen erst, wenn Sie sich sicher fühlen.",
+      "en": "At Lume Dental in Vienna, we take time, explain each step clearly, and only plan treatment once you feel ready."
     },
     "image": "/images/hero.png",
     "cta": {
       "label": {
-        "de": "Termin buchen",
-        "en": "Book an Appointment"
+        "de": "Erstgespräch anfragen",
+        "en": "Request a first consultation"
       },
       "href": "#book"
     }
   },
   "services": {
     "tag": {
-      "de": "Unsere Leistungen",
-      "en": "Our Services"
+      "de": "Leistungen",
+      "en": "Services"
     },
     "heading": {
-      "de": "Zahnmedizin für jedes Bedürfnis",
-      "en": "Dental care for every need"
+      "de": "Ruhige Hilfe für Ihre Zähne",
+      "en": "Calm support for your teeth"
     },
     "description": {
-      "de": "Von Mundhygiene bis Implantologie: klare Beratung, moderne Diagnostik und Behandlungen, die zu Ihrem Alltag passen.",
-      "en": "From cleanings to implants: clear advice, modern diagnostics, and treatments designed around real life."
+      "de": "Ob Kontrolle, Mundhygiene oder größere Behandlung: Sie erfahren vorab, was sinnvoll ist, was warten kann und welche Schritte wirklich nötig sind.",
+      "en": "Whether you need a check-up, cleaning, or a larger treatment, you will know what matters now, what can wait, and what each step involves."
     },
     "cta": {
       "label": {
-        "de": "Alle Leistungen entdecken",
-        "en": "Explore All Services"
+        "de": "Passende Behandlung finden",
+        "en": "Find the right care"
       },
       "href": "#services"
     },
@@ -186,8 +186,8 @@
         },
         "icon": "sparkles",
         "description": {
-          "de": "Gründliche Vorsorge für ein frisches Gefühl und langfristig gesunde Zähne.",
-          "en": "Thorough preventive care for a fresh feel and long-term oral health."
+          "de": "Gründliche Vorsorge mit ruhiger Erklärung, damit sich Ihre Zähne sauber und Ihr Kopf entlastet anfühlen.",
+          "en": "Thorough preventive care with calm explanations, so your teeth feel clean and your mind feels lighter."
         },
         "features": [
           {
@@ -195,12 +195,12 @@
             "en": "Professional cleaning"
           },
           {
-            "de": "Zahnsteinentfernung",
-            "en": "Tartar removal"
+            "de": "Zahnstein schonend entfernen",
+            "en": "Gentle tartar removal"
           },
           {
-            "de": "Politur & Pflegeberatung",
-            "en": "Polish and care advice"
+            "de": "Pflegeplan für zu Hause",
+            "en": "Home care guidance"
           }
         ],
         "href": "#book"
@@ -212,8 +212,8 @@
         },
         "icon": "/images/svc-restorative.png",
         "description": {
-          "de": "Substanzschonende Behandlung mit zahnfarbenen, langlebigen Lösungen.",
-          "en": "Conservative treatment with tooth-colored, durable solutions."
+          "de": "Wenn ein Zahn behandelt werden muss, erklären wir die Optionen klar und erhalten so viel gesunde Substanz wie möglich.",
+          "en": "When a tooth needs treatment, we explain the options clearly and preserve as much healthy tooth structure as possible."
         },
         "features": [
           {
@@ -221,12 +221,12 @@
             "en": "Tooth-colored fillings"
           },
           {
-            "de": "Inlays",
-            "en": "Inlays"
+            "de": "Inlays nach Bedarf",
+            "en": "Inlays when appropriate"
           },
           {
-            "de": "Kariesbehandlung",
-            "en": "Cavity treatment"
+            "de": "Kariesbehandlung ohne Eile",
+            "en": "Unhurried cavity care"
           }
         ],
         "href": "#book"
@@ -238,13 +238,13 @@
         },
         "icon": "activity",
         "description": {
-          "de": "Ruhige, präzise Endodontie, wenn ein Zahn erhalten werden kann.",
-          "en": "Calm, precise endodontic care when a tooth can be saved."
+          "de": "Für akute Beschwerden oder tiefe Entzündungen: kontrolliert, gut betäubt und Schritt für Schritt erklärt.",
+          "en": "For acute pain or deep inflammation: controlled, well numbed, and explained step by step."
         },
         "features": [
           {
-            "de": "Moderne Endodontie",
-            "en": "Modern endodontics"
+            "de": "Sorgfältige Diagnostik",
+            "en": "Careful diagnostics"
           },
           {
             "de": "Schonende Betäubung",
@@ -264,8 +264,8 @@
         },
         "icon": "/images/svc-implants.png",
         "description": {
-          "de": "Festsitzender Zahnersatz, digital geplant und verständlich erklärt.",
-          "en": "Fixed tooth replacement, digitally planned and clearly explained."
+          "de": "Festsitzender Zahnersatz mit digitaler Planung, klaren Kostenpunkten und genügend Zeit für Ihre Fragen.",
+          "en": "Fixed tooth replacement with digital planning, clear cost points, and enough time for your questions."
         },
         "features": [
           {
@@ -273,12 +273,12 @@
             "en": "Single implants"
           },
           {
-            "de": "Knochenaufbau",
-            "en": "Bone grafting"
+            "de": "Knochenaufbau erklären",
+            "en": "Bone grafting explained"
           },
           {
-            "de": "Festsitzender Zahnersatz",
-            "en": "Fixed prosthetics"
+            "de": "Planbarer Zahnersatz",
+            "en": "Predictable prosthetics"
           }
         ],
         "href": "#book"
@@ -290,8 +290,8 @@
         },
         "icon": "smile",
         "description": {
-          "de": "Diskrete Zahnkorrektur mit klaren Schritten und regelmäßiger Kontrolle.",
-          "en": "Discreet tooth alignment with clear steps and regular check-ins."
+          "de": "Diskrete Zahnkorrektur mit realistischem Plan statt schnellen Versprechen.",
+          "en": "Discreet tooth alignment with a realistic plan instead of quick promises."
         },
         "features": [
           {
@@ -299,12 +299,12 @@
             "en": "Invisible braces"
           },
           {
-            "de": "Aligner-Therapie",
-            "en": "Aligner therapy"
+            "de": "Aligner-Beratung",
+            "en": "Aligner consultation"
           },
           {
-            "de": "Digitale Verlaufskontrolle",
-            "en": "Digital progress checks"
+            "de": "Regelmäßige Kontrolle",
+            "en": "Regular check-ins"
           }
         ],
         "href": "#book"
@@ -316,21 +316,21 @@
         },
         "icon": "/images/svc-cosmetic.png",
         "description": {
-          "de": "Natürlich wirkende Ästhetik, die zu Gesicht, Biss und Alltag passt.",
-          "en": "Natural-looking aesthetics matched to your face, bite, and lifestyle."
+          "de": "Natürlich hellere, harmonische Zähne, ohne dass Ihr Lächeln fremd wirkt.",
+          "en": "Naturally brighter, balanced teeth without making your smile feel unfamiliar."
         },
         "features": [
           {
-            "de": "Bleaching",
-            "en": "Whitening"
+            "de": "Sanftes Bleaching",
+            "en": "Gentle whitening"
           },
           {
-            "de": "Veneers",
-            "en": "Veneers"
+            "de": "Veneers mit Maß",
+            "en": "Thoughtful veneers"
           },
           {
-            "de": "Smile Makeover",
-            "en": "Smile makeover"
+            "de": "Natürliches Smile Design",
+            "en": "Natural smile design"
           }
         ],
         "href": "#book"
@@ -342,17 +342,17 @@
         },
         "icon": "shield-check",
         "description": {
-          "de": "Gezielte Zahnfleischbehandlung zum Schutz von Zähnen und Implantaten.",
-          "en": "Targeted gum treatment to protect teeth and implants."
+          "de": "Zahnfleischbehandlung, die Entzündungen erklärt, stabilisiert und langfristig begleitet.",
+          "en": "Gum care that explains inflammation, stabilizes it, and supports you long term."
         },
         "features": [
           {
-            "de": "Zahnfleischbehandlung",
-            "en": "Gum treatment"
+            "de": "Zahnfleischstatus prüfen",
+            "en": "Gum health assessment"
           },
           {
-            "de": "Entzündungsmanagement",
-            "en": "Inflammation management"
+            "de": "Entzündungen reduzieren",
+            "en": "Reducing inflammation"
           },
           {
             "de": "Erhaltungsprogramm",
@@ -368,8 +368,8 @@
         },
         "icon": "baby",
         "description": {
-          "de": "Sanfte Vorsorge und Behandlung für Kinder ohne Druck.",
-          "en": "Gentle prevention and care for children without pressure."
+          "de": "Ruhige Termine für Kinder, bei denen Vertrauen wichtiger ist als Tempo.",
+          "en": "Calm appointments for children, where trust matters more than speed."
         },
         "features": [
           {
@@ -381,8 +381,8 @@
             "en": "Fissure sealing"
           },
           {
-            "de": "Vorsorge & Tipps",
-            "en": "Prevention and guidance"
+            "de": "Tipps für Eltern",
+            "en": "Guidance for parents"
           }
         ],
         "href": "#book"
@@ -394,8 +394,8 @@
         },
         "icon": "tooth",
         "description": {
-          "de": "Kronen, Brücken und Prothesen, die stabil sitzen und natürlich aussehen.",
-          "en": "Crowns, bridges, and dentures that feel stable and look natural."
+          "de": "Kronen, Brücken und Prothesen, die gut sitzen, natürlich wirken und verständlich geplant werden.",
+          "en": "Crowns, bridges, and dentures planned clearly, made to feel stable, and designed to look natural."
         },
         "features": [
           {
@@ -417,87 +417,87 @@
   },
   "about": {
     "tag": {
-      "de": "Über uns",
-      "en": "About us"
+      "de": "Über die Praxis",
+      "en": "About the clinic"
     },
     "heading": {
-      "de": "Kompetenz, der Sie vertrauen können",
-      "en": "Expertise you can trust"
+      "de": "Hier wird nichts gemacht, bevor es erklärt ist",
+      "en": "Nothing happens before it is explained"
     },
     "image": "/images/about-doctor.jpg",
     "rating": {
       "value": "4.8/5",
       "label": {
-        "de": "Patientenbewertung",
-        "en": "Patient rate"
+        "de": "Patient:innenstimmen",
+        "en": "Patient feedback"
       },
       "stars": 4
     },
     "badge": {
-      "de": "Erfahrene Hände",
-      "en": "Expert Hands"
+      "de": "Ruhig begleitet",
+      "en": "Calmly guided"
     },
     "stats": [
       {
         "value": "20+",
         "label": {
-          "de": "zertifizierte Spezialist:innen",
-          "en": "certified specialists"
+          "de": "Jahre gemeinsame Erfahrung",
+          "en": "years of combined experience"
         }
       },
       {
-        "value": "50+",
+        "value": "4",
         "label": {
-          "de": "moderne Behandlungen",
-          "en": "advanced procedures offered"
+          "de": "ruhige Schritte vor jeder Behandlung",
+          "en": "calm steps before treatment"
         }
       },
       {
         "value": "15",
         "label": {
-          "de": "Jahre Praxiserfahrung",
-          "en": "years in practice"
+          "de": "Jahre Praxis in Wien",
+          "en": "years in Vienna"
         }
       },
       {
         "value": "99%",
         "label": {
-          "de": "Patientenzufriedenheit",
-          "en": "patient satisfaction rate"
+          "de": "wünschen klare Erklärungen",
+          "en": "want clear explanations"
         }
       }
     ]
   },
   "appointmentBanner": {
     "heading": {
-      "de": "Buchen Sie Ihren Termin in wenigen Minuten",
-      "en": "Book Your Appointment in Minutes"
+      "de": "Erst beraten. Dann entscheiden.",
+      "en": "Talk first. Decide after."
     },
     "description": {
-      "de": "Bereit für ein gesünderes, strahlenderes Lächeln? Planen Sie Ihren Besuch noch heute.",
-      "en": "Brighter, healthier smile - schedule your visit with us today."
+      "de": "Beim ersten Termin klären wir Beschwerden, Wünsche und nächste Schritte. Ohne Druck und ohne überraschende Behandlung.",
+      "en": "At your first visit, we clarify concerns, goals, and next steps. No pressure and no surprise treatment."
     },
     "image": "/images/appointment.jpg",
     "cta": {
       "label": {
-        "de": "Termin buchen",
-        "en": "Book an Appointment"
+        "de": "Erstgespräch anfragen",
+        "en": "Request a first consultation"
       },
       "href": "#book"
     }
   },
   "team": {
     "tag": {
-      "de": "Unser Ärzteteam",
-      "en": "Our Doctors"
+      "de": "Unser Team",
+      "en": "Our team"
     },
     "heading": {
-      "de": "Expert:innen, denen Sie vertrauen",
-      "en": "Experts You Trust"
+      "de": "Menschen, die ruhig erklären",
+      "en": "People who explain calmly"
     },
     "description": {
-      "de": "Unsere Zahnärzt:innen, Prophylaxe-Teams und Spezialist:innen bringen jahrelange Erfahrung und moderne Fortbildungen mit.",
-      "en": "Each of our dentists, hygienists, and specialists brings years of expertise and advanced training."
+      "de": "Unser Team verbindet zahnmedizinische Erfahrung mit einer Gesprächskultur, die Fragen ausdrücklich willkommen heißt.",
+      "en": "Our team combines dental experience with a way of communicating that actively welcomes questions."
     },
     "filters": [
       {
@@ -510,11 +510,11 @@
       },
       {
         "de": "Chirurgie",
-        "en": "Surgeons"
+        "en": "Surgery"
       },
       {
         "de": "Kieferorthopädie",
-        "en": "Orthodontists"
+        "en": "Orthodontics"
       }
     ],
     "doctors": [
@@ -558,73 +558,73 @@
   },
   "whyChooseUs": {
     "tag": {
-      "de": "Warum wir",
-      "en": "WHY CHOOSE US"
+      "de": "Warum Lume",
+      "en": "Why Lume"
     },
     "heading": {
-      "de": "Über die Lume Dental Klinik",
-      "en": "About Lume Dental Clinic"
+      "de": "Für Patient:innen, die Klarheit vor der Behandlung brauchen",
+      "en": "For patients who need clarity before treatment"
     },
     "intro": [
       {
-        "de": "Bei Lume Dental glauben wir, dass ein gesundes Lächeln der Schlüssel zu Selbstvertrauen und Wohlbefinden ist.",
-        "en": "At Lume Dental, we believe that a healthy smile is a gateway to confidence and well-being."
+        "de": "Viele Menschen schieben Zahnarzttermine auf, weil sie schlechte Erfahrungen, Schmerzen oder unklare Kosten erwarten. Genau dort setzen wir an.",
+        "en": "Many people postpone dental visits because they expect pain, unclear costs, or another bad experience. That is exactly where we start."
       },
       {
-        "de": "Unser erfahrenes Team nutzt moderne Technologie, um hochwertige Zahnmedizin in einer angenehmen Umgebung zu bieten.",
-        "en": "Our team of experienced dentists and hygienists use the latest technology to provide top-quality dental care in a comfortable and welcoming environment."
+        "de": "Wir erklären Befund, Möglichkeiten und Reihenfolge so, dass Sie mitentscheiden können. Behandlung beginnt erst, wenn der nächste Schritt für Sie nachvollziehbar ist.",
+        "en": "We explain findings, options, and timing so you can take part in the decision. Treatment only begins when the next step makes sense to you."
       }
     ],
     "sideText": {
-      "de": "Ob Routinekontrolle, ästhetische Behandlung oder komplexer Eingriff - wir begleiten Sie zu Ihrem Wunschlächeln.",
-      "en": "Whether you need routine cleanings, cosmetic enhancements, or advanced procedures, we are here to help you achieve the smile of your dreams."
+      "de": "Das Ziel ist nicht, möglichst viel zu machen. Das Ziel ist, das Richtige gut zu planen.",
+      "en": "The goal is not to do as much as possible. The goal is to plan the right care well."
     },
     "items": [
       {
         "icon": "tools",
         "title": {
-          "de": "Modernste Ausstattung",
-          "en": "State-of-the-art equipment"
+          "de": "Diagnostik, die verständlich bleibt",
+          "en": "Diagnostics you can understand"
         },
         "text": {
-          "de": "Wir setzen auf aktuelle dentale Technologie für präzise, effektive Behandlungen.",
-          "en": "We use the latest advancements in dental technology to provide precise, effective care."
+          "de": "Bilder, Befunde und Optionen werden ruhig besprochen, damit Sie wissen, warum etwas empfohlen wird.",
+          "en": "Images, findings, and options are discussed calmly, so you know why something is recommended."
         },
         "highlight": false
       },
       {
         "icon": "heart-hands",
         "title": {
-          "de": "Erfahrene & einfühlsame Profis",
-          "en": "Experienced & caring professionals"
+          "de": "Zeit für Sorge und Fragen",
+          "en": "Time for concerns and questions"
         },
         "text": {
-          "de": "Unser Team verbindet fachliche Erfahrung mit echter Leidenschaft für Patient:innen.",
-          "en": "Our team of dentists, hygienists, and specialists brings years of expertise and a passion for patient care."
+          "de": "Wir planen Termine so, dass Unsicherheit Platz hat und nicht zwischen Tür und Angel beantwortet wird.",
+          "en": "We plan appointments so uncertainty has room and is not handled in a hurry."
         },
         "highlight": false
       },
       {
         "icon": "tooth",
         "title": {
-          "de": "Schmerzarm und stressfrei",
-          "en": "Pain-free, stress-free treatments"
+          "de": "Schmerzarm geplant",
+          "en": "Planned around comfort"
         },
         "text": {
-          "de": "Wir wissen, dass Zahnarztbesuche belasten können - deshalb steht Ihr Komfort im Mittelpunkt.",
-          "en": "We understand that dental visits can be stressful, which is why we prioritize comfort."
+          "de": "Betäubung, Pausen und Vorgehen werden vorab geklärt, besonders wenn Sie angespannt sind.",
+          "en": "Anesthesia, pauses, and the approach are clarified beforehand, especially if you feel tense."
         },
         "highlight": true
       },
       {
         "icon": "user-check",
         "title": {
-          "de": "Individuelle Betreuung",
-          "en": "Personalized approach for every patient"
+          "de": "Ein Plan, der zu Ihnen passt",
+          "en": "A plan that fits you"
         },
         "text": {
-          "de": "Jedes Lächeln ist einzigartig - und genauso individuell planen wir Ihre Behandlung.",
-          "en": "Every smile is unique, and so is every treatment plan."
+          "de": "Nicht jede Behandlung muss sofort passieren. Wir priorisieren gemeinsam nach Bedarf, Alltag und Budget.",
+          "en": "Not every treatment has to happen at once. We prioritize together around need, daily life, and budget."
         },
         "highlight": false
       }
@@ -632,16 +632,16 @@
   },
   "testimonials": {
     "tag": {
-      "de": "Bewertungen",
-      "en": "Reviews"
+      "de": "Patient:innenstimmen",
+      "en": "Patient stories"
     },
     "heading": {
-      "de": "Erfahrungen, die Vertrauen schaffen",
-      "en": "Stories that build trust"
+      "de": "Was ruhige Behandlung verändert",
+      "en": "What calm care changes"
     },
     "subheading": {
-      "de": "Echte Details aus typischen Behandlungen in unserer Wiener Demo-Praxis.",
-      "en": "Specific experiences from common treatments in our Vienna demo clinic."
+      "de": "Demo-Stimmen mit konkreten Situationen, wie sie Patient:innen in Wien häufig erleben.",
+      "en": "Demo stories based on common situations patients experience in Vienna."
     },
     "items": [
       {
@@ -658,8 +658,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Ich war zur Mundhygiene dort und zum ersten Mal hatte ich danach nicht das Gefühl, schnell abgefertigt worden zu sein. Jeder Schritt wurde erklärt, sehr ruhig und angenehm.",
-          "en": "I came in for a cleaning and, for the first time, did not feel rushed afterward. Every step was explained calmly and clearly."
+          "de": "Ich war nervös, weil Mundhygiene früher oft unangenehm war. Diesmal wurde jeder Schritt angekündigt, und ich konnte jederzeit kurz pausieren.",
+          "en": "I was nervous because cleanings had often felt uncomfortable before. This time, every step was announced and I could pause whenever I needed."
         }
       },
       {
@@ -676,8 +676,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Beim Implantat hatte ich viele Fragen. Die digitale Planung am Bildschirm hat mir geholfen, die Behandlung wirklich zu verstehen. Der Termin selbst war deutlich entspannter als erwartet.",
-          "en": "I had many questions about my implant. Seeing the digital plan helped me really understand the treatment. The appointment itself was much calmer than expected."
+          "de": "Beim Implantat wollte ich vor allem wissen, was genau passiert. Die Planung am Bildschirm und die ehrliche Kostenübersicht haben mir viel Druck genommen.",
+          "en": "With my implant, I mainly wanted to know exactly what would happen. The screen-based planning and honest cost overview took a lot of pressure off."
         }
       },
       {
@@ -694,8 +694,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Die Aligner-Beratung war ehrlich: keine übertriebenen Versprechen, sondern ein realistischer Plan. Genau das hat Vertrauen geschaffen.",
-          "en": "The aligner consultation was honest: no exaggerated promises, just a realistic plan. That is exactly what built trust."
+          "de": "Die Aligner-Beratung war angenehm unaufgeregt. Kein Verkaufsdruck, sondern ein realistischer Plan mit klaren Zwischenschritten.",
+          "en": "The aligner consultation felt pleasantly calm. No sales pressure, just a realistic plan with clear milestones."
         }
       },
       {
@@ -712,8 +712,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Ich kam mit starken Schmerzen und wurde sehr respektvoll behandelt. Die Wurzelbehandlung war nicht angenehm, aber viel ruhiger und kontrollierter, als ich befürchtet hatte.",
-          "en": "I came in with severe pain and was treated very respectfully. The root canal was not fun, but it was far calmer and more controlled than I had feared."
+          "de": "Ich kam mit Schmerzen und ziemlich viel Angst. Mir wurde zuerst erklärt, was dringend ist und was später Zeit hat. Das hat die Situation sofort geordnet.",
+          "en": "I came in with pain and quite a bit of fear. They first explained what was urgent and what could wait. That immediately made the situation feel manageable."
         }
       },
       {
@@ -730,8 +730,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Bei den Veneers ging es nie um ein künstliches Hollywood-Lächeln. Das Team hat auf Natürlichkeit geachtet, und genau deshalb passt das Ergebnis zu mir.",
-          "en": "With my veneers, it was never about an artificial Hollywood smile. The team focused on a natural result, which is why it suits me."
+          "de": "Bei den Veneers ging es nie um ein künstliches Lächeln. Wir haben lange über Natürlichkeit gesprochen, und genau deshalb fühle ich mich damit wohl.",
+          "en": "With my veneers, it was never about an artificial smile. We spent time talking about a natural result, which is exactly why I feel comfortable with it."
         }
       },
       {
@@ -739,8 +739,8 @@
         "rating": 5,
         "image": "/images/placeholder.jpg",
         "treatment": {
-          "de": "Kinderkontrolle",
-          "en": "Child checkup"
+          "de": "Kontrolle",
+          "en": "Check-up"
         },
         "date": {
           "de": "April 2024",
@@ -748,8 +748,8 @@
         },
         "verified": true,
         "quote": {
-          "de": "Unsere Tochter war nervös, aber die Ärztin hat sich Zeit genommen und alles kindgerecht erklärt. Beim zweiten Besuch ist sie ohne Tränen hineingegangen.",
-          "en": "Our daughter was nervous, but the dentist took time and explained everything in a child-friendly way. On the second visit, she went in without tears."
+          "de": "Ich hatte jahrelang Termine aufgeschoben. Beim ersten Besuch wurde nichts überstürzt, sondern zuerst ein überschaubarer Plan gemacht.",
+          "en": "I had postponed appointments for years. At the first visit, nothing was rushed; we started with a manageable plan."
         }
       }
     ]
@@ -760,68 +760,68 @@
       "en": "FAQ"
     },
     "heading": {
-      "de": "Klare Antworten auf Ihre Fragen",
-      "en": "Get clear answers to your questions"
+      "de": "Antworten, die vor dem Termin beruhigen",
+      "en": "Answers that help before your visit"
     },
     "video": "/images/faq-video.jpg",
     "cta": {
       "label": {
-        "de": "Mehr erfahren",
-        "en": "Learn more"
+        "de": "Frage im Erstgespräch klären",
+        "en": "Ask at your first consultation"
       },
       "href": "#"
     },
     "items": [
       {
         "q": {
-          "de": "Wie oft sollte ich zur Zahnärztin oder zum Zahnarzt gehen?",
-          "en": "How often should I visit the dentist?"
+          "de": "Was passiert beim ersten Termin?",
+          "en": "What happens at the first visit?"
         },
         "a": {
-          "de": "Wir empfehlen Kontrolle und professionelle Reinigung alle 6 Monate. Je nach Mundgesundheit kann Ihr Team häufigere Termine vorschlagen.",
-          "en": "We recommend a check-up and professional cleaning every 6 months, though your dentist may suggest more frequent visits based on your oral health."
+          "de": "Wir hören zuerst zu, schauen uns Ihre Situation an und erklären, welche Schritte sinnvoll wären. Eine Behandlung startet nur, wenn Sie einverstanden sind.",
+          "en": "We listen first, review your situation, and explain which steps would make sense. Treatment only starts if you agree."
         }
       },
       {
         "q": {
-          "de": "Sind Zahnbehandlungen schmerzhaft?",
-          "en": "Are dental treatments painful?"
+          "de": "Ich habe Angst vor Schmerzen. Wie gehen Sie damit um?",
+          "en": "I am afraid of pain. How do you handle that?"
         },
         "a": {
-          "de": "Moderne Techniken und Betäubung machen Behandlungen angenehm und nahezu schmerzfrei.",
-          "en": "Modern techniques and anesthesia keep treatments comfortable and virtually pain-free."
+          "de": "Wir besprechen Betäubung, Pausen und Tempo vorab. Sie wissen jederzeit, was als Nächstes passiert, und können ein Zeichen geben, wenn Sie stoppen möchten.",
+          "en": "We discuss numbing, pauses, and pace beforehand. You always know what comes next and can signal if you want to stop."
         }
       },
       {
         "q": {
-          "de": "Bieten Sie Zahnimplantate an?",
-          "en": "Do you offer dental implants?"
+          "de": "Muss ich sofort eine große Behandlung entscheiden?",
+          "en": "Do I have to decide on a big treatment right away?"
         },
         "a": {
-          "de": "Ja, wir bieten komplette Implantatlösungen mit digitaler Planung.",
-          "en": "Yes, we provide full implant solutions with digital planning."
+          "de": "Nein. Wir trennen Befund, Beratung und Entscheidung bewusst. Sie bekommen eine klare Empfehlung und können in Ruhe darüber nachdenken.",
+          "en": "No. We deliberately separate diagnosis, consultation, and decision. You receive a clear recommendation and can think it through calmly."
         }
       },
       {
         "q": {
-          "de": "Behandeln Sie auch Kinder?",
-          "en": "Do you treat children?"
+          "de": "Kann ich nur zur Mundhygiene oder Kontrolle kommen?",
+          "en": "Can I come just for a cleaning or check-up?"
         },
         "a": {
-          "de": "Ja, selbstverständlich - wir bieten einfühlsame Kinderzahnmedizin.",
-          "en": "Absolutely - we have dedicated pediatric care."
+          "de": "Ja. Viele Patient:innen starten mit einem ruhigen Kontrolltermin oder einer Mundhygiene, bevor weitere Schritte geplant werden.",
+          "en": "Yes. Many patients start with a calm check-up or cleaning before planning any further steps."
         }
       }
     ]
   },
   "finalCta": {
     "heading": {
-      "de": "Ihr selbstbewusstes Lächeln beginnt hier",
-      "en": "Your confident smile starts here"
+      "de": "Beginnen Sie mit einem ruhigen Erstgespräch",
+      "en": "Start with a calm first consultation"
     },
     "description": {
-      "de": "Vereinbaren Sie Ihre Beratung und lassen Sie unser erfahrenes Team einen Behandlungsplan für Sie erstellen.",
-      "en": "Schedule your consultation and let our experienced team create a treatment plan designed just for you."
+      "de": "Sagen Sie uns kurz, worum es geht. Wir melden uns mit einem passenden Terminvorschlag und erklären, was Sie beim ersten Besuch erwartet.",
+      "en": "Tell us briefly what is going on. We will get back to you with a suitable appointment option and explain what to expect at your first visit."
     },
     "form": {
       "nameLabel": {
@@ -829,76 +829,76 @@
         "en": "Your name"
       },
       "phoneLabel": {
-        "de": "Telefonnummer",
-        "en": "Phone number"
+        "de": "Telefonnummer für die Rückmeldung",
+        "en": "Phone number for our reply"
       },
       "emailLabel": {
         "de": "E-Mail (optional)",
         "en": "Email (optional)"
       },
       "callbackLabel": {
-        "de": "Rückruf gewünscht",
-        "en": "Request a callback"
+        "de": "Bitte rufen Sie mich zur Abstimmung zurück",
+        "en": "Please call me to coordinate"
       },
       "privacyConsentLabel": {
-        "de": "Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu.",
-        "en": "I agree to the processing of my data according to the privacy policy."
+        "de": "Ich stimme zu, dass meine Angaben zur Bearbeitung der Terminanfrage verwendet werden.",
+        "en": "I agree that my details may be used to handle this appointment request."
       },
       "submitLabel": {
-        "de": "Anfrage senden",
-        "en": "Send request"
+        "de": "Erstgespräch anfragen",
+        "en": "Request a first consultation"
       },
       "dateLabel": {
         "de": "Wunschtermin",
         "en": "Preferred date"
       },
       "timeLabel": {
-        "de": "Wunschzeit",
-        "en": "Preferred time"
+        "de": "Ruhige Tageszeit",
+        "en": "Preferred time of day"
       },
       "serviceLabel": {
-        "de": "Leistung",
-        "en": "Service"
+        "de": "Worum geht es?",
+        "en": "What is this about?"
       },
       "messageLabel": {
-        "de": "Nachricht (optional)",
-        "en": "Message (optional)"
+        "de": "Was sollten wir vorab wissen? (optional)",
+        "en": "What should we know beforehand? (optional)"
       },
       "requiredError": {
-        "de": "Bitte füllen Sie dieses Feld aus.",
-        "en": "Please complete this field."
+        "de": "Bitte füllen Sie dieses Feld aus, damit wir uns verlässlich melden können.",
+        "en": "Please complete this field so we can reply reliably."
       },
       "invalidEmailError": {
-        "de": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-        "en": "Please enter a valid email address."
+        "de": "Bitte geben Sie eine gültige E-Mail-Adresse ein oder lassen Sie das Feld frei.",
+        "en": "Please enter a valid email address or leave this field empty."
       },
       "privacyError": {
-        "de": "Bitte stimmen Sie der Datenschutzerklärung zu.",
-        "en": "Please accept the privacy policy."
+        "de": "Bitte bestätigen Sie die Verarbeitung Ihrer Anfrage.",
+        "en": "Please confirm that we may process your request."
       },
       "successMessage": {
-        "de": "Danke, Ihre Anfrage ist vorbereitet. Wir melden uns so rasch wie möglich.",
-        "en": "Thank you, your request is ready. We will get back to you as soon as possible."
+        "de": "Danke. Ihre Anfrage ist vorbereitet, und wir melden uns mit einem ruhigen nächsten Schritt.",
+        "en": "Thank you. Your request is ready, and we will reply with a calm next step."
       },
       "errorMessage": {
-        "de": "Leider konnte die Anfrage nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
-        "en": "We could not send the request. Please try again or call us."
+        "de": "Die Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+        "en": "The request could not be sent right now. Please try again or call us."
       },
       "loadingLabel": {
-        "de": "Wird gesendet...",
-        "en": "Sending..."
+        "de": "Anfrage wird vorbereitet...",
+        "en": "Preparing request..."
       },
       "selectPlaceholder": {
-        "de": "Leistung auswählen",
-        "en": "Select a service"
+        "de": "Anliegen auswählen",
+        "en": "Select a concern"
       },
       "badgePrimary": {
         "de": "Antwort innerhalb von 24h",
         "en": "Reply within 24h"
       },
       "badgeSecondary": {
-        "de": "Sanfte Erstberatung",
-        "en": "Gentle first consult"
+        "de": "Erst beraten, dann entscheiden",
+        "en": "Talk first, decide after"
       }
     }
   },
@@ -906,8 +906,8 @@
     "columns": [
       {
         "title": {
-          "de": "Über uns",
-          "en": "About"
+          "de": "Praxis",
+          "en": "Clinic"
         },
         "links": [
           {
@@ -1055,8 +1055,8 @@
   "cookieConsent": {
     "enabled": true,
     "message": {
-      "de": "Wir verwenden notwendige Cookies, um diese Website zuverlässig bereitzustellen.",
-      "en": "We use necessary cookies to keep this website reliable."
+      "de": "Wir verwenden notwendige Cookies, damit diese Website verlässlich funktioniert.",
+      "en": "We use necessary cookies so this website works reliably."
     },
     "acceptLabel": {
       "de": "Verstanden",
@@ -1070,20 +1070,20 @@
   "innovation": {
     "enabled": false,
     "eyebrow": {
-      "de": "Digitale Zahnmedizin",
-      "en": "Digital Dentistry"
+      "de": "Digitale Klarheit",
+      "en": "Digital clarity"
     },
     "heading": {
-      "de": "Präzise Planung mit moderner 3D-Technologie",
-      "en": "Precise planning with modern 3D technology"
+      "de": "Planung, die Behandlung verständlich macht",
+      "en": "Planning that makes treatment easier to understand"
     },
     "subheading": {
-      "de": "Scans, Diagnostik und Behandlungsplanung werden sichtbar, verständlich und stressfrei.",
-      "en": "Scans, diagnostics, and treatment planning become visual, clear, and calm."
+      "de": "Scans und digitale Ansichten helfen, Befunde sichtbar zu machen, bevor Sie entscheiden.",
+      "en": "Scans and digital views help make findings visible before you decide."
     },
     "body": {
-      "de": "Unsere digitale Ausstattung unterstützt präzise Diagnosen, transparente Beratung und planbare Behandlungsschritte.",
-      "en": "Our digital equipment supports precise diagnostics, transparent consultation, and predictable treatment steps."
+      "de": "Wir nutzen digitale Planung nicht als Show, sondern um Optionen, Reihenfolge und Aufwand klarer zu erklären.",
+      "en": "We use digital planning not as a showpiece, but to explain options, timing, and effort more clearly."
     },
     "splineSceneUrl": "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode",
     "fallbackImage": "/images/appointment.jpg"
@@ -1091,50 +1091,50 @@
   "animatedHero": {
     "enabled": false,
     "eyebrow": {
-      "de": "Ihr Lächeln",
-      "en": "Your smile"
+      "de": "Ihr Tempo zählt",
+      "en": "Your pace matters"
     },
     "prefix": {
       "de": "Ein",
       "en": "A"
     },
     "suffix": {
-      "de": "Lächeln beginnt hier.",
-      "en": "smile starts here."
+      "de": "Weg zum Zahnarzt beginnt hier.",
+      "en": "path to dental care starts here."
     },
     "rotatingWords": [
       {
-        "de": "gesundes",
-        "en": "healthy"
+        "de": "ruhiger",
+        "en": "calmer"
       },
       {
-        "de": "strahlendes",
-        "en": "radiant"
+        "de": "klarer",
+        "en": "clearer"
       },
       {
-        "de": "selbstbewusstes",
-        "en": "confident"
+        "de": "sicherer",
+        "en": "more confident"
       },
       {
-        "de": "perfektes",
-        "en": "perfect"
+        "de": "gut erklärter",
+        "en": "better explained"
       }
     ],
     "description": {
-      "de": "Eine ruhige, moderne Beratung für Patient:innen, die Klarheit vor der Behandlung wünschen.",
-      "en": "A calm, modern consultation for patients who want clarity before treatment."
+      "de": "Für Patient:innen, die vor der Behandlung wissen möchten, was passiert, warum es nötig ist und welche Alternativen es gibt.",
+      "en": "For patients who want to know what will happen, why it matters, and what alternatives exist before treatment starts."
     },
     "primaryCta": {
       "label": {
-        "de": "Termin buchen",
-        "en": "Book an Appointment"
+        "de": "Erstgespräch anfragen",
+        "en": "Request a first consultation"
       },
       "href": "#book"
     },
     "secondaryCta": {
       "label": {
-        "de": "Anrufen",
-        "en": "Call"
+        "de": "Praxis anrufen",
+        "en": "Call the clinic"
       },
       "href": "tel:+4319346820"
     }

@@ -66,7 +66,7 @@ export function MobileMenu({
           </motion.div>
 
           <div className="absolute inset-x-5 bottom-[calc(24px+env(safe-area-inset-bottom))] grid gap-3">
-            <ArrowButton href={nav?.cta?.href || "#book"} label={nav?.cta?.label || "Book"} variant="white" className="w-full justify-center" />
+            <ArrowButton href={nav?.cta?.href || "#book"} label={nav?.cta?.label || { de: "Beratung anfragen", en: "Request consultation" }} variant="white" className="w-full justify-center" />
             <div className="grid grid-cols-2 gap-3 text-center text-sm font-bold">
               <a href={`tel:${contact?.phone || ""}`} className="focus-ring rounded-full bg-white/10 px-4 py-4 active:scale-[0.98]">{tr({ de: "Anrufen", en: "Call" })}</a>
               <a href={`mailto:${contact?.email || ""}`} className="focus-ring rounded-full bg-white/10 px-4 py-4 active:scale-[0.98]">{tr({ de: "E-Mail", en: "Email" })}</a>

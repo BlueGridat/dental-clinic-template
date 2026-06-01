@@ -46,7 +46,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
         <MotionReveal className="flex flex-col justify-between gap-8 px-2 py-4 sm:px-6 lg:px-8 lg:py-10">
           <div className="space-y-6">
             <p className="font-heading max-w-4xl text-[clamp(3rem,7.1vw,6.25rem)] font-bold leading-[0.98] tracking-normal text-[var(--color-text)]" role="presentation" aria-hidden="true">
-              {tr(hero?.heading) || "Dental care for confident smiles"}
+              {tr(hero?.heading) || tr({ de: "Zahnmedizin, die Ihnen die Sorge nimmt", en: "Dental care that helps you feel at ease" })}
             </p>
             <p className="max-w-xl text-base font-medium leading-7 text-[var(--color-text)] sm:text-lg">{tr(hero?.subtitle)}</p>
           </div>
@@ -68,8 +68,8 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
             </article>
 
             <article className="flex min-h-44 flex-col items-center justify-center rounded-[2rem] bg-[var(--color-accent)] p-6 text-center">
-              <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || { de: "Termin buchen", en: "Book" }} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />
-              <h2 className="text-xl font-bold leading-tight">{tr(hero?.cta?.label) || "Book an Appointment"}</h2>
+              <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || { de: "Erstgespräch anfragen", en: "Request a first consultation" }} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />
+              <h2 className="text-xl font-bold leading-tight">{tr(hero?.cta?.label) || tr({ de: "Erstgespräch anfragen", en: "Request a first consultation" })}</h2>
             </article>
           </motion.div>
         </MotionReveal>
