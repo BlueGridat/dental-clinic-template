@@ -8,6 +8,7 @@ import type { TeamConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { cx, fallbackImage, safeArray } from "@/lib/utils";
 import { SectionHeading } from "./ui";
+import { SpotlightCard } from "./motion/SpotlightCard";
 
 export function TeamCarousel({ team }: { team: TeamConfig }) {
   const filters = safeArray(team?.filters);
@@ -61,15 +62,15 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-5">
             {doctors.map((doctor) => (
-              <article key={`${doctor.name}-${tr(doctor.role)}`} className="min-w-0 flex-[0_0_82%] sm:flex-[0_0_38%] lg:flex-[0_0_24%]">
+              <SpotlightCard key={`${doctor.name}-${tr(doctor.role)}`} className="min-w-0 flex-[0_0_82%] rounded-[1.7rem] p-2 transition duration-300 ease-out hover:-translate-y-1 hover:bg-[var(--color-white)] hover:shadow-xl sm:flex-[0_0_38%] lg:flex-[0_0_24%]">
                 <div className="relative aspect-[1.03] overflow-hidden rounded-[1.55rem] bg-[var(--color-surface)]">
-                  <Image src={fallbackImage(doctor.image)} alt={doctor.name} fill className="object-cover" sizes="(min-width: 1024px) 360px, 85vw" />
+                  <Image src={fallbackImage(doctor.image)} alt={doctor.name} fill className="object-cover transition duration-500 ease-out hover:scale-105" sizes="(min-width: 1024px) 360px, 85vw" />
                 </div>
                 <div className="pt-4 text-center">
                   <h3 className="text-base font-bold">{doctor.name}</h3>
                   <p className="mt-1 text-sm font-medium text-[var(--color-text)]">{tr(doctor.role)}</p>
                 </div>
-              </article>
+              </SpotlightCard>
             ))}
           </div>
         </div>

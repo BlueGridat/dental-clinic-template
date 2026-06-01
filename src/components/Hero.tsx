@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -85,3 +85,4 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
     </section>
   );
 }
+

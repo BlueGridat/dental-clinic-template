@@ -14,6 +14,9 @@ const fallbackColors: ClinicConfig["brand"]["colors"] = {
 
 export const defaultEffects: Required<EffectsConfig> = {
   magneticButtons: true,
+  cursorGlow: true,
+  auroraBlobs: true,
+  pointerParallax: true,
   spotlightCards: true,
   tiltImages: true,
   heroParallax: true,

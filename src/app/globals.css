@@ -55,6 +55,8 @@ img {
 }
 
 .site-shell {
+  position: relative;
+  isolation: isolate;
   width: min(100% - 28px, 1480px);
   margin: 34px auto;
   overflow: hidden;

@@ -16,6 +16,9 @@ export interface ClinicConfig {
   faq: FaqConfig;
   finalCta: FinalCtaConfig;
   footer: FooterConfig;
+  trust?: TrustConfig;
+  legal?: LegalConfig;
+  cookieConsent?: CookieConsentConfig;
   integrations: IntegrationsConfig;
   effects?: EffectsConfig;
   mobile?: MobileConfig;
@@ -181,6 +184,9 @@ export interface FinalCtaConfig {
   form: {
     nameLabel: Localized;
     phoneLabel: Localized;
+    emailLabel?: Localized;
+    callbackLabel?: Localized;
+    privacyConsentLabel?: Localized;
     submitLabel: Localized;
   };
 }
@@ -202,6 +208,9 @@ export interface IntegrationsConfig {
 
 export interface EffectsConfig {
   magneticButtons?: boolean;
+  cursorGlow?: boolean;
+  auroraBlobs?: boolean;
+  pointerParallax?: boolean;
   spotlightCards?: boolean;
   tiltImages?: boolean;
   heroParallax?: boolean;
@@ -220,4 +229,28 @@ export interface I18nConfig {
   defaultLocale?: Locale;
   locales?: Locale[];
   labels?: Partial<Record<Locale, string>>;
+}
+
+export interface TrustConfig {
+  ratingLabel?: Localized;
+  ratingValue?: string;
+  reviewCount?: Localized;
+  openNowLabel?: Localized;
+  sinceLabel?: Localized;
+  credentials?: Localized[];
+  directionsCta?: LinkItem;
+}
+
+export interface LegalConfig {
+  impressumTitle?: Localized;
+  impressumBody?: Localized[];
+  privacyTitle?: Localized;
+  privacyBody?: Localized[];
+}
+
+export interface CookieConsentConfig {
+  enabled?: boolean;
+  message?: Localized;
+  acceptLabel?: Localized;
+  declineLabel?: Localized;
 }

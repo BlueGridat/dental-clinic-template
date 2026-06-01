@@ -21,6 +21,7 @@ Open `http://localhost:3000`.
 6. Set `meta.siteUrl` to the deployed domain for Open Graph images.
 7. Set `integrations.formEndpoint` to a form service URL when available.
 8. Tune `effects` and `mobile` flags to enable or disable motion and mobile behavior.
+9. Edit `i18n`, `trust`, `legal`, and `cookieConsent` blocks for locale, conversion, and compliance details.
 
 When `integrations.formEndpoint` is empty, the booking form falls back to a `mailto:` link using `contact.email`.
 
@@ -40,6 +41,9 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 ```json
 "effects": {
   "magneticButtons": true,
+  "cursorGlow": true,
+  "auroraBlobs": true,
+  "pointerParallax": true,
   "spotlightCards": true,
   "tiltImages": true,
   "heroParallax": true,
@@ -55,6 +59,26 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 ```
 
 Pointer effects automatically disable for coarse pointers and `prefers-reduced-motion: reduce`. The custom cursor is off by default.
+
+## Localization
+
+The default locale is German (`de`) with English (`en`) available through the segmented language toggle. Text fields accept either a plain string or localized objects:
+
+```json
+"heading": {
+  "de": "Ihr perfektes Lächeln beginnt hier",
+  "en": "Your perfect smile starts here"
+}
+```
+
+Use `i18n.defaultLocale`, `i18n.locales`, and `i18n.labels` to control the toggle. The current implementation is client-side and updates `<html lang>`. For stronger indexable German SEO later, upgrade to locale routes such as `/de` and `/en` with `next-intl`; the `Localized` content model already supports this without content rework.
+
+## Trust, Legal, And Consent
+
+- `trust` powers the hero trust strip: Google-style rating, review count, open-now label, credentials, and directions CTA.
+- `legal` powers `/impressum` and `/datenschutz` pages. Replace the sample text with legally reviewed Austrian clinic details before launch.
+- `cookieConsent` controls the GDPR-style cookie banner.
+- `finalCta.form.privacyConsentLabel` controls the booking privacy checkbox.
 
 ## Image Swapping
 
