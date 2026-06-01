@@ -5,6 +5,7 @@ import { BadgeCheck } from "lucide-react";
 import type { TestimonialsConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { SpotlightCard } from "./motion/SpotlightCard";
 import { Stagger, StaggerItem } from "./motion/Stagger";
 import { RatingStars, SectionHeading } from "./ui";
@@ -12,7 +13,7 @@ import { RatingStars, SectionHeading } from "./ui";
 export function Testimonials({ testimonials }: { testimonials: TestimonialsConfig }) {
   const tr = useT();
   return (
-    <section className="section-pad hidden pt-0 md:block">
+    <section data-sanity={dataSanity("testimonials")} className="section-pad hidden pt-0 md:block">
       <div className="container-page">
         <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || { de: "Was ruhige Behandlung verändert", en: "What calm care changes" }} description={testimonials?.subheading} align="center" />
         <Stagger className="mt-10 grid gap-5 md:grid-cols-2">

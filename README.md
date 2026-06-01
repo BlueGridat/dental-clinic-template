@@ -23,7 +23,7 @@ New UI primitives and 3D sections rely on these runtime packages:
 ## How To Customize For A New Client
 
 1. Create or select the client's Sanity dataset.
-2. Set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, and `SANITY_API_TOKEN` in `.env.local`.
+2. Set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_TOKEN`, `SANITY_PREVIEW_SECRET`, and `SANITY_STUDIO_PREVIEW_URL` in `.env.local`.
 3. Run the migration script once to seed Sanity from `clinicConfig.json`.
 4. Edit content in `/studio`.
 5. Change `brand.colors` to re-theme the full site.
@@ -68,6 +68,9 @@ Copy `.env.local.example` to `.env.local` and fill in:
 NEXT_PUBLIC_SANITY_PROJECT_ID=
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_TOKEN=
+SANITY_PREVIEW_SECRET=any_random_string_you_choose
+SANITY_STUDIO_PREVIEW_URL=https://your-vercel-url.vercel.app
+NEXT_PUBLIC_SANITY_VISUAL_EDITING=true
 ```
 
 Seed a dataset from the fallback config:
@@ -77,6 +80,10 @@ npx tsx scripts/migrate-to-sanity.ts
 ```
 
 The app reads one singleton document with `_id: "clinicConfig"` and `_type: "clinicConfig"`. The Studio is embedded at `/studio`. This template expects one Sanity project with one dataset per deployed dental client, selected by `NEXT_PUBLIC_SANITY_DATASET`.
+
+### Live Preview
+
+Sanity Presentation is available in Studio as `Live Preview`. Set `SANITY_STUDIO_PREVIEW_URL` to the deployed app origin, set `SANITY_PREVIEW_SECRET` to a private random string, and keep `NEXT_PUBLIC_SANITY_VISUAL_EDITING=true` when editors should see visual editing overlays. Draft Mode is enabled through `/api/draft-mode?secret=...&path=/` and can be disabled manually at `/api/disable-draft`.
 
 ## Motion And Mobile Flags
 

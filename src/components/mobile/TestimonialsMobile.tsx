@@ -5,13 +5,14 @@ import { BadgeCheck } from "lucide-react";
 import type { TestimonialsConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { RatingStars, SectionHeading } from "../ui";
 import { MobileCarousel } from "./MobileCarousel";
 
 export function TestimonialsMobile({ testimonials }: { testimonials: TestimonialsConfig }) {
   const tr = useT();
   return (
-    <section className="section-pad pt-0 md:hidden">
+    <section data-sanity={dataSanity("testimonials")} className="section-pad pt-0 md:hidden">
       <div className="px-4">
         <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || "Reviews"} description={testimonials?.subheading} />
         <MobileCarousel className="mt-7">

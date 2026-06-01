@@ -5,6 +5,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import type { ServiceItem, ServicesConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { IconResolver } from "./IconResolver";
 import { SpotlightCard } from "./motion/SpotlightCard";
 import { Stagger, StaggerItem } from "./motion/Stagger";
@@ -26,7 +27,7 @@ function ServiceIcon({ service }: { service: ServiceItem }) {
 export function Services({ services }: { services: ServicesConfig }) {
   const tr = useT();
   return (
-    <section id="services" className="section-pad hidden pt-8 md:block">
+    <section id="services" data-sanity={dataSanity("services")} className="section-pad hidden pt-8 md:block">
       <div className="container-page rounded-[2rem] bg-[var(--color-white)] p-5 shadow-sm sm:p-8 lg:p-10">
         <div className="mb-10 grid gap-6 lg:grid-cols-[0.72fr_0.55fr_auto] lg:items-end">
           <SectionHeading tag={services?.tag} title={services?.heading || { de: "Ruhige Hilfe für Ihr Anliegen", en: "Calm support for your concern" }} />

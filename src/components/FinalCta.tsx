@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import type { ContactConfig, FinalCtaConfig, IntegrationsConfig, ServicesConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 
 interface BookingForm {
   name: string;
@@ -110,7 +111,7 @@ export function FinalCta({
   const errorClass = "border-red-500 bg-red-50";
 
   return (
-    <section id="book" className="container-page pb-16">
+    <section id="book" data-sanity={dataSanity("finalCta")} className="container-page pb-16">
       <div className="overflow-hidden rounded-[2rem] bg-[var(--color-primary)] p-5 text-[var(--color-white)] sm:p-8 lg:p-12">
         <div className="grid gap-8 xl:grid-cols-[0.76fr_1.24fr] xl:items-start">
           <div className="min-w-0">

@@ -1,6 +1,6 @@
-import { cache } from "react";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { createClient } from "next-sanity";
+import { draftMode } from "next/headers";
 import rawConfig from "../../clinicConfig.json";
 import type { ClinicConfig, EffectsConfig, MobileConfig } from "./types";
 import { defaultEffects, defaultI18n, defaultMobile } from "./defaults";
@@ -23,7 +23,7 @@ const client =
 
 const imageBuilder =
   client && projectId && dataset
-    ? imageUrlBuilder({
+    ? createImageUrlBuilder({
         projectId,
         dataset
       })
@@ -74,18 +74,33 @@ function normalizeSanityValue(value: unknown): unknown {
   return normalized;
 }
 
-export const getClinicConfig = cache(async (): Promise<ClinicConfig> => {
+function isDynamicServerError(error: unknown) {
+  return Boolean(error && typeof error === "object" && "digest" in error && (error as { digest?: string }).digest === "DYNAMIC_SERVER_USAGE");
+}
+
+export async function getClinicConfig(): Promise<ClinicConfig> {
   if (!client) return fallbackConfig;
 
   try {
-    const sanityConfig = await client.fetch<unknown>(clinicConfigQuery, {}, { cache: "no-store" });
+    const draft = await draftMode();
+    const fetchClient =
+      draft.isEnabled && process.env.SANITY_API_TOKEN
+        ? client.withConfig({
+            token: process.env.SANITY_API_TOKEN,
+            perspective: "previewDrafts",
+            useCdn: false
+          })
+        : client;
+
+    const sanityConfig = await fetchClient.fetch<unknown>(clinicConfigQuery, {}, { cache: "no-store" });
     if (!sanityConfig) return fallbackConfig;
     return normalizeSanityValue(sanityConfig) as ClinicConfig;
   } catch (error) {
+    if (isDynamicServerError(error)) throw error;
     console.warn("Falling back to clinicConfig.json because Sanity config could not be fetched.", error);
     return fallbackConfig;
   }
-});
+}
 
 export function getEffectsConfig(config: ClinicConfig): Required<EffectsConfig> {
   return { ...defaultEffects, ...(config.effects ?? {}) };

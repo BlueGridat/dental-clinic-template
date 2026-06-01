@@ -4,11 +4,12 @@ import Link from "next/link";
 import type { BrandConfig, ContactConfig, FooterConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 
 export function Footer({ footer, contact, brand }: { footer: FooterConfig; contact: ContactConfig; brand: BrandConfig }) {
   const tr = useT();
   return (
-    <footer id="contacts" className="bg-[var(--color-primary)] text-[var(--color-white)]">
+    <footer id="contacts" data-sanity={dataSanity("footer")} className="bg-[var(--color-primary)] text-[var(--color-white)]">
       <div className="container-page py-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.4fr]">
           <div>

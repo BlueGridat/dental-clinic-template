@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { TeamConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { cx, fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { SectionHeading } from "./ui";
 import { SpotlightCard } from "./motion/SpotlightCard";
 
@@ -36,7 +37,7 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
   }, [emblaApi, doctors.length]);
 
   return (
-    <section id="doctors" className="section-pad">
+    <section id="doctors" data-sanity={dataSanity("team")} className="section-pad">
       <div className="container-page rounded-[2rem] bg-[var(--color-white)] p-5 shadow-sm sm:p-8 lg:p-10">
         <div className="mb-8 grid gap-6 lg:grid-cols-[0.9fr_0.65fr_auto] lg:items-end">
           <SectionHeading tag={team?.tag} title={team?.heading || "Doctors"} description={team?.description} />

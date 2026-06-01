@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { ContactConfig, HeroConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { TodayClock } from "../TodayClock";
 
 export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: ContactConfig }) {
@@ -13,7 +14,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
   const tr = useT();
 
   return (
-    <section className="px-4 pb-5 pt-20 md:hidden">
+    <section data-sanity={dataSanity("hero")} className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
         <p className="font-heading max-w-full text-[clamp(1.85rem,8vw,2.45rem)] font-bold leading-[1.06] text-[var(--color-text)] [overflow-wrap:anywhere]" role="presentation" aria-hidden="true">
           {tr(hero?.heading) || tr({ de: "Zahnmedizin, die Ihnen die Sorge nimmt", en: "Dental care that helps you feel at ease" })}

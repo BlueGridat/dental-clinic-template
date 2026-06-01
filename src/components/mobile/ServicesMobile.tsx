@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import type { ServiceItem, ServicesConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { dataSanity } from "@/lib/sanityData";
 import { IconResolver } from "../IconResolver";
 import { SectionHeading } from "../ui";
 import { MobileCarousel } from "./MobileCarousel";
@@ -25,7 +26,7 @@ function ServiceIcon({ service }: { service: ServiceItem }) {
 export function ServicesMobile({ services }: { services: ServicesConfig }) {
   const tr = useT();
   return (
-    <section id="services-mobile" className="section-pad md:hidden">
+    <section id="services-mobile" data-sanity={dataSanity("services")} className="section-pad md:hidden">
       <div className="px-4">
         <SectionHeading tag={services?.tag} title={services?.heading || "Services"} description={services?.description} />
         <MobileCarousel className="mt-7">

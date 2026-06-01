@@ -8,6 +8,7 @@ import { useEffectsConfig } from "@/config/ConfigProvider";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
+import { dataSanity } from "@/lib/sanityData";
 import { MotionReveal } from "./MotionReveal";
 import { TodayClock } from "./TodayClock";
 import { TiltCard } from "./motion/TiltCard";
@@ -29,6 +30,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
   return (
     <section
       ref={ref}
+      data-sanity={dataSanity("hero")}
       className="container-page hidden pb-8 pt-4 md:block lg:pb-12"
       onMouseMove={(event) => {
         if (!enabled || reduced || !pointerFine) return;

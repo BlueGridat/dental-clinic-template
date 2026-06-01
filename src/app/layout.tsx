@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { draftMode } from "next/headers";
 import "./globals.css";
 import { ConfigProvider } from "@/config/ConfigProvider";
 import { getClinicConfig, getGoogleFontUrl, getI18nConfig, getThemeCss } from "@/config";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { t } from "@/i18n/translate";
+import { VisualEditing } from "@/components/VisualEditing";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getClinicConfig();
@@ -40,6 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const config = await getClinicConfig();
+  const draft = await draftMode();
   const i18n = getI18nConfig(config);
 
   return (
@@ -53,6 +56,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body>
         <ConfigProvider config={config}>
           <LocaleProvider>{children}</LocaleProvider>
+          {draft.isEnabled ? <VisualEditing /> : null}
         </ConfigProvider>
       </body>
     </html>
