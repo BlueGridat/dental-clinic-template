@@ -19,6 +19,8 @@ export interface ClinicConfig {
   trust?: TrustConfig;
   legal?: LegalConfig;
   cookieConsent?: CookieConsentConfig;
+  innovation?: InnovationConfig;
+  animatedHero?: AnimatedHeroConfig;
   integrations: IntegrationsConfig;
   effects?: EffectsConfig;
   mobile?: MobileConfig;
@@ -253,4 +255,25 @@ export interface CookieConsentConfig {
   message?: Localized;
   acceptLabel?: Localized;
   declineLabel?: Localized;
+}
+
+export interface InnovationConfig {
+  enabled?: boolean;
+  eyebrow?: Localized;
+  heading?: Localized;
+  subheading?: Localized;
+  body?: Localized;
+  splineSceneUrl?: string;
+  fallbackImage?: string;
+}
+
+export interface AnimatedHeroConfig {
+  enabled?: boolean;
+  eyebrow?: Localized;
+  prefix?: Localized;
+  suffix?: Localized;
+  rotatingWords?: Localized[];
+  description?: Localized;
+  primaryCta?: LinkItem;
+  secondaryCta?: LinkItem;
 }

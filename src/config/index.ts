@@ -66,11 +66,15 @@ export function getThemeCss(config: ClinicConfig = clinicConfig) {
 
   return `:root {
     --color-primary: ${colors.primary};
+    --brand-primary: ${colors.primary};
     --color-accent: ${colors.accent};
     --color-surface: ${colors.surface};
     --color-white: ${colors.white};
     --color-text: ${colors.text};
     --color-text-muted: ${colors.textMuted};
+    --brand-border: color-mix(in srgb, ${colors.primary} 10%, transparent);
+    --brand-input: color-mix(in srgb, ${colors.primary} 10%, transparent);
+    --brand-ring: ${colors.accent};
     --font-heading: "${heading}", sans-serif;
     --font-body: "${body}", sans-serif;
   }`;

@@ -1,13 +1,42 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-background: var(--color-surface);
+  --color-foreground: var(--color-text);
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-surface);
+  --color-secondary-foreground: var(--color-text);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-text);
+  --color-muted: var(--color-surface);
+  --color-muted-foreground: var(--color-text-muted);
+  --color-border: var(--brand-border);
+  --color-input: var(--brand-input);
+  --color-ring: var(--brand-ring);
+}
+
 :root {
   /* Fallbacks only. Runtime values are injected from clinicConfig.json in layout.tsx. */
   --color-primary: #131c15;
+  --brand-primary: #131c15;
   --color-accent: #a9eaf7;
   --color-surface: #f4f5f7;
   --color-white: #ffffff;
   --color-text: #131c15;
   --color-text-muted: #6b7280;
+  --color-primary-foreground: var(--color-white);
+  --color-background: var(--color-surface);
+  --color-foreground: var(--color-text);
+  --color-secondary: var(--color-surface);
+  --color-secondary-foreground: var(--color-text);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-text);
+  --color-muted: var(--color-surface);
+  --color-muted-foreground: var(--color-text-muted);
+  --brand-border: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  --brand-input: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  --brand-ring: var(--color-accent);
   --font-heading: "Unbounded", sans-serif;
   --font-body: "Inter", sans-serif;
 }

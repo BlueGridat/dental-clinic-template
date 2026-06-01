@@ -11,6 +11,15 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+New UI primitives and 3D sections rely on these runtime packages:
+
+- `clsx`
+- `tailwind-merge`
+- `class-variance-authority`
+- `@radix-ui/react-slot`
+- `@splinetool/react-spline`
+- `@splinetool/runtime`
+
 ## How To Customize For A New Client
 
 1. Edit `clinicConfig.json`.
@@ -31,8 +40,9 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 - `src/config/types.ts` defines the full `ClinicConfig` interface.
 - `src/config/index.ts` imports and type-checks the JSON, builds Google Fonts URLs, and injects CSS custom properties.
 - `src/app/layout.tsx` applies theme CSS variables to `:root`, so colors and typography update from JSON.
+- Tailwind v4 tokens are bridged in `src/app/globals.css` with `@theme inline`. Config values such as `brand.colors.primary`, `surface`, `white`, `text`, and `textMuted` become runtime CSS vars first, then feed utility tokens like `bg-primary`, `bg-card`, `text-muted-foreground`, `border-border`, and `ring-ring`. This keeps shadcn-compatible primitives in `src/components/ui/` re-themeable from `clinicConfig.json`.
 - Section components receive config data through props and do not hardcode clinic-specific values.
-- Desktop and mobile use the same config data but can render different layouts. Mobile-specific components live in `src/components/mobile`.
+- Desktop and mobile use the same config data but can render different layouts. Mobile-specific components live in `src/components/mobile`. Breakpoint-specific hero, services, why-choose-us, and testimonial trees are loaded through client-side dynamic imports so phones do not download desktop-only section code and desktop browsers do not download mobile-only section code.
 
 ## Motion And Mobile Flags
 
@@ -60,6 +70,15 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 
 Pointer effects automatically disable for coarse pointers and `prefers-reduced-motion: reduce`. The custom cursor is off by default.
 
+## Innovation And Animated Hero
+
+Two opt-in sections are available in `clinicConfig.json`:
+
+- `innovation` renders a dark, brand-colored 3D technology panel. Set `innovation.enabled` to `true`, provide localized `eyebrow`, `heading`, `subheading`, and `body`, and set `fallbackImage` to a client-owned image. Replace `splineSceneUrl` with the client's verified Spline `.splinecode` URL. The current sample URL returns `200`, but agencies should still swap it for a client-approved scene before launch.
+- `animatedHero` renders a secondary animated statement with localized rotating words and CTAs. Set `animatedHero.enabled` to `true` and edit `prefix`, `rotatingWords`, `suffix`, `description`, `primaryCta`, and `secondaryCta`.
+
+Both sections ship disabled by default. The Spline scene lazy-loads only after the Innovation panel approaches the viewport, and the fallback image is used for reduced motion, coarse pointers, or Save-Data connections. The animated words render the first word statically when motion is reduced.
+
 ## Localization
 
 The default locale is German (`de`) with English (`en`) available through the segmented language toggle. Text fields accept either a plain string or localized objects:
@@ -72,6 +91,8 @@ The default locale is German (`de`) with English (`en`) available through the se
 ```
 
 Use `i18n.defaultLocale`, `i18n.locales`, and `i18n.labels` to control the toggle. The current implementation is client-side and updates `<html lang>`. For stronger indexable German SEO later, upgrade to locale routes such as `/de` and `/en` with `next-intl`; the `Localized` content model already supports this without content rework.
+
+Metadata currently points hreflang alternates at the canonical root because there are no separate locale routes yet, and the client syncs `<html lang>` after the user switches languages. The recommended routing upgrade is to add `/de` and `/en` App Router segments, move `LocaleProvider` initialization from the route param, and then update `metadata.alternates.languages` to `{ de: "/de", en: "/en", "x-default": "/" }`.
 
 ## Trust, Legal, And Consent
 
@@ -100,16 +121,19 @@ Recommended sizes are at least 1200px wide for hero/banner images, 700px wide fo
 The landing page includes:
 
 1. Navbar
-2. Desktop hero with parallax cards and mobile hero with image overlay
-3. Services desktop grid and mobile swipe carousel
-4. Stats / expertise
-5. Appointment banner
-6. Filterable doctor carousel
-7. Why choose us
-8. Testimonials desktop grid and mobile swipe carousel
-9. FAQ accordion
-10. Final CTA booking form
-11. Footer
+2. Responsive hero with parallax cards on desktop and a mobile-native card layout
+3. Optional animated hero statement
+4. Trust strip
+5. Services desktop grid or mobile swipe carousel
+6. Stats / expertise
+7. Appointment banner
+8. Filterable doctor carousel
+9. Optional Innovation / Spline panel
+10. Why choose us
+11. Testimonials desktop grid or mobile swipe carousel
+12. FAQ accordion
+13. Final CTA booking form
+14. Footer
 
 ## Notes For Agencies
 

@@ -45,9 +45,9 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
       <div className="grid gap-5 rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm lg:grid-cols-[1fr_0.95fr] lg:p-6">
         <MotionReveal className="flex flex-col justify-between gap-8 px-2 py-4 sm:px-6 lg:px-8 lg:py-10">
           <div className="space-y-6">
-            <h1 className="font-heading max-w-4xl text-[clamp(3rem,7.1vw,6.25rem)] font-bold leading-[0.98] tracking-normal text-[var(--color-text)]">
+            <p className="font-heading max-w-4xl text-[clamp(3rem,7.1vw,6.25rem)] font-bold leading-[0.98] tracking-normal text-[var(--color-text)]" role="presentation" aria-hidden="true">
               {tr(hero?.heading) || "Dental care for confident smiles"}
-            </h1>
+            </p>
             <p className="max-w-xl text-base font-medium leading-7 text-[var(--color-text)] sm:text-lg">{tr(hero?.subtitle)}</p>
           </div>
 
@@ -77,7 +77,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
         <TiltCard className="relative">
           <MotionReveal className="relative min-h-[420px] overflow-hidden rounded-[1.75rem] bg-[var(--color-accent)] sm:min-h-[620px]">
             <motion.div className="absolute -inset-3" style={enabled && !reduced && pointerFine ? { x: imageX, y: imageY } : undefined}>
-              <Image src={fallbackImage(hero?.image)} alt="" fill priority className="object-cover" sizes="(min-width: 1024px) 48vw, 100vw" />
+              <Image src={fallbackImage(hero?.image)} alt={tr(hero?.heading) || "Dental clinic hero image"} fill priority className="object-cover" sizes="(min-width: 1024px) 48vw, 100vw" />
             </motion.div>
           </MotionReveal>
         </TiltCard>

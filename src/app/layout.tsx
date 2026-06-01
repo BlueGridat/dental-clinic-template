@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   alternates: {
     languages: {
       de: "/",
-      en: "/"
+      en: "/",
+      "x-default": "/"
     }
   },
   icons: clinicConfig.meta?.favicon ? [{ rel: "icon", url: clinicConfig.meta.favicon }] : undefined,

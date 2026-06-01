@@ -15,13 +15,13 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
   return (
     <section className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-        <h1 className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]">
+        <p className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]" role="presentation" aria-hidden="true">
           {tr(hero?.heading) || "Dental care for confident smiles"}
-        </h1>
+        </p>
         <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
 
         <div className="relative mt-5 aspect-[1.42] overflow-hidden rounded-[1.5rem] bg-[var(--color-accent)]">
-          <Image src={fallbackImage(hero?.image)} alt="" fill priority className="object-cover" sizes="100vw" />
+          <Image src={fallbackImage(hero?.image)} alt={tr(hero?.heading) || "Dental clinic hero image"} fill priority className="object-cover" sizes="100vw" />
         </div>
 
         <div className="mt-4 grid grid-cols-[1fr_0.92fr] gap-3">

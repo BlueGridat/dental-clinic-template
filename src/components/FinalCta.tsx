@@ -45,10 +45,10 @@ export function FinalCta({ finalCta, integrations, contact }: { finalCta: FinalC
         <div className="absolute bottom-8 right-28 hidden rounded-full bg-[var(--color-white)] px-5 py-3 text-sm font-bold text-[var(--color-primary)] lg:block">
           Smile consult
         </div>
-        <div className="relative max-w-4xl">
+        <div className="relative max-w-6xl">
           <h2 className="font-heading text-3xl font-bold leading-tight md:text-6xl">{tr(finalCta?.heading) || "Book your visit"}</h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-white/75 md:mt-5 md:text-lg md:leading-8">{tr(finalCta?.description)}</p>
-          <form onSubmit={handleSubmit(onSubmit)} className="mt-7 grid gap-3 rounded-[1.5rem] bg-[var(--color-white)] p-3 sm:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_auto] md:mt-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-7 grid gap-3 rounded-[1.5rem] bg-[var(--color-white)] p-3 sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto] md:mt-8">
             <label className="sr-only" htmlFor="booking-name">{tr(finalCta?.form?.nameLabel) || "Name"}</label>
             <input
               id="booking-name"
@@ -71,14 +71,14 @@ export function FinalCta({ finalCta, integrations, contact }: { finalCta: FinalC
               placeholder={tr(finalCta?.form?.emailLabel) || "Email"}
               {...register("email", { required: true })}
             />
-            <button type="submit" disabled={formState.isSubmitting} className="focus-ring min-h-14 rounded-full bg-[var(--color-primary)] px-6 font-bold text-[var(--color-white)] active:scale-[0.98] disabled:opacity-70">
+            <button type="submit" disabled={formState.isSubmitting} className="focus-ring min-h-14 whitespace-nowrap rounded-full bg-[var(--color-primary)] px-7 font-bold text-[var(--color-white)] active:scale-[0.98] disabled:opacity-70">
               {formState.isSubmitting ? tr({ de: "Wird gesendet...", en: "Sending..." }) : tr(finalCta?.form?.submitLabel) || "Book"}
             </button>
-            <label className="flex items-start gap-3 rounded-[1.2rem] px-3 py-2 text-sm font-semibold text-[var(--color-primary)] sm:col-span-2 lg:col-span-4">
+            <label className="flex min-w-0 items-start gap-3 rounded-[1.2rem] px-3 py-2 text-sm font-semibold text-[var(--color-primary)] sm:col-span-2 xl:col-span-4">
               <input type="checkbox" className="mt-1 size-4 accent-[var(--color-primary)]" {...register("privacy", { required: true })} />
               <span>{tr(finalCta?.form?.privacyConsentLabel) || "I agree to the privacy policy."}</span>
             </label>
-            <label className="flex items-center gap-3 rounded-full bg-[var(--color-surface)] px-4 py-3 text-sm font-bold text-[var(--color-primary)] sm:col-span-2 lg:col-span-4">
+            <label className="flex min-w-0 items-center gap-3 rounded-full bg-[var(--color-surface)] px-4 py-3 text-sm font-bold text-[var(--color-primary)] sm:col-span-2 xl:col-span-4">
               <input type="checkbox" className="size-4 accent-[var(--color-primary)]" {...register("callback")} />
               <span>{tr(finalCta?.form?.callbackLabel) || "Request a callback"}</span>
             </label>

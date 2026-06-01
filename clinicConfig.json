@@ -149,7 +149,7 @@
                                   "de":  "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
                                   "en":  "Advanced dental care with a gentle touch. Book your appointment today."
                               },
-                 "image":  "/images/hero.jpg",
+                 "image":  "/images/hero.png",
                  "cta":  {
                              "label":  {
                                            "de":  "Termin buchen",
@@ -673,7 +673,7 @@
                                                                        "de":  "Datenschutz",
                                                                        "en":  "Privacy policy"
                                                                    },
-                                                         "href":  "#"
+                                                         "href":  "/datenschutz"
                                                      },
                                                      {
                                                          "label":  {
@@ -753,6 +753,78 @@
                                              "en":  "Close"
                                          }
                       },
+    "innovation":  {
+                       "enabled":  false,
+                       "eyebrow":  {
+                                      "de":  "Digitale Zahnmedizin",
+                                      "en":  "Digital Dentistry"
+                                  },
+                       "heading":  {
+                                      "de":  "Präzise Planung mit moderner 3D-Technologie",
+                                      "en":  "Precise planning with modern 3D technology"
+                                  },
+                       "subheading":  {
+                                          "de":  "Scans, Diagnostik und Behandlungsplanung werden sichtbar, verständlich und stressfrei.",
+                                          "en":  "Scans, diagnostics, and treatment planning become visual, clear, and calm."
+                                      },
+                       "body":  {
+                                    "de":  "Unsere digitale Ausstattung unterstützt präzise Diagnosen, transparente Beratung und planbare Behandlungsschritte.",
+                                    "en":  "Our digital equipment supports precise diagnostics, transparent consultation, and predictable treatment steps."
+                                },
+                       "splineSceneUrl":  "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode",
+                       "fallbackImage":  "/images/appointment.jpg"
+                   },
+    "animatedHero":  {
+                         "enabled":  false,
+                         "eyebrow":  {
+                                        "de":  "Ihr Lächeln",
+                                        "en":  "Your smile"
+                                    },
+                         "prefix":  {
+                                      "de":  "Ein",
+                                      "en":  "A"
+                                  },
+                         "suffix":  {
+                                      "de":  "Lächeln beginnt hier.",
+                                      "en":  "smile starts here."
+                                  },
+                         "rotatingWords":  [
+                                               {
+                                                   "de":  "gesundes",
+                                                   "en":  "healthy"
+                                               },
+                                               {
+                                                   "de":  "strahlendes",
+                                                   "en":  "radiant"
+                                               },
+                                               {
+                                                   "de":  "selbstbewusstes",
+                                                   "en":  "confident"
+                                               },
+                                               {
+                                                   "de":  "perfektes",
+                                                   "en":  "perfect"
+                                               }
+                                           ],
+                         "description":  {
+                                           "de":  "Eine ruhige, moderne Beratung für Patient:innen, die Klarheit vor der Behandlung wünschen.",
+                                           "en":  "A calm, modern consultation for patients who want clarity before treatment."
+                                       },
+                         "primaryCta":  {
+                                          "label":  {
+                                                        "de":  "Termin buchen",
+                                                        "en":  "Book an Appointment"
+                                                    },
+                                          "href":  "#book"
+                                      },
+                         "secondaryCta":  {
+                                            "label":  {
+                                                          "de":  "Anrufen",
+                                                          "en":  "Call"
+                                                      },
+                                            "href":  "tel:+12125557483"
+                                        }
+                     },
     "integrations":  {
                          "formEndpoint":  ""
                      },
