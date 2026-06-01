@@ -118,7 +118,7 @@ export function FinalCta({
               {form?.badgePrimary ? <span className="rounded-[1.2rem] bg-[var(--color-accent)] px-5 py-3 font-heading text-lg font-bold text-[var(--color-primary)]">{tr(form.badgePrimary)}</span> : null}
               {form?.badgeSecondary ? <span className="rounded-full bg-[var(--color-white)] px-5 py-3 text-sm font-bold text-[var(--color-primary)]">{tr(form.badgeSecondary)}</span> : null}
             </div>
-            <h2 className="font-heading text-[clamp(2.35rem,6vw,5.2rem)] font-bold leading-tight">{tr(finalCta?.heading) || tr({ de: "Beginnen Sie mit einem ruhigen Erstgespräch", en: "Start with a calm first consultation" })}</h2>
+            <h2 className="font-heading min-w-0 max-w-full text-[clamp(2.25rem,5vw,4.35rem)] font-bold leading-[1.08] [overflow-wrap:anywhere]">{tr(finalCta?.heading) || tr({ de: "Ruhig starten mit Erstgespräch", en: "Start with a calm first visit" })}</h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 md:text-lg md:leading-8">{tr(finalCta?.description)}</p>
           </div>
 
