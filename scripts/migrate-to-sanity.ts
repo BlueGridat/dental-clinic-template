@@ -29,7 +29,9 @@ function shouldUploadImage(pathParts: string[], value: string) {
   if (!/\.(png|jpe?g|webp|gif|svg)$/i.test(value)) return false;
 
   const field = pathParts[pathParts.length - 1];
-  return field === "image" || field === "ogImage" || field === "video" || field === "fallbackImage" || field === "logoImage" || field === "icon";
+  // NOTE: "icon" is intentionally excluded — schema defines it as type "string"
+  // (holds either a Lucide icon name like "sparkles" or a local image path like "/images/svc-cosmetic.png")
+  return field === "image" || field === "ogImage" || field === "video" || field === "fallbackImage" || field === "logoImage";
 }
 
 async function uploadImage(publicPath: string) {
