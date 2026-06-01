@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "dotenv -e .env.local -- tsx scripts/migrate-to-sanity.ts",
+    "migrate:v2": "dotenv -e .env.local -- tsx scripts/migrate-to-sanity-v2.ts",
+    "check-sanity": "dotenv -e .env.local -- tsx scripts/check-sanity-data.ts",
+    "fix-schema": "dotenv -e .env.local -- tsx scripts/fix-schema-mismatch.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
