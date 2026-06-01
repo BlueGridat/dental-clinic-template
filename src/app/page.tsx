@@ -35,7 +35,7 @@ export default function Home() {
           <ResponsiveWhyChooseUs data={config.whyChooseUs} />
           <ResponsiveTestimonials testimonials={config.testimonials} />
           <Faq faq={config.faq} />
-          <FinalCta finalCta={config.finalCta} integrations={config.integrations} contact={config.contact} />
+          <FinalCta finalCta={config.finalCta} integrations={config.integrations} contact={config.contact} services={config.services} />
         </main>
         <Footer footer={config.footer} contact={config.contact} brand={config.brand} />
         <ClientEffects config={config} />

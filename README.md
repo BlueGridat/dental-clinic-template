@@ -34,6 +34,20 @@ New UI primitives and 3D sections rely on these runtime packages:
 
 When `integrations.formEndpoint` is empty, the booking form falls back to a `mailto:` link using `contact.email`.
 
+## Services, Testimonials, And Booking
+
+Services live in `services.items`. Each item supports:
+
+- `title`: localized service name.
+- `description`: optional localized one-line summary.
+- `icon`: either an image path such as `/images/svc-cosmetic.png` or a lucide/icon key such as `sparkles`, `shield-check`, `activity`, `smile`, `baby`, or `tooth`.
+- `features`: localized bullet points.
+- `href`: usually `#book` for a booking-focused landing page.
+
+Testimonials live in `testimonials.items`. Use real, licensed patient photos before launch. Each testimonial can include `treatment`, `date`, and `verified` to render credibility chips without hardcoding content in components.
+
+The booking form is configured through `finalCta.form`. Labels, helper/error messages, submit text, success/failure text, service dropdown placeholder, and the two header badges are all localized there. Phone is required, email is optional, and the service dropdown is populated from `services.items`.
+
 ## Config-Driven Architecture
 
 - `clinicConfig.json` contains all clinic-specific data: metadata, name, colors, fonts, copy, doctors, images, hours, contact details, links, FAQs, testimonials, and integrations.

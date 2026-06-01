@@ -15,7 +15,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
   return (
     <section className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-        <p className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]" role="presentation" aria-hidden="true">
+        <p className="font-heading max-w-full text-[clamp(2.05rem,9.2vw,2.85rem)] font-bold leading-[1.04] text-[var(--color-text)]" role="presentation" aria-hidden="true">
           {tr(hero?.heading) || "Dental care for confident smiles"}
         </p>
         <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
@@ -24,7 +24,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
           <Image src={fallbackImage(hero?.image)} alt={tr(hero?.heading) || "Dental clinic hero image"} fill priority className="object-cover" sizes="100vw" />
         </div>
 
-        <div className="mt-4 grid grid-cols-[1fr_0.92fr] gap-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_0.92fr]">
           <article className="rounded-[1.35rem] bg-[var(--color-surface)] p-4">
             <h2 className="text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
             <dl className="mt-3 grid gap-2 text-sm leading-5">

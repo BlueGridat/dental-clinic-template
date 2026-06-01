@@ -54,6 +54,7 @@ body {
   background: color-mix(in srgb, var(--color-accent) 28%, var(--color-surface));
   color: var(--color-text);
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 button,

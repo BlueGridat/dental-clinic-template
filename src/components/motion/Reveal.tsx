@@ -4,10 +4,10 @@ import { motion, type Variants } from "framer-motion";
 import { motionTokens, useReducedMotionSafe } from "@/lib/motion";
 
 const variants: Record<string, Variants> = {
-  "fade-up": { hidden: { opacity: 0, y: motionTokens.offset.y }, show: { opacity: 1, y: 0 } },
-  fade: { hidden: { opacity: 0 }, show: { opacity: 1 } },
-  "scale-in": { hidden: { opacity: 0, scale: motionTokens.offset.scaleFrom }, show: { opacity: 1, scale: 1 } },
-  "blur-in": { hidden: { opacity: 0, filter: `blur(${motionTokens.offset.blur}px)`, y: motionTokens.offset.tinyY }, show: { opacity: 1, filter: "blur(0px)", y: 0 } }
+  "fade-up": { hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } },
+  fade: { hidden: { opacity: 1 }, show: { opacity: 1 } },
+  "scale-in": { hidden: { opacity: 1, scale: 1 }, show: { opacity: 1, scale: 1 } },
+  "blur-in": { hidden: { opacity: 1, filter: "blur(0px)", y: 0 }, show: { opacity: 1, filter: "blur(0px)", y: 0 } }
 };
 
 export function Reveal({

@@ -94,6 +94,7 @@ export interface ServicesConfig {
 export interface ServiceItem {
   title: Localized;
   icon: string;
+  description?: Localized;
   features: Localized[];
   href: string;
 }
@@ -165,6 +166,9 @@ export interface TestimonialItem {
   name: string;
   rating: number;
   image: string;
+  treatment?: Localized;
+  date?: Localized;
+  verified?: boolean;
 }
 
 export interface FaqConfig {
@@ -187,9 +191,22 @@ export interface FinalCtaConfig {
     nameLabel: Localized;
     phoneLabel: Localized;
     emailLabel?: Localized;
+    dateLabel?: Localized;
+    timeLabel?: Localized;
+    serviceLabel?: Localized;
+    messageLabel?: Localized;
     callbackLabel?: Localized;
     privacyConsentLabel?: Localized;
     submitLabel: Localized;
+    requiredError?: Localized;
+    invalidEmailError?: Localized;
+    privacyError?: Localized;
+    successMessage?: Localized;
+    errorMessage?: Localized;
+    loadingLabel?: Localized;
+    selectPlaceholder?: Localized;
+    badgePrimary?: Localized;
+    badgeSecondary?: Localized;
   };
 }
 

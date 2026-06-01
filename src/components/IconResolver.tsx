@@ -1,4 +1,4 @@
-import { HeartHandshake, Stethoscope, UserCheck, Wrench } from "lucide-react";
+import { Activity, Baby, CalendarClock, HeartHandshake, HeartPulse, ShieldCheck, Smile, Sparkles, Stethoscope, Syringe, UserCheck, Wrench } from "lucide-react";
 
 function ToothSvg({ className }: { className?: string }) {
   return (
@@ -17,8 +17,19 @@ export function IconResolver({ name, className }: { name?: string; className?: s
   const icons: Record<string, React.ComponentType<{ className?: string }>> = {
     tooth: ToothSvg,
     tools: Wrench,
+    wrench: Wrench,
     "heart-hands": HeartHandshake,
-    "user-check": UserCheck
+    "user-check": UserCheck,
+    "shield-check": ShieldCheck,
+    shield: ShieldCheck,
+    sparkles: Sparkles,
+    smile: Smile,
+    activity: Activity,
+    "heart-pulse": HeartPulse,
+    baby: Baby,
+    syringe: Syringe,
+    calendar: CalendarClock,
+    stethoscope: Stethoscope
   };
   const Icon = icons[name || ""] ?? Stethoscope;
   return <Icon className={className} aria-hidden="true" />;

@@ -56,7 +56,7 @@ export function getI18nConfig(config: ClinicConfig = clinicConfig) {
 export function getGoogleFontUrl(config: ClinicConfig = clinicConfig) {
   const fonts = [config.brand?.fonts?.heading || "Unbounded", config.brand?.fonts?.body || "Inter"];
   const families = Array.from(new Set(fonts)).map((font) => `family=${font.replace(/\s+/g, "+")}:wght@400;500;600;700;800`);
-  return `https://fonts.googleapis.com/css2?${families.join("&")}&display=swap`;
+  return `https://fonts.googleapis.com/css2?${families.join("&")}&subset=latin-ext&display=swap`;
 }
 
 export function getThemeCss(config: ClinicConfig = clinicConfig) {

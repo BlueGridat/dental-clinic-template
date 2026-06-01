@@ -1,860 +1,1173 @@
-﻿{
-    "meta":  {
-                 "siteTitle":  {
-                                   "de":  "Lume Dental - Moderne Zahnmedizin",
-                                   "en":  "Lume Dental - Advanced Dental Care"
-                               },
-                 "description":  {
-                                     "de":  "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
-                                     "en":  "Advanced dental care with a gentle touch. Book your appointment today."
-                                 },
-                 "siteUrl":  "https://lumedental.com",
-                 "ogImage":  "/images/og.jpg",
-                 "favicon":  "/favicon.ico"
-             },
-    "brand":  {
-                  "name":  "Lume Dental",
-                  "logoText":  {
-                                   "de":  "Lume Dental",
-                                   "en":  "Lume Dental"
-                               },
-                  "logoIcon":  "tooth",
-                  "logoImage":  "",
-                  "colors":  {
-                                 "primary":  "#131C15",
-                                 "accent":  "#A9EAF7",
-                                 "surface":  "#F4F5F7",
-                                 "white":  "#FFFFFF",
-                                 "text":  "#131C15",
-                                 "textMuted":  "#6B7280"
-                             },
-                  "fonts":  {
-                                "heading":  "Unbounded",
-                                "body":  "Inter"
-                            }
-              },
-    "contact":  {
-                    "phone":  "+1 (212) 555-7483",
-                    "email":  "hello@lumedental.com",
-                    "address":  "245 Madison Avenue, Suite 1203, New York, NY 10016",
-                    "workingHours":  [
-                                         {
-                                             "days":  {
-                                                          "de":  "Montag - Freitag",
-                                                          "en":  "Monday - Friday"
-                                                      },
-                                             "hours":  "9:00 - 21:00"
-                                         },
-                                         {
-                                             "days":  {
-                                                          "de":  "Samstag, Sonntag",
-                                                          "en":  "Saturday, Sunday"
-                                                      },
-                                             "hours":  "10:00 - 18:00"
-                                         }
-                                     ]
-                },
-    "trust":  {
-                  "ratingLabel":  {
-                                      "de":  "Google Bewertung",
-                                      "en":  "Google rating"
-                                  },
-                  "ratingValue":  "4.8/5",
-                  "reviewCount":  {
-                                      "de":  "1.200+ Bewertungen",
-                                      "en":  "1,200+ reviews"
-                                  },
-                  "openNowLabel":  {
-                                       "de":  "Heute geöffnet",
-                                       "en":  "Open today"
-                                   },
-                  "sinceLabel":  {
-                                     "de":  "Seit 2011 in Wien",
-                                     "en":  "Serving Vienna since 2011"
-                                 },
-                  "credentials":  [
-                                      {
-                                          "de":  "DSGVO-konforme Betreuung",
-                                          "en":  "GDPR-compliant care"
-                                      },
-                                      {
-                                          "de":  "Digitale Diagnostik",
-                                          "en":  "Digital diagnostics"
-                                      },
-                                      {
-                                          "de":  "Zertifizierte Spezialist:innen",
-                                          "en":  "Certified specialists"
-                                      }
-                                  ],
-                  "directionsCta":  {
-                                        "label":  {
-                                                      "de":  "Route planen",
-                                                      "en":  "Get directions"
-                                                  },
-                                        "href":  "https://maps.google.com"
-                                    }
-              },
-    "nav":  {
-                "links":  [
-                              {
-                                  "label":  {
-                                                "de":  "Leistungen",
-                                                "en":  "Services"
-                                            },
-                                  "href":  "#services"
-                              },
-                              {
-                                  "label":  {
-                                                "de":  "Ärzteteam",
-                                                "en":  "Doctors"
-                                            },
-                                  "href":  "#doctors"
-                              },
-                              {
-                                  "label":  {
-                                                "de":  "Preise",
-                                                "en":  "Pricing"
-                                            },
-                                  "href":  "#pricing"
-                              },
-                              {
-                                  "label":  {
-                                                "de":  "Über uns",
-                                                "en":  "About us"
-                                            },
-                                  "href":  "#about"
-                              },
-                              {
-                                  "label":  {
-                                                "de":  "Kontakt",
-                                                "en":  "Contacts"
-                                            },
-                                  "href":  "#contacts"
-                              }
-                          ],
-                "cta":  {
-                            "label":  {
-                                          "de":  "Termin buchen",
-                                          "en":  "Book an Appointment"
-                                      },
-                            "href":  "#book"
-                        }
+{
+  "meta": {
+    "siteTitle": {
+      "de": "Lume Dental - Moderne Zahnmedizin",
+      "en": "Lume Dental - Advanced Dental Care"
+    },
+    "description": {
+      "de": "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
+      "en": "Advanced dental care with a gentle touch. Book your appointment today."
+    },
+    "siteUrl": "https://lumedental.com",
+    "ogImage": "/images/og.jpg",
+    "favicon": "/favicon.ico"
+  },
+  "brand": {
+    "name": "Lume Dental",
+    "logoText": {
+      "de": "Lume Dental",
+      "en": "Lume Dental"
+    },
+    "logoIcon": "tooth",
+    "logoImage": "",
+    "colors": {
+      "primary": "#131C15",
+      "accent": "#A9EAF7",
+      "surface": "#F4F5F7",
+      "white": "#FFFFFF",
+      "text": "#131C15",
+      "textMuted": "#6B7280"
+    },
+    "fonts": {
+      "heading": "Unbounded",
+      "body": "Inter"
+    }
+  },
+  "contact": {
+    "phone": "+43 1 934 68 20",
+    "email": "servus@lumedental.at",
+    "address": "Mariahilfer Straße 88A, 1060 Wien",
+    "workingHours": [
+      {
+        "days": {
+          "de": "Montag - Freitag",
+          "en": "Monday - Friday"
+        },
+        "hours": "8:00 - 19:00"
+      },
+      {
+        "days": {
+          "de": "Samstag",
+          "en": "Saturday"
+        },
+        "hours": "9:00 - 14:00"
+      }
+    ]
+  },
+  "trust": {
+    "ratingLabel": {
+      "de": "Google Bewertung",
+      "en": "Google rating"
+    },
+    "ratingValue": "4.8/5",
+    "reviewCount": {
+      "de": "1.200+ Bewertungen",
+      "en": "1,200+ reviews"
+    },
+    "openNowLabel": {
+      "de": "Heute geöffnet",
+      "en": "Open today"
+    },
+    "sinceLabel": {
+      "de": "Seit 2011 in Wien",
+      "en": "Serving Vienna since 2011"
+    },
+    "credentials": [
+      {
+        "de": "DSGVO-konforme Betreuung",
+        "en": "GDPR-compliant care"
+      },
+      {
+        "de": "Digitale Diagnostik",
+        "en": "Digital diagnostics"
+      },
+      {
+        "de": "Zertifizierte Spezialist:innen",
+        "en": "Certified specialists"
+      }
+    ],
+    "directionsCta": {
+      "label": {
+        "de": "Route planen",
+        "en": "Get directions"
+      },
+      "href": "https://www.google.com/maps/search/?api=1&query=Mariahilfer+Stra%C3%9Fe+88A+1060+Wien"
+    }
+  },
+  "nav": {
+    "links": [
+      {
+        "label": {
+          "de": "Leistungen",
+          "en": "Services"
+        },
+        "href": "#services"
+      },
+      {
+        "label": {
+          "de": "Ärzteteam",
+          "en": "Doctors"
+        },
+        "href": "#doctors"
+      },
+      {
+        "label": {
+          "de": "Preise",
+          "en": "Pricing"
+        },
+        "href": "#pricing"
+      },
+      {
+        "label": {
+          "de": "Über uns",
+          "en": "About us"
+        },
+        "href": "#about"
+      },
+      {
+        "label": {
+          "de": "Kontakt",
+          "en": "Contacts"
+        },
+        "href": "#contacts"
+      }
+    ],
+    "cta": {
+      "label": {
+        "de": "Termin buchen",
+        "en": "Book an Appointment"
+      },
+      "href": "#book"
+    }
+  },
+  "hero": {
+    "heading": {
+      "de": "Ihr perfektes Lächeln beginnt bei Lume Dental",
+      "en": "Your Perfect Smile Starts with Lume Dental"
+    },
+    "subtitle": {
+      "de": "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
+      "en": "Advanced dental care with a gentle touch. Book your appointment today."
+    },
+    "image": "/images/hero.png",
+    "cta": {
+      "label": {
+        "de": "Termin buchen",
+        "en": "Book an Appointment"
+      },
+      "href": "#book"
+    }
+  },
+  "services": {
+    "tag": {
+      "de": "Unsere Leistungen",
+      "en": "Our Services"
+    },
+    "heading": {
+      "de": "Zahnmedizin für jedes Bedürfnis",
+      "en": "Dental care for every need"
+    },
+    "description": {
+      "de": "Von Mundhygiene bis Implantologie: klare Beratung, moderne Diagnostik und Behandlungen, die zu Ihrem Alltag passen.",
+      "en": "From cleanings to implants: clear advice, modern diagnostics, and treatments designed around real life."
+    },
+    "cta": {
+      "label": {
+        "de": "Alle Leistungen entdecken",
+        "en": "Explore All Services"
+      },
+      "href": "#services"
+    },
+    "items": [
+      {
+        "title": {
+          "de": "Prophylaxe & Mundhygiene",
+          "en": "Prophylaxis & Cleaning"
+        },
+        "icon": "sparkles",
+        "description": {
+          "de": "Gründliche Vorsorge für ein frisches Gefühl und langfristig gesunde Zähne.",
+          "en": "Thorough preventive care for a fresh feel and long-term oral health."
+        },
+        "features": [
+          {
+            "de": "Professionelle Zahnreinigung",
+            "en": "Professional cleaning"
+          },
+          {
+            "de": "Zahnsteinentfernung",
+            "en": "Tartar removal"
+          },
+          {
+            "de": "Politur & Pflegeberatung",
+            "en": "Polish and care advice"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Zahnerhaltung & Füllungen",
+          "en": "Restorative & Fillings"
+        },
+        "icon": "/images/svc-restorative.png",
+        "description": {
+          "de": "Substanzschonende Behandlung mit zahnfarbenen, langlebigen Lösungen.",
+          "en": "Conservative treatment with tooth-colored, durable solutions."
+        },
+        "features": [
+          {
+            "de": "Zahnfarbene Füllungen",
+            "en": "Tooth-colored fillings"
+          },
+          {
+            "de": "Inlays",
+            "en": "Inlays"
+          },
+          {
+            "de": "Kariesbehandlung",
+            "en": "Cavity treatment"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Wurzelbehandlung",
+          "en": "Root Canal Treatment"
+        },
+        "icon": "activity",
+        "description": {
+          "de": "Ruhige, präzise Endodontie, wenn ein Zahn erhalten werden kann.",
+          "en": "Calm, precise endodontic care when a tooth can be saved."
+        },
+        "features": [
+          {
+            "de": "Moderne Endodontie",
+            "en": "Modern endodontics"
+          },
+          {
+            "de": "Schonende Betäubung",
+            "en": "Gentle anesthesia"
+          },
+          {
+            "de": "Zahnerhalt im Fokus",
+            "en": "Focused on saving teeth"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Implantologie",
+          "en": "Implants"
+        },
+        "icon": "/images/svc-implants.png",
+        "description": {
+          "de": "Festsitzender Zahnersatz, digital geplant und verständlich erklärt.",
+          "en": "Fixed tooth replacement, digitally planned and clearly explained."
+        },
+        "features": [
+          {
+            "de": "Einzelimplantate",
+            "en": "Single implants"
+          },
+          {
+            "de": "Knochenaufbau",
+            "en": "Bone grafting"
+          },
+          {
+            "de": "Festsitzender Zahnersatz",
+            "en": "Fixed prosthetics"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Kieferorthopädie & Aligner",
+          "en": "Orthodontics & Aligners"
+        },
+        "icon": "smile",
+        "description": {
+          "de": "Diskrete Zahnkorrektur mit klaren Schritten und regelmäßiger Kontrolle.",
+          "en": "Discreet tooth alignment with clear steps and regular check-ins."
+        },
+        "features": [
+          {
+            "de": "Unsichtbare Zahnspangen",
+            "en": "Invisible braces"
+          },
+          {
+            "de": "Aligner-Therapie",
+            "en": "Aligner therapy"
+          },
+          {
+            "de": "Digitale Verlaufskontrolle",
+            "en": "Digital progress checks"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Ästhetische Zahnmedizin",
+          "en": "Cosmetic Dentistry"
+        },
+        "icon": "/images/svc-cosmetic.png",
+        "description": {
+          "de": "Natürlich wirkende Ästhetik, die zu Gesicht, Biss und Alltag passt.",
+          "en": "Natural-looking aesthetics matched to your face, bite, and lifestyle."
+        },
+        "features": [
+          {
+            "de": "Bleaching",
+            "en": "Whitening"
+          },
+          {
+            "de": "Veneers",
+            "en": "Veneers"
+          },
+          {
+            "de": "Smile Makeover",
+            "en": "Smile makeover"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Parodontologie",
+          "en": "Periodontology"
+        },
+        "icon": "shield-check",
+        "description": {
+          "de": "Gezielte Zahnfleischbehandlung zum Schutz von Zähnen und Implantaten.",
+          "en": "Targeted gum treatment to protect teeth and implants."
+        },
+        "features": [
+          {
+            "de": "Zahnfleischbehandlung",
+            "en": "Gum treatment"
+          },
+          {
+            "de": "Entzündungsmanagement",
+            "en": "Inflammation management"
+          },
+          {
+            "de": "Erhaltungsprogramm",
+            "en": "Maintenance plan"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Kinderzahnheilkunde",
+          "en": "Pediatric Dentistry"
+        },
+        "icon": "baby",
+        "description": {
+          "de": "Sanfte Vorsorge und Behandlung für Kinder ohne Druck.",
+          "en": "Gentle prevention and care for children without pressure."
+        },
+        "features": [
+          {
+            "de": "Kindgerechte Kontrolle",
+            "en": "Child-friendly checkups"
+          },
+          {
+            "de": "Fissurenversiegelung",
+            "en": "Fissure sealing"
+          },
+          {
+            "de": "Vorsorge & Tipps",
+            "en": "Prevention and guidance"
+          }
+        ],
+        "href": "#book"
+      },
+      {
+        "title": {
+          "de": "Zahnersatz",
+          "en": "Prosthetics"
+        },
+        "icon": "tooth",
+        "description": {
+          "de": "Kronen, Brücken und Prothesen, die stabil sitzen und natürlich aussehen.",
+          "en": "Crowns, bridges, and dentures that feel stable and look natural."
+        },
+        "features": [
+          {
+            "de": "Kronen",
+            "en": "Crowns"
+          },
+          {
+            "de": "Brücken",
+            "en": "Bridges"
+          },
+          {
+            "de": "Prothesen",
+            "en": "Dentures"
+          }
+        ],
+        "href": "#book"
+      }
+    ]
+  },
+  "about": {
+    "tag": {
+      "de": "Über uns",
+      "en": "About us"
+    },
+    "heading": {
+      "de": "Kompetenz, der Sie vertrauen können",
+      "en": "Expertise you can trust"
+    },
+    "image": "/images/about-doctor.jpg",
+    "rating": {
+      "value": "4.8/5",
+      "label": {
+        "de": "Patientenbewertung",
+        "en": "Patient rate"
+      },
+      "stars": 4
+    },
+    "badge": {
+      "de": "Erfahrene Hände",
+      "en": "Expert Hands"
+    },
+    "stats": [
+      {
+        "value": "20+",
+        "label": {
+          "de": "zertifizierte Spezialist:innen",
+          "en": "certified specialists"
+        }
+      },
+      {
+        "value": "50+",
+        "label": {
+          "de": "moderne Behandlungen",
+          "en": "advanced procedures offered"
+        }
+      },
+      {
+        "value": "15",
+        "label": {
+          "de": "Jahre Praxiserfahrung",
+          "en": "years in practice"
+        }
+      },
+      {
+        "value": "99%",
+        "label": {
+          "de": "Patientenzufriedenheit",
+          "en": "patient satisfaction rate"
+        }
+      }
+    ]
+  },
+  "appointmentBanner": {
+    "heading": {
+      "de": "Buchen Sie Ihren Termin in wenigen Minuten",
+      "en": "Book Your Appointment in Minutes"
+    },
+    "description": {
+      "de": "Bereit für ein gesünderes, strahlenderes Lächeln? Planen Sie Ihren Besuch noch heute.",
+      "en": "Brighter, healthier smile - schedule your visit with us today."
+    },
+    "image": "/images/appointment.jpg",
+    "cta": {
+      "label": {
+        "de": "Termin buchen",
+        "en": "Book an Appointment"
+      },
+      "href": "#book"
+    }
+  },
+  "team": {
+    "tag": {
+      "de": "Unser Ärzteteam",
+      "en": "Our Doctors"
+    },
+    "heading": {
+      "de": "Expert:innen, denen Sie vertrauen",
+      "en": "Experts You Trust"
+    },
+    "description": {
+      "de": "Unsere Zahnärzt:innen, Prophylaxe-Teams und Spezialist:innen bringen jahrelange Erfahrung und moderne Fortbildungen mit.",
+      "en": "Each of our dentists, hygienists, and specialists brings years of expertise and advanced training."
+    },
+    "filters": [
+      {
+        "de": "Alle",
+        "en": "All"
+      },
+      {
+        "de": "Zahnärzt:innen",
+        "en": "Dentists"
+      },
+      {
+        "de": "Chirurgie",
+        "en": "Surgeons"
+      },
+      {
+        "de": "Kieferorthopädie",
+        "en": "Orthodontists"
+      }
+    ],
+    "doctors": [
+      {
+        "name": "Austin Camacho",
+        "role": {
+          "de": "Chirurg",
+          "en": "Surgeon"
+        },
+        "category": {
+          "de": "Chirurgie",
+          "en": "Surgeons"
+        },
+        "image": "/images/dr-austin.jpg"
+      },
+      {
+        "name": "Fletcher Morse",
+        "role": {
+          "de": "Zahnarzt",
+          "en": "Dentist"
+        },
+        "category": {
+          "de": "Zahnärzt:innen",
+          "en": "Dentists"
+        },
+        "image": "/images/dr-fletcher.jpg"
+      },
+      {
+        "name": "Aysha Hayes",
+        "role": {
+          "de": "Kieferorthopädin",
+          "en": "Orthodontist"
+        },
+        "category": {
+          "de": "Kieferorthopädie",
+          "en": "Orthodontists"
+        },
+        "image": "/images/dr-aysha.jpg"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "tag": {
+      "de": "Warum wir",
+      "en": "WHY CHOOSE US"
+    },
+    "heading": {
+      "de": "Über die Lume Dental Klinik",
+      "en": "About Lume Dental Clinic"
+    },
+    "intro": [
+      {
+        "de": "Bei Lume Dental glauben wir, dass ein gesundes Lächeln der Schlüssel zu Selbstvertrauen und Wohlbefinden ist.",
+        "en": "At Lume Dental, we believe that a healthy smile is a gateway to confidence and well-being."
+      },
+      {
+        "de": "Unser erfahrenes Team nutzt moderne Technologie, um hochwertige Zahnmedizin in einer angenehmen Umgebung zu bieten.",
+        "en": "Our team of experienced dentists and hygienists use the latest technology to provide top-quality dental care in a comfortable and welcoming environment."
+      }
+    ],
+    "sideText": {
+      "de": "Ob Routinekontrolle, ästhetische Behandlung oder komplexer Eingriff - wir begleiten Sie zu Ihrem Wunschlächeln.",
+      "en": "Whether you need routine cleanings, cosmetic enhancements, or advanced procedures, we are here to help you achieve the smile of your dreams."
+    },
+    "items": [
+      {
+        "icon": "tools",
+        "title": {
+          "de": "Modernste Ausstattung",
+          "en": "State-of-the-art equipment"
+        },
+        "text": {
+          "de": "Wir setzen auf aktuelle dentale Technologie für präzise, effektive Behandlungen.",
+          "en": "We use the latest advancements in dental technology to provide precise, effective care."
+        },
+        "highlight": false
+      },
+      {
+        "icon": "heart-hands",
+        "title": {
+          "de": "Erfahrene & einfühlsame Profis",
+          "en": "Experienced & caring professionals"
+        },
+        "text": {
+          "de": "Unser Team verbindet fachliche Erfahrung mit echter Leidenschaft für Patient:innen.",
+          "en": "Our team of dentists, hygienists, and specialists brings years of expertise and a passion for patient care."
+        },
+        "highlight": false
+      },
+      {
+        "icon": "tooth",
+        "title": {
+          "de": "Schmerzarm und stressfrei",
+          "en": "Pain-free, stress-free treatments"
+        },
+        "text": {
+          "de": "Wir wissen, dass Zahnarztbesuche belasten können - deshalb steht Ihr Komfort im Mittelpunkt.",
+          "en": "We understand that dental visits can be stressful, which is why we prioritize comfort."
+        },
+        "highlight": true
+      },
+      {
+        "icon": "user-check",
+        "title": {
+          "de": "Individuelle Betreuung",
+          "en": "Personalized approach for every patient"
+        },
+        "text": {
+          "de": "Jedes Lächeln ist einzigartig - und genauso individuell planen wir Ihre Behandlung.",
+          "en": "Every smile is unique, and so is every treatment plan."
+        },
+        "highlight": false
+      }
+    ]
+  },
+  "testimonials": {
+    "tag": {
+      "de": "Bewertungen",
+      "en": "Reviews"
+    },
+    "heading": {
+      "de": "Erfahrungen, die Vertrauen schaffen",
+      "en": "Stories that build trust"
+    },
+    "subheading": {
+      "de": "Echte Details aus typischen Behandlungen in unserer Wiener Demo-Praxis.",
+      "en": "Specific experiences from common treatments in our Vienna demo clinic."
+    },
+    "items": [
+      {
+        "name": "Sophie Bauer",
+        "rating": 5,
+        "image": "/images/patient-1.jpg",
+        "treatment": {
+          "de": "Mundhygiene",
+          "en": "Cleaning"
+        },
+        "date": {
+          "de": "März 2025",
+          "en": "March 2025"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Ich war zur Mundhygiene dort und zum ersten Mal hatte ich danach nicht das Gefühl, schnell abgefertigt worden zu sein. Jeder Schritt wurde erklärt, sehr ruhig und angenehm.",
+          "en": "I came in for a cleaning and, for the first time, did not feel rushed afterward. Every step was explained calmly and clearly."
+        }
+      },
+      {
+        "name": "Lukas Gruber",
+        "rating": 5,
+        "image": "/images/patient-2.jpg",
+        "treatment": {
+          "de": "Implantat",
+          "en": "Implant"
+        },
+        "date": {
+          "de": "Jänner 2025",
+          "en": "January 2025"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Beim Implantat hatte ich viele Fragen. Die digitale Planung am Bildschirm hat mir geholfen, die Behandlung wirklich zu verstehen. Der Termin selbst war deutlich entspannter als erwartet.",
+          "en": "I had many questions about my implant. Seeing the digital plan helped me really understand the treatment. The appointment itself was much calmer than expected."
+        }
+      },
+      {
+        "name": "Elena Wagner",
+        "rating": 5,
+        "image": "/images/placeholder.jpg",
+        "treatment": {
+          "de": "Aligner",
+          "en": "Aligners"
+        },
+        "date": {
+          "de": "November 2024",
+          "en": "November 2024"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Die Aligner-Beratung war ehrlich: keine übertriebenen Versprechen, sondern ein realistischer Plan. Genau das hat Vertrauen geschaffen.",
+          "en": "The aligner consultation was honest: no exaggerated promises, just a realistic plan. That is exactly what built trust."
+        }
+      },
+      {
+        "name": "Thomas Huber",
+        "rating": 4,
+        "image": "/images/patient-1.jpg",
+        "treatment": {
+          "de": "Wurzelbehandlung",
+          "en": "Root canal"
+        },
+        "date": {
+          "de": "September 2024",
+          "en": "September 2024"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Ich kam mit starken Schmerzen und wurde sehr respektvoll behandelt. Die Wurzelbehandlung war nicht angenehm, aber viel ruhiger und kontrollierter, als ich befürchtet hatte.",
+          "en": "I came in with severe pain and was treated very respectfully. The root canal was not fun, but it was far calmer and more controlled than I had feared."
+        }
+      },
+      {
+        "name": "Julia Steiner",
+        "rating": 5,
+        "image": "/images/patient-2.jpg",
+        "treatment": {
+          "de": "Veneers",
+          "en": "Veneers"
+        },
+        "date": {
+          "de": "Juni 2024",
+          "en": "June 2024"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Bei den Veneers ging es nie um ein künstliches Hollywood-Lächeln. Das Team hat auf Natürlichkeit geachtet, und genau deshalb passt das Ergebnis zu mir.",
+          "en": "With my veneers, it was never about an artificial Hollywood smile. The team focused on a natural result, which is why it suits me."
+        }
+      },
+      {
+        "name": "Markus Hofer",
+        "rating": 5,
+        "image": "/images/placeholder.jpg",
+        "treatment": {
+          "de": "Kinderkontrolle",
+          "en": "Child checkup"
+        },
+        "date": {
+          "de": "April 2024",
+          "en": "April 2024"
+        },
+        "verified": true,
+        "quote": {
+          "de": "Unsere Tochter war nervös, aber die Ärztin hat sich Zeit genommen und alles kindgerecht erklärt. Beim zweiten Besuch ist sie ohne Tränen hineingegangen.",
+          "en": "Our daughter was nervous, but the dentist took time and explained everything in a child-friendly way. On the second visit, she went in without tears."
+        }
+      }
+    ]
+  },
+  "faq": {
+    "tag": {
+      "de": "FAQ",
+      "en": "FAQ"
+    },
+    "heading": {
+      "de": "Klare Antworten auf Ihre Fragen",
+      "en": "Get clear answers to your questions"
+    },
+    "video": "/images/faq-video.jpg",
+    "cta": {
+      "label": {
+        "de": "Mehr erfahren",
+        "en": "Learn more"
+      },
+      "href": "#"
+    },
+    "items": [
+      {
+        "q": {
+          "de": "Wie oft sollte ich zur Zahnärztin oder zum Zahnarzt gehen?",
+          "en": "How often should I visit the dentist?"
+        },
+        "a": {
+          "de": "Wir empfehlen Kontrolle und professionelle Reinigung alle 6 Monate. Je nach Mundgesundheit kann Ihr Team häufigere Termine vorschlagen.",
+          "en": "We recommend a check-up and professional cleaning every 6 months, though your dentist may suggest more frequent visits based on your oral health."
+        }
+      },
+      {
+        "q": {
+          "de": "Sind Zahnbehandlungen schmerzhaft?",
+          "en": "Are dental treatments painful?"
+        },
+        "a": {
+          "de": "Moderne Techniken und Betäubung machen Behandlungen angenehm und nahezu schmerzfrei.",
+          "en": "Modern techniques and anesthesia keep treatments comfortable and virtually pain-free."
+        }
+      },
+      {
+        "q": {
+          "de": "Bieten Sie Zahnimplantate an?",
+          "en": "Do you offer dental implants?"
+        },
+        "a": {
+          "de": "Ja, wir bieten komplette Implantatlösungen mit digitaler Planung.",
+          "en": "Yes, we provide full implant solutions with digital planning."
+        }
+      },
+      {
+        "q": {
+          "de": "Behandeln Sie auch Kinder?",
+          "en": "Do you treat children?"
+        },
+        "a": {
+          "de": "Ja, selbstverständlich - wir bieten einfühlsame Kinderzahnmedizin.",
+          "en": "Absolutely - we have dedicated pediatric care."
+        }
+      }
+    ]
+  },
+  "finalCta": {
+    "heading": {
+      "de": "Ihr selbstbewusstes Lächeln beginnt hier",
+      "en": "Your confident smile starts here"
+    },
+    "description": {
+      "de": "Vereinbaren Sie Ihre Beratung und lassen Sie unser erfahrenes Team einen Behandlungsplan für Sie erstellen.",
+      "en": "Schedule your consultation and let our experienced team create a treatment plan designed just for you."
+    },
+    "form": {
+      "nameLabel": {
+        "de": "Ihr Name",
+        "en": "Your name"
+      },
+      "phoneLabel": {
+        "de": "Telefonnummer",
+        "en": "Phone number"
+      },
+      "emailLabel": {
+        "de": "E-Mail (optional)",
+        "en": "Email (optional)"
+      },
+      "callbackLabel": {
+        "de": "Rückruf gewünscht",
+        "en": "Request a callback"
+      },
+      "privacyConsentLabel": {
+        "de": "Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu.",
+        "en": "I agree to the processing of my data according to the privacy policy."
+      },
+      "submitLabel": {
+        "de": "Anfrage senden",
+        "en": "Send request"
+      },
+      "dateLabel": {
+        "de": "Wunschtermin",
+        "en": "Preferred date"
+      },
+      "timeLabel": {
+        "de": "Wunschzeit",
+        "en": "Preferred time"
+      },
+      "serviceLabel": {
+        "de": "Leistung",
+        "en": "Service"
+      },
+      "messageLabel": {
+        "de": "Nachricht (optional)",
+        "en": "Message (optional)"
+      },
+      "requiredError": {
+        "de": "Bitte füllen Sie dieses Feld aus.",
+        "en": "Please complete this field."
+      },
+      "invalidEmailError": {
+        "de": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "en": "Please enter a valid email address."
+      },
+      "privacyError": {
+        "de": "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        "en": "Please accept the privacy policy."
+      },
+      "successMessage": {
+        "de": "Danke, Ihre Anfrage ist vorbereitet. Wir melden uns so rasch wie möglich.",
+        "en": "Thank you, your request is ready. We will get back to you as soon as possible."
+      },
+      "errorMessage": {
+        "de": "Leider konnte die Anfrage nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+        "en": "We could not send the request. Please try again or call us."
+      },
+      "loadingLabel": {
+        "de": "Wird gesendet...",
+        "en": "Sending..."
+      },
+      "selectPlaceholder": {
+        "de": "Leistung auswählen",
+        "en": "Select a service"
+      },
+      "badgePrimary": {
+        "de": "Antwort innerhalb von 24h",
+        "en": "Reply within 24h"
+      },
+      "badgeSecondary": {
+        "de": "Sanfte Erstberatung",
+        "en": "Gentle first consult"
+      }
+    }
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": {
+          "de": "Über uns",
+          "en": "About"
+        },
+        "links": [
+          {
+            "label": {
+              "de": "Über die Klinik",
+              "en": "About Clinic"
             },
-    "hero":  {
-                 "heading":  {
-                                 "de":  "Ihr perfektes Lächeln beginnt bei Lume Dental",
-                                 "en":  "Your Perfect Smile Starts with Lume Dental"
-                             },
-                 "subtitle":  {
-                                  "de":  "Moderne Zahnmedizin mit sanfter Betreuung. Vereinbaren Sie noch heute Ihren Termin.",
-                                  "en":  "Advanced dental care with a gentle touch. Book your appointment today."
-                              },
-                 "image":  "/images/hero.png",
-                 "cta":  {
-                             "label":  {
-                                           "de":  "Termin buchen",
-                                           "en":  "Book an Appointment"
-                                       },
-                             "href":  "#book"
-                         }
-             },
-    "services":  {
-                     "tag":  {
-                                 "de":  "Unsere Leistungen",
-                                 "en":  "Our Services"
-                             },
-                     "heading":  {
-                                     "de":  "Zahnmedizin für jedes Bedürfnis",
-                                     "en":  "Services You Need"
-                                 },
-                     "description":  {
-                                         "de":  "Von Prophylaxe bis zu ästhetischen und restaurativen Behandlungen bieten wir umfassende Zahnmedizin, abgestimmt auf Ihre Bedürfnisse.",
-                                         "en":  "From preventive care to advanced cosmetic and restorative treatments, we provide a full range of dental services tailored to your needs."
-                                     },
-                     "cta":  {
-                                 "label":  {
-                                               "de":  "Alle Leistungen entdecken",
-                                               "en":  "Explore All Services"
-                                           },
-                                 "href":  "#services"
-                             },
-                     "items":  [
-                                   {
-                                       "title":  {
-                                                     "de":  "Ästhetische Zahnmedizin",
-                                                     "en":  "Cosmetic Dentistry"
-                                                 },
-                                       "icon":  "/images/svc-cosmetic.png",
-                                       "features":  [
-                                                        {
-                                                            "de":  "Zahnaufhellung",
-                                                            "en":  "Teeth Whitening"
-                                                        },
-                                                        {
-                                                            "de":  "Veneers",
-                                                            "en":  "Veneers"
-                                                        },
-                                                        {
-                                                            "de":  "Smile Makeovers",
-                                                            "en":  "Smile Makeovers"
-                                                        }
-                                                    ],
-                                       "href":  "#"
-                                   },
-                                   {
-                                       "title":  {
-                                                     "de":  "Implantate \u0026 Zahnersatz",
-                                                     "en":  "Implants \u0026 Prosthetics"
-                                                 },
-                                       "icon":  "/images/svc-implants.png",
-                                       "features":  [
-                                                        {
-                                                            "de":  "Zahnimplantate",
-                                                            "en":  "Dental Implant"
-                                                        },
-                                                        {
-                                                            "de":  "Prothesen",
-                                                            "en":  "Dentures"
-                                                        }
-                                                    ],
-                                       "href":  "#"
-                                   },
-                                   {
-                                       "title":  {
-                                                     "de":  "Restaurative Zahnmedizin",
-                                                     "en":  "Restorative"
-                                                 },
-                                       "icon":  "/images/svc-restorative.png",
-                                       "features":  [
-                                                        {
-                                                            "de":  "Füllungen",
-                                                            "en":  "Fillings"
-                                                        },
-                                                        {
-                                                            "de":  "Kronen",
-                                                            "en":  "Crowns"
-                                                        },
-                                                        {
-                                                            "de":  "Brücken",
-                                                            "en":  "Bridges"
-                                                        }
-                                                    ],
-                                       "href":  "#"
-                                   }
-                               ]
-                 },
-    "about":  {
-                  "tag":  {
-                              "de":  "Über uns",
-                              "en":  "About us"
-                          },
-                  "heading":  {
-                                  "de":  "Kompetenz, der Sie vertrauen können",
-                                  "en":  "Expertise you can trust"
-                              },
-                  "image":  "/images/about-doctor.jpg",
-                  "rating":  {
-                                 "value":  "4.8/5",
-                                 "label":  {
-                                               "de":  "Patientenbewertung",
-                                               "en":  "Patient rate"
-                                           },
-                                 "stars":  4
-                             },
-                  "badge":  {
-                                "de":  "Erfahrene Hände",
-                                "en":  "Expert Hands"
-                            },
-                  "stats":  [
-                                {
-                                    "value":  "20+",
-                                    "label":  {
-                                                  "de":  "zertifizierte Spezialist:innen",
-                                                  "en":  "certified specialists"
-                                              }
-                                },
-                                {
-                                    "value":  "50+",
-                                    "label":  {
-                                                  "de":  "moderne Behandlungen",
-                                                  "en":  "advanced procedures offered"
-                                              }
-                                },
-                                {
-                                    "value":  "15",
-                                    "label":  {
-                                                  "de":  "Jahre Praxiserfahrung",
-                                                  "en":  "years in practice"
-                                              }
-                                },
-                                {
-                                    "value":  "99%",
-                                    "label":  {
-                                                  "de":  "Patientenzufriedenheit",
-                                                  "en":  "patient satisfaction rate"
-                                              }
-                                }
-                            ]
-              },
-    "appointmentBanner":  {
-                              "heading":  {
-                                              "de":  "Buchen Sie Ihren Termin in wenigen Minuten",
-                                              "en":  "Book Your Appointment in Minutes"
-                                          },
-                              "description":  {
-                                                  "de":  "Bereit für ein gesünderes, strahlenderes Lächeln? Planen Sie Ihren Besuch noch heute.",
-                                                  "en":  "Brighter, healthier smile - schedule your visit with us today."
-                                              },
-                              "image":  "/images/appointment.jpg",
-                              "cta":  {
-                                          "label":  {
-                                                        "de":  "Termin buchen",
-                                                        "en":  "Book an Appointment"
-                                                    },
-                                          "href":  "#book"
-                                      }
-                          },
-    "team":  {
-                 "tag":  {
-                             "de":  "Unser Ärzteteam",
-                             "en":  "Our Doctors"
-                         },
-                 "heading":  {
-                                 "de":  "Expert:innen, denen Sie vertrauen",
-                                 "en":  "Experts You Trust"
-                             },
-                 "description":  {
-                                     "de":  "Unsere Zahnärzt:innen, Prophylaxe-Teams und Spezialist:innen bringen jahrelange Erfahrung und moderne Fortbildungen mit.",
-                                     "en":  "Each of our dentists, hygienists, and specialists brings years of expertise and advanced training."
-                                 },
-                 "filters":  [
-                                 {
-                                     "de":  "Alle",
-                                     "en":  "All"
-                                 },
-                                 {
-                                     "de":  "Zahnärzt:innen",
-                                     "en":  "Dentists"
-                                 },
-                                 {
-                                     "de":  "Chirurgie",
-                                     "en":  "Surgeons"
-                                 },
-                                 {
-                                     "de":  "Kieferorthopädie",
-                                     "en":  "Orthodontists"
-                                 }
-                             ],
-                 "doctors":  [
-                                 {
-                                     "name":  "Austin Camacho",
-                                     "role":  {
-                                                  "de":  "Chirurg",
-                                                  "en":  "Surgeon"
-                                              },
-                                     "category":  {
-                                                      "de":  "Chirurgie",
-                                                      "en":  "Surgeons"
-                                                  },
-                                     "image":  "/images/dr-austin.jpg"
-                                 },
-                                 {
-                                     "name":  "Fletcher Morse",
-                                     "role":  {
-                                                  "de":  "Zahnarzt",
-                                                  "en":  "Dentist"
-                                              },
-                                     "category":  {
-                                                      "de":  "Zahnärzt:innen",
-                                                      "en":  "Dentists"
-                                                  },
-                                     "image":  "/images/dr-fletcher.jpg"
-                                 },
-                                 {
-                                     "name":  "Aysha Hayes",
-                                     "role":  {
-                                                  "de":  "Kieferorthopädin",
-                                                  "en":  "Orthodontist"
-                                              },
-                                     "category":  {
-                                                      "de":  "Kieferorthopädie",
-                                                      "en":  "Orthodontists"
-                                                  },
-                                     "image":  "/images/dr-aysha.jpg"
-                                 }
-                             ]
-             },
-    "whyChooseUs":  {
-                        "tag":  {
-                                    "de":  "Warum wir",
-                                    "en":  "WHY CHOOSE US"
-                                },
-                        "heading":  {
-                                        "de":  "Über die Lume Dental Klinik",
-                                        "en":  "About Lume Dental Clinic"
-                                    },
-                        "intro":  [
-                                      {
-                                          "de":  "Bei Lume Dental glauben wir, dass ein gesundes Lächeln der Schlüssel zu Selbstvertrauen und Wohlbefinden ist.",
-                                          "en":  "At Lume Dental, we believe that a healthy smile is a gateway to confidence and well-being."
-                                      },
-                                      {
-                                          "de":  "Unser erfahrenes Team nutzt moderne Technologie, um hochwertige Zahnmedizin in einer angenehmen Umgebung zu bieten.",
-                                          "en":  "Our team of experienced dentists and hygienists use the latest technology to provide top-quality dental care in a comfortable and welcoming environment."
-                                      }
-                                  ],
-                        "sideText":  {
-                                         "de":  "Ob Routinekontrolle, ästhetische Behandlung oder komplexer Eingriff - wir begleiten Sie zu Ihrem Wunschlächeln.",
-                                         "en":  "Whether you need routine cleanings, cosmetic enhancements, or advanced procedures, we are here to help you achieve the smile of your dreams."
-                                     },
-                        "items":  [
-                                      {
-                                          "icon":  "tools",
-                                          "title":  {
-                                                        "de":  "Modernste Ausstattung",
-                                                        "en":  "State-of-the-art equipment"
-                                                    },
-                                          "text":  {
-                                                       "de":  "Wir setzen auf aktuelle dentale Technologie für präzise, effektive Behandlungen.",
-                                                       "en":  "We use the latest advancements in dental technology to provide precise, effective care."
-                                                   },
-                                          "highlight":  false
-                                      },
-                                      {
-                                          "icon":  "heart-hands",
-                                          "title":  {
-                                                        "de":  "Erfahrene \u0026 einfühlsame Profis",
-                                                        "en":  "Experienced \u0026 caring professionals"
-                                                    },
-                                          "text":  {
-                                                       "de":  "Unser Team verbindet fachliche Erfahrung mit echter Leidenschaft für Patient:innen.",
-                                                       "en":  "Our team of dentists, hygienists, and specialists brings years of expertise and a passion for patient care."
-                                                   },
-                                          "highlight":  false
-                                      },
-                                      {
-                                          "icon":  "tooth",
-                                          "title":  {
-                                                        "de":  "Schmerzarm und stressfrei",
-                                                        "en":  "Pain-free, stress-free treatments"
-                                                    },
-                                          "text":  {
-                                                       "de":  "Wir wissen, dass Zahnarztbesuche belasten können - deshalb steht Ihr Komfort im Mittelpunkt.",
-                                                       "en":  "We understand that dental visits can be stressful, which is why we prioritize comfort."
-                                                   },
-                                          "highlight":  true
-                                      },
-                                      {
-                                          "icon":  "user-check",
-                                          "title":  {
-                                                        "de":  "Individuelle Betreuung",
-                                                        "en":  "Personalized approach for every patient"
-                                                    },
-                                          "text":  {
-                                                       "de":  "Jedes Lächeln ist einzigartig - und genauso individuell planen wir Ihre Behandlung.",
-                                                       "en":  "Every smile is unique, and so is every treatment plan."
-                                                   },
-                                          "highlight":  false
-                                      }
-                                  ]
-                    },
-    "testimonials":  {
-                         "tag":  {
-                                     "de":  "Bewertungen",
-                                     "en":  "Reviews"
-                                 },
-                         "heading":  {
-                                         "de":  "Lächeln, die für sich sprechen",
-                                         "en":  "Smiles That Speak for Themselves"
-                                     },
-                         "subheading":  {
-                                            "de":  "Das sagen unsere zufriedenen Patient:innen über ihre Erfahrung bei uns.",
-                                            "en":  "Here\u0027s what our happy patients have to say about their experience with us."
-                                        },
-                         "items":  [
-                                       {
-                                           "quote":  {
-                                                         "de":  "Das Team hat mir jede Sorge genommen und mein Lächeln sah noch nie besser aus.",
-                                                         "en":  "The team made me feel completely at ease and my smile has never looked better."
-                                                     },
-                                           "name":  "Jordan Lee",
-                                           "rating":  5,
-                                           "image":  "/images/patient-1.jpg"
-                                       },
-                                       {
-                                           "quote":  {
-                                                         "de":  "Schmerzarm, professionell und vom Anfang bis zum Ende wirklich fürsorglich.",
-                                                         "en":  "Painless, professional, and genuinely caring from start to finish."
-                                                     },
-                                           "name":  "Maria Gomez",
-                                           "rating":  5,
-                                           "image":  "/images/patient-2.jpg"
-                                       }
-                                   ]
-                     },
-    "faq":  {
-                "tag":  {
-                            "de":  "FAQ",
-                            "en":  "FAQ"
-                        },
-                "heading":  {
-                                "de":  "Klare Antworten auf Ihre Fragen",
-                                "en":  "Get clear answers to your questions"
-                            },
-                "video":  "/images/faq-video.jpg",
-                "cta":  {
-                            "label":  {
-                                          "de":  "Mehr erfahren",
-                                          "en":  "Learn more"
-                                      },
-                            "href":  "#"
-                        },
-                "items":  [
-                              {
-                                  "q":  {
-                                            "de":  "Wie oft sollte ich zur Zahnärztin oder zum Zahnarzt gehen?",
-                                            "en":  "How often should I visit the dentist?"
-                                        },
-                                  "a":  {
-                                            "de":  "Wir empfehlen Kontrolle und professionelle Reinigung alle 6 Monate. Je nach Mundgesundheit kann Ihr Team häufigere Termine vorschlagen.",
-                                            "en":  "We recommend a check-up and professional cleaning every 6 months, though your dentist may suggest more frequent visits based on your oral health."
-                                        }
-                              },
-                              {
-                                  "q":  {
-                                            "de":  "Sind Zahnbehandlungen schmerzhaft?",
-                                            "en":  "Are dental treatments painful?"
-                                        },
-                                  "a":  {
-                                            "de":  "Moderne Techniken und Betäubung machen Behandlungen angenehm und nahezu schmerzfrei.",
-                                            "en":  "Modern techniques and anesthesia keep treatments comfortable and virtually pain-free."
-                                        }
-                              },
-                              {
-                                  "q":  {
-                                            "de":  "Bieten Sie Zahnimplantate an?",
-                                            "en":  "Do you offer dental implants?"
-                                        },
-                                  "a":  {
-                                            "de":  "Ja, wir bieten komplette Implantatlösungen mit digitaler Planung.",
-                                            "en":  "Yes, we provide full implant solutions with digital planning."
-                                        }
-                              },
-                              {
-                                  "q":  {
-                                            "de":  "Behandeln Sie auch Kinder?",
-                                            "en":  "Do you treat children?"
-                                        },
-                                  "a":  {
-                                            "de":  "Ja, selbstverständlich - wir bieten einfühlsame Kinderzahnmedizin.",
-                                            "en":  "Absolutely - we have dedicated pediatric care."
-                                        }
-                              }
-                          ]
+            "href": "/datenschutz"
+          },
+          {
+            "label": {
+              "de": "Unser Team",
+              "en": "Our Doctors"
             },
-    "finalCta":  {
-                     "heading":  {
-                                     "de":  "Ihr selbstbewusstes Lächeln beginnt hier",
-                                     "en":  "Your confident smile starts here"
-                                 },
-                     "description":  {
-                                         "de":  "Vereinbaren Sie Ihre Beratung und lassen Sie unser erfahrenes Team einen Behandlungsplan für Sie erstellen.",
-                                         "en":  "Schedule your consultation and let our experienced team create a treatment plan designed just for you."
-                                     },
-            "form":  {
-                         "nameLabel":  {
-                                           "de":  "Ihr Name",
-                                           "en":  "Your name"
-                                       },
-                         "phoneLabel":  {
-                                            "de":  "Ihre Telefonnummer",
-                                            "en":  "Your phone"
-                                        },
-                         "emailLabel":  {
-                                            "de":  "Ihre E-Mail",
-                                            "en":  "Your email"
-                                        },
-                         "callbackLabel":  {
-                                               "de":  "Rückruf gewünscht",
-                                               "en":  "Request a callback"
-                                           },
-                         "privacyConsentLabel":  {
-                                                     "de":  "Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu.",
-                                                     "en":  "I agree to the processing of my data according to the privacy policy."
-                                                 },
-                         "submitLabel":  {
-                                            "de":  "Termin buchen",
-                                            "en":  "Book an Appointment"
-                                                  }
-                              }
-                 },
-    "footer":  {
-                   "columns":  [
-                                   {
-                                       "title":  {
-                                                     "de":  "Über uns",
-                                                     "en":  "About"
-                                                 },
-                                       "links":  [
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Über die Klinik",
-                                                                       "en":  "About Clinic"
-                                                                   },
-                                                         "href":  "/datenschutz"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Unser Team",
-                                                                       "en":  "Our Doctors"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Technologie",
-                                                                       "en":  "Technology"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Bewertungen",
-                                                                       "en":  "Reviews"
-                                                                   },
-                                                         "href":  "#"
-                                                     }
-                                                 ]
-                                   },
-                                   {
-                                       "title":  {
-                                                     "de":  "Leistungen",
-                                                     "en":  "Services"
-                                                 },
-                                       "links":  [
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Ästhetische Zahnmedizin",
-                                                                       "en":  "Cosmetic Dentistry"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Implantate \u0026 Zahnersatz",
-                                                                       "en":  "Implants \u0026 Prosthetics"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Restaurative Zahnmedizin",
-                                                                       "en":  "Restorative"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Kieferorthopädie",
-                                                                       "en":  "Orthodontics"
-                                                                   },
-                                                         "href":  "#"
-                                                     }
-                                                 ]
-                                   },
-                                   {
-                                       "title":  {
-                                                     "de":  "Rechtliches",
-                                                     "en":  "Legal"
-                                                 },
-                                       "links":  [
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Datenschutz",
-                                                                       "en":  "Privacy policy"
-                                                                   },
-                                                         "href":  "/datenschutz"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Nutzungsbedingungen",
-                                                                       "en":  "Term of use"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Cookie-Richtlinie",
-                                                                       "en":  "Cookie policy"
-                                                                   },
-                                                         "href":  "#"
-                                                     },
-                                                     {
-                                                         "label":  {
-                                                                       "de":  "Impressum",
-                                                                       "en":  "Legal notice"
-                                                                   },
-                                                         "href":  "/impressum"
-                                                     }
-                                                 ]
-                                   }
-                               ],
-                   "wordmark":  {
-                                    "de":  "Lume Dental",
-                                    "en":  "Lume Dental"
-                                },
-                   "copyright":  {
-                                     "de":  "© 2026 Lume Dental. Alle Rechte vorbehalten",
-                                     "en":  "© 2026 Lume Dental. All rights reserved"
-                                 }
-               },
-    "legal":  {
-                  "impressumTitle":  {
-                                         "de":  "Impressum",
-                                         "en":  "Legal notice"
-                                     },
-                  "impressumBody":  [
-                                        {
-                                            "de":  "Lume Dental, 245 Madison Avenue, Suite 1203, New York, NY 10016. Verantwortlich für den Inhalt: Praxisleitung Lume Dental.",
-                                            "en":  "Lume Dental, 245 Madison Avenue, Suite 1203, New York, NY 10016. Responsible for content: Lume Dental practice management."
-                                        },
-                                        {
-                                            "de":  "Diese Vorlage dient als Beispiel. Ersetzen Sie alle rechtlichen Angaben vor dem Einsatz in Österreich durch geprüfte Kanzlei- und Praxisdaten.",
-                                            "en":  "This template is sample content. Replace all legal information with verified clinic and legal details before use."
-                                        }
-                                    ],
-                  "privacyTitle":  {
-                                      "de":  "Datenschutz",
-                                      "en":  "Privacy policy"
-                                  },
-                  "privacyBody":  [
-                                      {
-                                          "de":  "Wir verarbeiten Ihre Angaben ausschließlich zur Bearbeitung Ihrer Terminanfrage und gemäß geltender Datenschutzbestimmungen.",
-                                          "en":  "We process your details only to handle your appointment request and in accordance with applicable privacy rules."
-                                      },
-                                      {
-                                          "de":  "Bitte passen Sie diese Datenschutzerklärung vor dem Livegang an Ihre tatsächlichen Tools, Anbieter und Rechtsgrundlagen an.",
-                                          "en":  "Please adapt this privacy policy to your actual tools, providers, and legal basis before launch."
-                                      }
-                                  ]
-              },
-    "cookieConsent":  {
-                          "enabled":  true,
-                          "message":  {
-                                          "de":  "Wir verwenden notwendige Cookies, um diese Website zuverlässig bereitzustellen.",
-                                          "en":  "We use necessary cookies to keep this website reliable."
-                                      },
-                          "acceptLabel":  {
-                                            "de":  "Verstanden",
-                                            "en":  "Got it"
-                                        },
-                          "declineLabel":  {
-                                             "de":  "Schließen",
-                                             "en":  "Close"
-                                         }
-                      },
-    "innovation":  {
-                       "enabled":  false,
-                       "eyebrow":  {
-                                      "de":  "Digitale Zahnmedizin",
-                                      "en":  "Digital Dentistry"
-                                  },
-                       "heading":  {
-                                      "de":  "Präzise Planung mit moderner 3D-Technologie",
-                                      "en":  "Precise planning with modern 3D technology"
-                                  },
-                       "subheading":  {
-                                          "de":  "Scans, Diagnostik und Behandlungsplanung werden sichtbar, verständlich und stressfrei.",
-                                          "en":  "Scans, diagnostics, and treatment planning become visual, clear, and calm."
-                                      },
-                       "body":  {
-                                    "de":  "Unsere digitale Ausstattung unterstützt präzise Diagnosen, transparente Beratung und planbare Behandlungsschritte.",
-                                    "en":  "Our digital equipment supports precise diagnostics, transparent consultation, and predictable treatment steps."
-                                },
-                       "splineSceneUrl":  "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode",
-                       "fallbackImage":  "/images/appointment.jpg"
-                   },
-    "animatedHero":  {
-                         "enabled":  false,
-                         "eyebrow":  {
-                                        "de":  "Ihr Lächeln",
-                                        "en":  "Your smile"
-                                    },
-                         "prefix":  {
-                                      "de":  "Ein",
-                                      "en":  "A"
-                                  },
-                         "suffix":  {
-                                      "de":  "Lächeln beginnt hier.",
-                                      "en":  "smile starts here."
-                                  },
-                         "rotatingWords":  [
-                                               {
-                                                   "de":  "gesundes",
-                                                   "en":  "healthy"
-                                               },
-                                               {
-                                                   "de":  "strahlendes",
-                                                   "en":  "radiant"
-                                               },
-                                               {
-                                                   "de":  "selbstbewusstes",
-                                                   "en":  "confident"
-                                               },
-                                               {
-                                                   "de":  "perfektes",
-                                                   "en":  "perfect"
-                                               }
-                                           ],
-                         "description":  {
-                                           "de":  "Eine ruhige, moderne Beratung für Patient:innen, die Klarheit vor der Behandlung wünschen.",
-                                           "en":  "A calm, modern consultation for patients who want clarity before treatment."
-                                       },
-                         "primaryCta":  {
-                                          "label":  {
-                                                        "de":  "Termin buchen",
-                                                        "en":  "Book an Appointment"
-                                                    },
-                                          "href":  "#book"
-                                      },
-                         "secondaryCta":  {
-                                            "label":  {
-                                                          "de":  "Anrufen",
-                                                          "en":  "Call"
-                                                      },
-                                            "href":  "tel:+12125557483"
-                                        }
-                     },
-    "integrations":  {
-                         "formEndpoint":  ""
-                     },
-    "effects":  {
-                    "magneticButtons":  true,
-                    "spotlightCards":  true,
-                    "tiltImages":  true,
-                    "heroParallax":  true,
-                    "statCountUp":  true,
-                    "customCursor":  false,
-                    "reactiveNavbar":  true,
-                    "cursorGlow":  true,
-                    "auroraBlobs":  true,
-                    "pointerParallax":  true
-                },
-    "mobile":  {
-                   "stickyBookingBar":  true,
-                   "fullscreenMenu":  true,
-                   "showCallButton":  true
-               },
-    "i18n":  {
-                 "defaultLocale":  "de",
-                 "locales":  [
-                                 "de",
-                                 "en"
-                             ],
-                 "labels":  {
-                                "de":  "DE",
-                                "en":  "EN"
-                            }
-             }
+            "href": "#"
+          },
+          {
+            "label": {
+              "de": "Technologie",
+              "en": "Technology"
+            },
+            "href": "#"
+          },
+          {
+            "label": {
+              "de": "Bewertungen",
+              "en": "Reviews"
+            },
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": {
+          "de": "Leistungen",
+          "en": "Services"
+        },
+        "links": [
+          {
+            "label": {
+              "de": "Prophylaxe & Mundhygiene",
+              "en": "Prophylaxis & Cleaning"
+            },
+            "href": "#services"
+          },
+          {
+            "label": {
+              "de": "Zahnerhaltung & Füllungen",
+              "en": "Restorative & Fillings"
+            },
+            "href": "#services"
+          },
+          {
+            "label": {
+              "de": "Wurzelbehandlung",
+              "en": "Root Canal Treatment"
+            },
+            "href": "#services"
+          },
+          {
+            "label": {
+              "de": "Implantologie",
+              "en": "Implants"
+            },
+            "href": "#services"
+          }
+        ]
+      },
+      {
+        "title": {
+          "de": "Rechtliches",
+          "en": "Legal"
+        },
+        "links": [
+          {
+            "label": {
+              "de": "Datenschutz",
+              "en": "Privacy policy"
+            },
+            "href": "/datenschutz"
+          },
+          {
+            "label": {
+              "de": "Nutzungsbedingungen",
+              "en": "Term of use"
+            },
+            "href": "#"
+          },
+          {
+            "label": {
+              "de": "Cookie-Richtlinie",
+              "en": "Cookie policy"
+            },
+            "href": "#"
+          },
+          {
+            "label": {
+              "de": "Impressum",
+              "en": "Legal notice"
+            },
+            "href": "/impressum"
+          }
+        ]
+      }
+    ],
+    "wordmark": {
+      "de": "Lume Dental",
+      "en": "Lume Dental"
+    },
+    "copyright": {
+      "de": "© 2026 Lume Dental. Alle Rechte vorbehalten",
+      "en": "© 2026 Lume Dental. All rights reserved"
+    }
+  },
+  "legal": {
+    "impressumTitle": {
+      "de": "Impressum",
+      "en": "Legal notice"
+    },
+    "impressumBody": [
+      {
+        "de": "Lume Dental, Mariahilfer Straße 88A, 1060 Wien. Verantwortlich für den Inhalt: Praxisleitung Lume Dental.",
+        "en": "Lume Dental, Mariahilfer Straße 88A, 1060 Vienna. Responsible for content: Lume Dental practice management."
+      },
+      {
+        "de": "Diese Vorlage dient als Beispiel. Ersetzen Sie alle rechtlichen Angaben vor dem Einsatz in Österreich durch geprüfte Kanzlei- und Praxisdaten.",
+        "en": "This template is sample content. Replace all legal information with verified clinic and legal details before use."
+      }
+    ],
+    "privacyTitle": {
+      "de": "Datenschutz",
+      "en": "Privacy policy"
+    },
+    "privacyBody": [
+      {
+        "de": "Wir verarbeiten Ihre Angaben ausschließlich zur Bearbeitung Ihrer Terminanfrage und gemäß geltender Datenschutzbestimmungen.",
+        "en": "We process your details only to handle your appointment request and in accordance with applicable privacy rules."
+      },
+      {
+        "de": "Bitte passen Sie diese Datenschutzerklärung vor dem Livegang an Ihre tatsächlichen Tools, Anbieter und Rechtsgrundlagen an.",
+        "en": "Please adapt this privacy policy to your actual tools, providers, and legal basis before launch."
+      }
+    ]
+  },
+  "cookieConsent": {
+    "enabled": true,
+    "message": {
+      "de": "Wir verwenden notwendige Cookies, um diese Website zuverlässig bereitzustellen.",
+      "en": "We use necessary cookies to keep this website reliable."
+    },
+    "acceptLabel": {
+      "de": "Verstanden",
+      "en": "Got it"
+    },
+    "declineLabel": {
+      "de": "Schließen",
+      "en": "Close"
+    }
+  },
+  "innovation": {
+    "enabled": false,
+    "eyebrow": {
+      "de": "Digitale Zahnmedizin",
+      "en": "Digital Dentistry"
+    },
+    "heading": {
+      "de": "Präzise Planung mit moderner 3D-Technologie",
+      "en": "Precise planning with modern 3D technology"
+    },
+    "subheading": {
+      "de": "Scans, Diagnostik und Behandlungsplanung werden sichtbar, verständlich und stressfrei.",
+      "en": "Scans, diagnostics, and treatment planning become visual, clear, and calm."
+    },
+    "body": {
+      "de": "Unsere digitale Ausstattung unterstützt präzise Diagnosen, transparente Beratung und planbare Behandlungsschritte.",
+      "en": "Our digital equipment supports precise diagnostics, transparent consultation, and predictable treatment steps."
+    },
+    "splineSceneUrl": "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode",
+    "fallbackImage": "/images/appointment.jpg"
+  },
+  "animatedHero": {
+    "enabled": false,
+    "eyebrow": {
+      "de": "Ihr Lächeln",
+      "en": "Your smile"
+    },
+    "prefix": {
+      "de": "Ein",
+      "en": "A"
+    },
+    "suffix": {
+      "de": "Lächeln beginnt hier.",
+      "en": "smile starts here."
+    },
+    "rotatingWords": [
+      {
+        "de": "gesundes",
+        "en": "healthy"
+      },
+      {
+        "de": "strahlendes",
+        "en": "radiant"
+      },
+      {
+        "de": "selbstbewusstes",
+        "en": "confident"
+      },
+      {
+        "de": "perfektes",
+        "en": "perfect"
+      }
+    ],
+    "description": {
+      "de": "Eine ruhige, moderne Beratung für Patient:innen, die Klarheit vor der Behandlung wünschen.",
+      "en": "A calm, modern consultation for patients who want clarity before treatment."
+    },
+    "primaryCta": {
+      "label": {
+        "de": "Termin buchen",
+        "en": "Book an Appointment"
+      },
+      "href": "#book"
+    },
+    "secondaryCta": {
+      "label": {
+        "de": "Anrufen",
+        "en": "Call"
+      },
+      "href": "tel:+4319346820"
+    }
+  },
+  "integrations": {
+    "formEndpoint": ""
+  },
+  "effects": {
+    "magneticButtons": true,
+    "spotlightCards": true,
+    "tiltImages": true,
+    "heroParallax": true,
+    "statCountUp": true,
+    "customCursor": false,
+    "reactiveNavbar": true,
+    "cursorGlow": true,
+    "auroraBlobs": true,
+    "pointerParallax": true
+  },
+  "mobile": {
+    "stickyBookingBar": true,
+    "fullscreenMenu": true,
+    "showCallButton": true
+  },
+  "i18n": {
+    "defaultLocale": "de",
+    "locales": [
+      "de",
+      "en"
+    ],
+    "labels": {
+      "de": "DE",
+      "en": "EN"
+    }
+  }
 }
-

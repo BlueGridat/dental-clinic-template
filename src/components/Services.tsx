@@ -2,12 +2,26 @@
 
 import Image from "next/image";
 import { ArrowUpRight, Check } from "lucide-react";
-import type { ServicesConfig } from "@/config/types";
+import type { ServiceItem, ServicesConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
+import { IconResolver } from "./IconResolver";
 import { SpotlightCard } from "./motion/SpotlightCard";
 import { Stagger, StaggerItem } from "./motion/Stagger";
 import { ArrowButton, SectionHeading } from "./ui";
+
+function ServiceIcon({ service }: { service: ServiceItem }) {
+  const icon = service.icon || "tooth";
+  if (icon.startsWith("/")) {
+    return <Image src={fallbackImage(icon, "/images/svc-cosmetic.png")} alt="" width={110} height={110} className="object-contain transition duration-500 ease-out group-hover:scale-105" />;
+  }
+
+  return (
+    <span className="grid size-20 place-items-center rounded-[1.4rem] bg-[var(--color-white)] text-[var(--color-primary)] shadow-sm transition duration-500 ease-out group-hover:scale-105">
+      <IconResolver name={icon} className="size-9" />
+    </span>
+  );
+}
 
 export function Services({ services }: { services: ServicesConfig }) {
   const tr = useT();
@@ -22,11 +36,12 @@ export function Services({ services }: { services: ServicesConfig }) {
         <Stagger className="snap-x-cards flex gap-5 overflow-x-auto pb-3 lg:grid lg:grid-cols-3 lg:overflow-visible">
           {safeArray(services?.items).map((service) => (
             <StaggerItem key={tr(service.title)} className="min-w-[280px] flex-1">
-              <SpotlightCard className="group flex h-full flex-col rounded-[1.8rem] border border-black/10 bg-[var(--color-white)] p-4 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
+              <SpotlightCard className="group flex h-full min-h-[390px] flex-col rounded-[1.8rem] border border-black/10 bg-[var(--color-white)] p-4 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative mb-5 grid aspect-[1.25] place-items-center overflow-hidden rounded-[1.5rem] bg-[var(--color-surface)]">
-                  <Image src={fallbackImage(service.icon, "/images/svc-cosmetic.png")} alt="" width={110} height={110} className="object-contain transition duration-500 ease-out group-hover:scale-105" />
+                  <ServiceIcon service={service} />
                 </div>
                 <h3 className="text-lg font-bold leading-tight">{tr(service.title)}</h3>
+                {service.description ? <p className="mt-3 text-sm leading-6 text-[var(--color-text-muted)]">{tr(service.description)}</p> : null}
                 <ul className="my-5 grid gap-2">
                   {safeArray(service.features).map((feature) => (
                     <li key={tr(feature)} className="flex items-center gap-2 text-xs font-medium text-[var(--color-text)]">
