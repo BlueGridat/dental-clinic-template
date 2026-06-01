@@ -21,7 +21,7 @@ export default defineConfig({
       previewUrl: {
         initial: previewUrl,
         previewMode: {
-          enable: "/api/draft-mode",
+          enable: "/api/draft-mode?secret=my-preview-secret-123",
           disable: "/api/disable-draft"
         }
       }
