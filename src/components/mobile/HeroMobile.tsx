@@ -7,6 +7,7 @@ import type { ContactConfig, HeroConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { TodayClock } from "../TodayClock";
+import { Reveal } from "../motion/Reveal";
 
 export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: ContactConfig }) {
   const [open, setOpen] = useState(false);
@@ -15,16 +16,18 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
   return (
     <section className="px-4 pb-5 pt-20 md:hidden">
       <div className="rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-        <p className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]" role="presentation" aria-hidden="true">
-          {tr(hero?.heading) || "Dental care for confident smiles"}
-        </p>
-        <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
+        <Reveal variant="fade-up">
+          <p className="font-heading text-[clamp(2.35rem,11vw,3.55rem)] font-bold leading-[1.02] text-[var(--color-text)]" role="presentation" aria-hidden="true">
+            {tr(hero?.heading) || "Dental care for confident smiles"}
+          </p>
+          <p className="mt-4 text-base font-medium leading-7 text-[var(--color-text)]">{tr(hero?.subtitle)}</p>
+        </Reveal>
 
-        <div className="relative mt-5 aspect-[1.42] overflow-hidden rounded-[1.5rem] bg-[var(--color-accent)]">
+        <Reveal variant="scale-in" delay={0.1} className="relative mt-5 aspect-[1.42] overflow-hidden rounded-[1.5rem] bg-[var(--color-accent)]">
           <Image src={fallbackImage(hero?.image)} alt={tr(hero?.heading) || "Dental clinic hero image"} fill priority className="object-cover" sizes="100vw" />
-        </div>
+        </Reveal>
 
-        <div className="mt-4 grid grid-cols-[1fr_0.92fr] gap-3">
+        <Reveal variant="fade-up" delay={0.18} className="mt-4 grid grid-cols-[1fr_0.92fr] gap-3">
           <article className="rounded-[1.35rem] bg-[var(--color-surface)] p-4">
             <h2 className="text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
             <dl className="mt-3 grid gap-2 text-sm leading-5">
@@ -43,7 +46,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
             </span>
             {tr(hero?.cta?.label) || "Book"}
           </a>
-        </div>
+        </Reveal>
 
         <div className="mt-3">
           <button type="button" onClick={() => setOpen((value) => !value)} className="focus-ring flex min-h-12 w-full items-center justify-between rounded-full border border-black/10 bg-[var(--color-white)] px-5 text-sm font-bold text-[var(--color-text-muted)] active:scale-[0.98]" aria-expanded={open}>
