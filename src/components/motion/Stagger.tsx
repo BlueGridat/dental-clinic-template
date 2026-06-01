@@ -10,6 +10,7 @@ export function Stagger({ children, className }: { children: React.ReactNode; cl
   return (
     <motion.div
       className={className}
+      initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
       variants={{ hidden: {}, show: { transition: { staggerChildren: motionTokens.stagger } } }}
@@ -27,7 +28,7 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: motionTokens.offset.y },
         show: { opacity: 1, y: 0, transition: { duration: motionTokens.duration.base, ease: motionTokens.ease } }
       }}
     >
