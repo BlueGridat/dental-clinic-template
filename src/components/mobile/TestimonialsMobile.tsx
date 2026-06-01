@@ -6,14 +6,18 @@ import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { RatingStars, SectionHeading } from "../ui";
 import { MobileCarousel } from "./MobileCarousel";
+import { Reveal } from "../motion/Reveal";
 
 export function TestimonialsMobile({ testimonials }: { testimonials: TestimonialsConfig }) {
   const tr = useT();
   return (
     <section className="section-pad pt-0 md:hidden">
       <div className="px-4">
-        <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || "Reviews"} description={testimonials?.subheading} />
-        <MobileCarousel className="mt-7">
+        <Reveal variant="fade-up">
+          <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || "Reviews"} description={testimonials?.subheading} />
+        </Reveal>
+        <Reveal variant="fade-up" delay={0.1}>
+          <MobileCarousel className="mt-7">
           {safeArray(testimonials?.items).map((item) => (
             <article key={`${item.name}-mobile`} className="min-w-0 flex-[0_0_88%] rounded-[2rem] bg-[var(--color-white)] p-6 shadow-sm">
               <RatingStars rating={item.rating} />
@@ -25,6 +29,7 @@ export function TestimonialsMobile({ testimonials }: { testimonials: Testimonial
             </article>
           ))}
         </MobileCarousel>
+        </Reveal>
       </div>
     </section>
   );
