@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { clinicConfig, getI18nConfig } from "@/config";
 import type { Locale, Localized } from "@/config/types";
+import { useI18nConfig } from "@/config/ConfigProvider";
 import { t } from "./translate";
 
 interface LocaleContextValue {
@@ -13,7 +13,7 @@ interface LocaleContextValue {
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const i18n = getI18nConfig(clinicConfig);
+  const i18n = useI18nConfig();
   const [locale, setLocaleState] = useState<Locale>(i18n.defaultLocale);
 
   useEffect(() => {
@@ -41,15 +41,12 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
 export function useLocale() {
   const context = useContext(LocaleContext);
-  if (!context) {
-    const i18n = getI18nConfig(clinicConfig);
-    return { locale: i18n.defaultLocale, setLocale: () => undefined };
-  }
+  if (!context) return { locale: "de" as Locale, setLocale: () => undefined };
   return context;
 }
 
 export function useT() {
   const { locale } = useLocale();
-  const i18n = getI18nConfig(clinicConfig);
+  const i18n = useI18nConfig();
   return (value: Localized | undefined | null) => t(value, locale, i18n.defaultLocale);
 }

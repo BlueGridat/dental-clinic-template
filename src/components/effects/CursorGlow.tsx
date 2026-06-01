@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 
 export function CursorGlow() {
@@ -10,7 +10,7 @@ export function CursorGlow() {
   const auroraBRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
-  const effects = getEffectsConfig(clinicConfig);
+  const effects = useEffectsConfig();
 
   useEffect(() => {
     if (!effects.cursorGlow || reduced || !pointerFine) return;

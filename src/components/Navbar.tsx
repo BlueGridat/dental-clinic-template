@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, Stethoscope, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
 import type { BrandConfig, ContactConfig, NavConfig } from "@/config/types";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { ArrowButton } from "./ui";
 import { MobileMenu } from "./mobile/MobileMenu";
@@ -16,7 +16,7 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const links = safeArray(nav?.links);
-  const reactive = getEffectsConfig(clinicConfig).reactiveNavbar;
+  const reactive = useEffectsConfig().reactiveNavbar;
   const tr = useT();
 
   useEffect(() => {

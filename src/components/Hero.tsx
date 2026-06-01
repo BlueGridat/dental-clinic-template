@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
 import type { ContactConfig, HeroConfig } from "@/config/types";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { useT } from "@/i18n/LocaleProvider";
 import { fallbackImage, safeArray } from "@/lib/utils";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
@@ -15,7 +15,7 @@ import { ArrowButton } from "./ui";
 
 export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConfig }) {
   const ref = useRef<HTMLElement>(null);
-  const enabled = getEffectsConfig(clinicConfig).heroParallax;
+  const enabled = useEffectsConfig().heroParallax;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
   const tr = useT();

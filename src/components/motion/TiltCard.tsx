@@ -2,12 +2,12 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 
 export function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const enabled = getEffectsConfig(clinicConfig).tiltImages;
+  const enabled = useEffectsConfig().tiltImages;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
   const rotateX = useSpring(useMotionValue(0), { stiffness: 180, damping: 18 });

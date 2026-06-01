@@ -1,4 +1,4 @@
-import { clinicConfig } from "@/config";
+import { getClinicConfig } from "@/config";
 import { AboutStats } from "@/components/AboutStats";
 import { AnimatedHeroSection } from "@/components/AnimatedHeroSection";
 import { AppointmentBanner } from "@/components/AppointmentBanner";
@@ -14,8 +14,8 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { ResponsiveHero, ResponsiveServices, ResponsiveTestimonials, ResponsiveWhyChooseUs } from "@/components/ResponsiveSections";
 import { t } from "@/i18n/translate";
 
-export default function Home() {
-  const config = clinicConfig;
+export default async function Home() {
+  const config = await getClinicConfig();
 
   return (
     <div className="site-shell">

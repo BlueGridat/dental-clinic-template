@@ -2,12 +2,12 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 
 export function MagneticButton({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const enabled = getEffectsConfig(clinicConfig).magneticButtons;
+  const enabled = useEffectsConfig().magneticButtons;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
   const x = useSpring(useMotionValue(0), { stiffness: 240, damping: 18, mass: 0.25 });

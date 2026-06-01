@@ -1,6 +1,6 @@
 # Dental Clinic Landing Page Template
 
-A production-ready, reusable Next.js landing page template for dental clinics. The site is designed so a web agency can reuse the same codebase across clients by editing only `clinicConfig.json` and replacing files in `public/images`.
+A production-ready, reusable Next.js landing page template for dental clinics. The site is designed so a web agency can reuse the same codebase across clients by managing content in Sanity. `clinicConfig.json` remains as the local fallback when Sanity environment variables are not configured.
 
 ## Run Locally
 
@@ -22,15 +22,16 @@ New UI primitives and 3D sections rely on these runtime packages:
 
 ## How To Customize For A New Client
 
-1. Edit `clinicConfig.json`.
-2. Replace image files in `public/images` with the client's real assets.
-3. Keep image paths in config pointed at `/images/...`.
-4. Change `brand.colors` to re-theme the full site.
-5. Change `brand.fonts.heading` and `brand.fonts.body` to load different Google Fonts.
-6. Set `meta.siteUrl` to the deployed domain for Open Graph images.
-7. Set `integrations.formEndpoint` to a form service URL when available.
-8. Tune `effects` and `mobile` flags to enable or disable motion and mobile behavior.
-9. Edit `i18n`, `trust`, `legal`, and `cookieConsent` blocks for locale, conversion, and compliance details.
+1. Create or select the client's Sanity dataset.
+2. Set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, and `SANITY_API_TOKEN` in `.env.local`.
+3. Run the migration script once to seed Sanity from `clinicConfig.json`.
+4. Edit content in `/studio`.
+5. Change `brand.colors` to re-theme the full site.
+6. Change `brand.fonts.heading` and `brand.fonts.body` to load different Google Fonts.
+7. Set `meta.siteUrl` to the deployed domain for Open Graph images.
+8. Set `integrations.formEndpoint` to a form service URL when available.
+9. Tune `effects` and `mobile` flags to enable or disable motion and mobile behavior.
+10. Edit `i18n`, `trust`, `legal`, and `cookieConsent` blocks for locale, conversion, and compliance details.
 
 When `integrations.formEndpoint` is empty, the booking form falls back to a `mailto:` link using `contact.email`.
 
@@ -50,13 +51,32 @@ The booking form is configured through `finalCta.form`. Labels, helper/error mes
 
 ## Config-Driven Architecture
 
-- `clinicConfig.json` contains all clinic-specific data: metadata, name, colors, fonts, copy, doctors, images, hours, contact details, links, FAQs, testimonials, and integrations.
+- Sanity contains all clinic-specific data: metadata, name, colors, fonts, copy, doctors, images, hours, contact details, links, FAQs, testimonials, and integrations.
+- `clinicConfig.json` is kept as a fallback for local development and builds without Sanity credentials.
 - `src/config/types.ts` defines the full `ClinicConfig` interface.
-- `src/config/index.ts` imports and type-checks the JSON, builds Google Fonts URLs, and injects CSS custom properties.
-- `src/app/layout.tsx` applies theme CSS variables to `:root`, so colors and typography update from JSON.
+- `src/config/index.ts` fetches the singleton Sanity document, normalizes Sanity image assets into CDN URL strings, falls back to JSON when needed, builds Google Fonts URLs, and injects CSS custom properties.
+- `src/app/layout.tsx` applies theme CSS variables to `:root`, so colors and typography update from CMS data or the JSON fallback.
 - Tailwind v4 tokens are bridged in `src/app/globals.css` with `@theme inline`. Config values such as `brand.colors.primary`, `surface`, `white`, `text`, and `textMuted` become runtime CSS vars first, then feed utility tokens like `bg-primary`, `bg-card`, `text-muted-foreground`, `border-border`, and `ring-ring`. This keeps shadcn-compatible primitives in `src/components/ui/` re-themeable from `clinicConfig.json`.
 - Section components receive config data through props and do not hardcode clinic-specific values.
 - Desktop and mobile use the same config data but can render different layouts. Mobile-specific components live in `src/components/mobile`. Breakpoint-specific hero, services, why-choose-us, and testimonial trees are loaded through client-side dynamic imports so phones do not download desktop-only section code and desktop browsers do not download mobile-only section code.
+
+## Sanity CMS
+
+Copy `.env.local.example` to `.env.local` and fill in:
+
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=
+```
+
+Seed a dataset from the fallback config:
+
+```bash
+npx tsx scripts/migrate-to-sanity.ts
+```
+
+The app reads one singleton document with `_id: "clinicConfig"` and `_type: "clinicConfig"`. The Studio is embedded at `/studio`. This template expects one Sanity project with one dataset per deployed dental client, selected by `NEXT_PUBLIC_SANITY_DATASET`.
 
 ## Motion And Mobile Flags
 
@@ -151,4 +171,4 @@ The landing page includes:
 
 ## Notes For Agencies
 
-Keep all client-specific edits in `clinicConfig.json` and `public/images`. The same codebase can be deployed for another clinic by replacing those assets and config values only.
+Keep all client-specific edits in Sanity after migration. The same codebase can be deployed for another clinic by pointing `NEXT_PUBLIC_SANITY_DATASET` at that client's dataset.

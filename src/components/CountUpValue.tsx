@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { useReducedMotionSafe } from "@/lib/motion";
 
 function parseValue(value: string) {
@@ -16,7 +16,7 @@ export function CountUpValue({ value, className }: { value: string; className?: 
   const ref = useRef<HTMLSpanElement>(null);
   const [{ target, suffix }] = useState(() => parseValue(value));
   const reduced = useReducedMotionSafe();
-  const enabled = getEffectsConfig(clinicConfig).statCountUp;
+  const enabled = useEffectsConfig().statCountUp;
   void enabled;
   void reduced;
 

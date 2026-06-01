@@ -2,11 +2,11 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 
 export function CursorFollower() {
-  const enabled = getEffectsConfig(clinicConfig).customCursor;
+  const enabled = useEffectsConfig().customCursor;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
   const [active, setActive] = useState(false);

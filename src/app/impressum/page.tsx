@@ -1,6 +1,7 @@
-import { clinicConfig } from "@/config";
+import { getClinicConfig } from "@/config";
 import { LegalPage } from "@/components/LegalPage";
 
-export default function ImpressumPage() {
-  return <LegalPage title={clinicConfig.legal?.impressumTitle} body={clinicConfig.legal?.impressumBody} />;
+export default async function ImpressumPage() {
+  const config = await getClinicConfig();
+  return <LegalPage title={config.legal?.impressumTitle} body={config.legal?.impressumBody} />;
 }

@@ -1,13 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { clinicConfig, getEffectsConfig } from "@/config";
+import { useEffectsConfig } from "@/config/ConfigProvider";
 import { usePointerFine, useReducedMotionSafe } from "@/lib/motion";
 import { cx } from "@/lib/utils";
 
 export function SpotlightCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const enabled = getEffectsConfig(clinicConfig).spotlightCards;
+  const enabled = useEffectsConfig().spotlightCards;
   const reduced = useReducedMotionSafe();
   const pointerFine = usePointerFine();
 

@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { clinicConfig, getI18nConfig } from "@/config";
 import type { Locale } from "@/config/types";
+import { useI18nConfig } from "@/config/ConfigProvider";
 import { useReducedMotionSafe } from "@/lib/motion";
 import { cx } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export function LanguageToggle({ className }: { className?: string }) {
   const { locale, setLocale } = useLocale();
-  const i18n = getI18nConfig(clinicConfig);
+  const i18n = useI18nConfig();
   const reduced = useReducedMotionSafe();
 
   function onKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {

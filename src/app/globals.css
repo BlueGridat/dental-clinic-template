@@ -17,7 +17,7 @@
 }
 
 :root {
-  /* Fallbacks only. Runtime values are injected from clinicConfig.json in layout.tsx. */
+  /* Fallbacks only. Runtime values are injected from CMS config in layout.tsx. */
   --color-primary: #131c15;
   --brand-primary: #131c15;
   --color-accent: #a9eaf7;
