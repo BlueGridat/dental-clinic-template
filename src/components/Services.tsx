@@ -12,6 +12,13 @@ import { Stagger, StaggerItem } from "./motion/Stagger";
 import { ArrowButton, SectionHeading } from "./ui";
 
 function ServiceIcon({ service }: { service: ServiceItem }) {
+  const tr = useT();
+
+  // An uploaded photo takes priority and fills the whole card media area.
+  if (service.image && service.image.trim().length > 0) {
+    return <Image src={service.image} alt={tr(service.title) || ""} fill sizes="(min-width: 1024px) 360px, 90vw" className="object-cover transition duration-500 ease-out group-hover:scale-105" />;
+  }
+
   const icon = service.icon || "tooth";
   if (icon.startsWith("/")) {
     return <Image src={fallbackImage(icon, "/images/svc-cosmetic.png")} alt="" width={110} height={110} className="object-contain transition duration-500 ease-out group-hover:scale-105" />;

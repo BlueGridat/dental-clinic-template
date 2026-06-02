@@ -17,12 +17,28 @@ const stringArrayField = (name: string, title?: string) =>
 
 export const clinicConfig = defineType({
   name: "clinicConfig",
-  title: "Clinic config",
+  title: "Website content",
   type: "document",
+  groups: [
+    { name: "general", title: "General & SEO", default: true },
+    { name: "brand", title: "Brand & Contact" },
+    { name: "header", title: "Header / Nav" },
+    { name: "hero", title: "Hero" },
+    { name: "services", title: "Services" },
+    { name: "about", title: "About / Why us" },
+    { name: "team", title: "Team" },
+    { name: "testimonials", title: "Testimonials" },
+    { name: "faq", title: "FAQ" },
+    { name: "appointment", title: "Appointment & CTA" },
+    { name: "footer", title: "Footer & Legal" },
+    { name: "advanced", title: "Advanced & Effects" }
+  ],
   fields: [
     defineField({
       name: "meta",
+      title: "SEO / Meta",
       type: "object",
+      group: "general",
       fields: [
         localeField("siteTitle"),
         localeField("description"),
@@ -34,6 +50,7 @@ export const clinicConfig = defineType({
     defineField({
       name: "brand",
       type: "object",
+      group: "brand",
       fields: [
         defineField({ name: "name", type: "string" }),
         localeField("logoText"),
@@ -59,6 +76,7 @@ export const clinicConfig = defineType({
     defineField({
       name: "contact",
       type: "object",
+      group: "brand",
       fields: [
         defineField({ name: "phone", type: "string" }),
         defineField({ name: "email", type: "email" }),
@@ -67,8 +85,24 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "nav",
+      name: "trust",
       type: "object",
+      group: "brand",
+      fields: [
+        localeField("ratingLabel"),
+        defineField({ name: "ratingValue", type: "string" }),
+        localeField("reviewCount"),
+        localeField("openNowLabel"),
+        localeField("sinceLabel"),
+        localeArrayField("credentials"),
+        linkField("directionsCta")
+      ]
+    }),
+    defineField({
+      name: "nav",
+      title: "Navigation",
+      type: "object",
+      group: "header",
       fields: [
         defineField({ name: "links", type: "array", of: [defineArrayMember({ type: "linkItem" })] }),
         linkField("cta")
@@ -77,11 +111,28 @@ export const clinicConfig = defineType({
     defineField({
       name: "hero",
       type: "object",
+      group: "hero",
       fields: [localeField("heading"), localeField("subtitle"), imageField("image"), linkField("cta")]
+    }),
+    defineField({
+      name: "animatedHero",
+      type: "object",
+      group: "hero",
+      fields: [
+        defineField({ name: "enabled", type: "boolean" }),
+        localeField("eyebrow"),
+        localeField("prefix"),
+        localeField("suffix"),
+        localeArrayField("rotatingWords"),
+        localeField("description"),
+        linkField("primaryCta"),
+        linkField("secondaryCta")
+      ]
     }),
     defineField({
       name: "services",
       type: "object",
+      group: "services",
       fields: [
         localeField("tag"),
         localeField("heading"),
@@ -95,11 +146,20 @@ export const clinicConfig = defineType({
               type: "object",
               fields: [
                 localeField("title"),
-                defineField({ name: "icon", type: "string", description: "Lucide icon key or image URL/path." }),
+                imageField("image", "Photo"),
+                defineField({
+                  name: "icon",
+                  title: "Icon (fallback)",
+                  type: "string",
+                  description: "Lucide icon key or image URL/path. Only used when no photo is uploaded above."
+                }),
                 localeField("description"),
                 localeArrayField("features"),
                 defineField({ name: "href", type: "string" })
-              ]
+              ],
+              preview: {
+                select: { title: "title.de", media: "image" }
+              }
             })
           ]
         })
@@ -108,6 +168,7 @@ export const clinicConfig = defineType({
     defineField({
       name: "about",
       type: "object",
+      group: "about",
       fields: [
         localeField("tag"),
         localeField("heading"),
@@ -135,38 +196,10 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "appointmentBanner",
-      type: "object",
-      fields: [localeField("heading"), localeField("description"), imageField("image"), linkField("cta")]
-    }),
-    defineField({
-      name: "team",
-      type: "object",
-      fields: [
-        localeField("tag"),
-        localeField("heading"),
-        localeField("description"),
-        localeArrayField("filters"),
-        defineField({
-          name: "doctors",
-          type: "array",
-          of: [
-            defineArrayMember({
-              type: "object",
-              fields: [
-                defineField({ name: "name", type: "string" }),
-                localeField("role"),
-                localeField("category"),
-                imageField("image")
-              ]
-            })
-          ]
-        })
-      ]
-    }),
-    defineField({
       name: "whyChooseUs",
+      title: "Why choose us",
       type: "object",
+      group: "about",
       fields: [
         localeField("tag"),
         localeField("heading"),
@@ -190,8 +223,35 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
+      name: "team",
+      type: "object",
+      group: "team",
+      fields: [
+        localeField("tag"),
+        localeField("heading"),
+        localeField("description"),
+        localeArrayField("filters"),
+        defineField({
+          name: "doctors",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              fields: [
+                defineField({ name: "name", type: "string" }),
+                localeField("role"),
+                localeField("category"),
+                imageField("image")
+              ]
+            })
+          ]
+        })
+      ]
+    }),
+    defineField({
       name: "testimonials",
       type: "object",
+      group: "testimonials",
       fields: [
         localeField("tag"),
         localeField("heading"),
@@ -218,7 +278,9 @@ export const clinicConfig = defineType({
     }),
     defineField({
       name: "faq",
+      title: "FAQ",
       type: "object",
+      group: "faq",
       fields: [
         localeField("tag"),
         localeField("heading"),
@@ -232,8 +294,17 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "finalCta",
+      name: "appointmentBanner",
+      title: "Appointment banner",
       type: "object",
+      group: "appointment",
+      fields: [localeField("heading"), localeField("description"), imageField("image"), linkField("cta")]
+    }),
+    defineField({
+      name: "finalCta",
+      title: "Final CTA / Booking form",
+      type: "object",
+      group: "appointment",
       fields: [
         localeField("heading"),
         localeField("description"),
@@ -267,6 +338,7 @@ export const clinicConfig = defineType({
     defineField({
       name: "footer",
       type: "object",
+      group: "footer",
       fields: [
         defineField({
           name: "columns",
@@ -283,21 +355,9 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "trust",
-      type: "object",
-      fields: [
-        localeField("ratingLabel"),
-        defineField({ name: "ratingValue", type: "string" }),
-        localeField("reviewCount"),
-        localeField("openNowLabel"),
-        localeField("sinceLabel"),
-        localeArrayField("credentials"),
-        linkField("directionsCta")
-      ]
-    }),
-    defineField({
       name: "legal",
       type: "object",
+      group: "footer",
       fields: [
         localeField("impressumTitle"),
         localeArrayField("impressumBody"),
@@ -306,18 +366,9 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "cookieConsent",
-      type: "object",
-      fields: [
-        defineField({ name: "enabled", type: "boolean" }),
-        localeField("message"),
-        localeField("acceptLabel"),
-        localeField("declineLabel")
-      ]
-    }),
-    defineField({
       name: "innovation",
       type: "object",
+      group: "advanced",
       fields: [
         defineField({ name: "enabled", type: "boolean" }),
         localeField("eyebrow"),
@@ -329,27 +380,27 @@ export const clinicConfig = defineType({
       ]
     }),
     defineField({
-      name: "animatedHero",
+      name: "cookieConsent",
+      title: "Cookie consent",
       type: "object",
+      group: "advanced",
       fields: [
         defineField({ name: "enabled", type: "boolean" }),
-        localeField("eyebrow"),
-        localeField("prefix"),
-        localeField("suffix"),
-        localeArrayField("rotatingWords"),
-        localeField("description"),
-        linkField("primaryCta"),
-        linkField("secondaryCta")
+        localeField("message"),
+        localeField("acceptLabel"),
+        localeField("declineLabel")
       ]
     }),
     defineField({
       name: "integrations",
       type: "object",
+      group: "advanced",
       fields: [defineField({ name: "formEndpoint", type: "url" })]
     }),
     defineField({
       name: "effects",
       type: "object",
+      group: "advanced",
       fields: [
         "magneticButtons",
         "cursorGlow",
@@ -366,11 +417,14 @@ export const clinicConfig = defineType({
     defineField({
       name: "mobile",
       type: "object",
+      group: "advanced",
       fields: ["stickyBookingBar", "fullscreenMenu", "showCallButton"].map((name) => defineField({ name, type: "boolean" }))
     }),
     defineField({
       name: "i18n",
+      title: "Languages (i18n)",
       type: "object",
+      group: "general",
       fields: [
         defineField({ name: "defaultLocale", type: "string", options: { list: ["de", "en"] } }),
         stringArrayField("locales"),
