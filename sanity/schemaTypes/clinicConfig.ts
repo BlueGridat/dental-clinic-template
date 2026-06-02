@@ -95,11 +95,20 @@ export const clinicConfig = defineType({
               type: "object",
               fields: [
                 localeField("title"),
-                defineField({ name: "icon", type: "string", description: "Lucide icon key or image URL/path." }),
+                imageField("image", "Photo"),
+                defineField({
+                  name: "icon",
+                  title: "Icon (fallback)",
+                  type: "string",
+                  description: "Lucide icon key or image URL/path. Only used when no photo is uploaded above."
+                }),
                 localeField("description"),
                 localeArrayField("features"),
                 defineField({ name: "href", type: "string" })
-              ]
+              ],
+              preview: {
+                select: { title: "title.de", media: "image" }
+              }
             })
           ]
         })

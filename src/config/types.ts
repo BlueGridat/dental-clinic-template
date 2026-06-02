@@ -94,6 +94,7 @@ export interface ServicesConfig {
 export interface ServiceItem {
   title: Localized;
   icon: string;
+  image?: string;
   description?: Localized;
   features: Localized[];
   href: string;

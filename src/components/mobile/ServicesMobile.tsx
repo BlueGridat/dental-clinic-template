@@ -11,6 +11,13 @@ import { SectionHeading } from "../ui";
 import { MobileCarousel } from "./MobileCarousel";
 
 function ServiceIcon({ service }: { service: ServiceItem }) {
+  const tr = useT();
+
+  // An uploaded photo takes priority and fills the whole card media area.
+  if (service.image && service.image.trim().length > 0) {
+    return <Image src={service.image} alt={tr(service.title) || ""} fill sizes="86vw" className="object-cover" />;
+  }
+
   const icon = service.icon || "tooth";
   if (icon.startsWith("/")) {
     return <Image src={fallbackImage(icon, "/images/svc-cosmetic.png")} alt="" width={110} height={110} />;
@@ -32,7 +39,7 @@ export function ServicesMobile({ services }: { services: ServicesConfig }) {
         <MobileCarousel className="mt-7">
           {safeArray(services?.items).map((service) => (
             <article key={`${tr(service.title)}-mobile`} className="min-w-0 flex-[0_0_86%] rounded-[2rem] bg-[var(--color-white)] p-4 shadow-sm">
-              <div className="grid aspect-[1.25] place-items-center rounded-[1.5rem] bg-[var(--color-surface)]">
+              <div className="relative grid aspect-[1.25] place-items-center overflow-hidden rounded-[1.5rem] bg-[var(--color-surface)]">
                 <ServiceIcon service={service} />
               </div>
               <h3 className="mt-5 text-xl font-bold">{tr(service.title)}</h3>
