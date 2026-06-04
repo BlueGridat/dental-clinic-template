@@ -186,6 +186,35 @@ def generate_xlsx():
     
     ws4.column_dimensions['A'].width = 80
     
+    # === EXPANDED HIGH-PRIORITY SHEET (ordered by city, starting Linz) ===
+    hp_csv = os.path.join(os.path.dirname(__file__), "austrian_dental_high_priority_leads.csv")
+    if os.path.exists(hp_csv):
+        with open(hp_csv, 'r', encoding='utf-8') as f:
+            hp_rows = list(csv.reader(f))
+
+        ws5 = wb.create_sheet("High Priority (by City)")
+        # title 0
+        for col_idx, header in enumerate(hp_rows[0], 1):
+            cell = ws5.cell(row=1, column=col_idx, value=header)
+            cell.font = header_font
+            cell.fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+            cell.alignment = Alignment(horizontal='center', wrap_text=True)
+            cell.border = thin_border
+
+        for row_idx, row in enumerate(hp_rows[1:], 2):
+            for col_idx, value in enumerate(row, 1):
+                cell = ws5.cell(row=row_idx, column=col_idx, value=value)
+                cell.border = thin_border
+                cell.alignment = Alignment(wrap_text=True, vertical='top')
+                cell.fill = high_fill
+
+        for i, width in enumerate([26, 24, 18, 40, 30, 20, 7, 30, 55, 12, 12, 10, 65], 1):
+            ws5.column_dimensions[get_column_letter(i)].width = width
+        ws5.freeze_panes = "A2"
+        # Move this sheet to be the first visible tab
+        wb.move_sheet("High Priority (by City)", -(len(wb.sheetnames) - 1))
+        print(f"   Expanded high-priority leads: {len(hp_rows) - 1}")
+
     # Save
     output_path = os.path.join(os.path.dirname(__file__), "austrian_dental_leads.xlsx")
     wb.save(output_path)
