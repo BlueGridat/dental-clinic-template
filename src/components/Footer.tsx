@@ -15,9 +15,9 @@ export function Footer({ footer, contact, brand }: { footer: FooterConfig; conta
           <div>
             <h2 className="font-heading text-3xl font-bold">{brand?.name || tr(footer?.wordmark)}</h2>
             <address className="mt-6 grid gap-3 not-italic text-white/70">
-              <span>{contact?.address}</span>
-              <a href={`tel:${contact?.phone || ""}`} className="focus-ring rounded-full hover:text-white">{contact?.phone}</a>
-              <a href={`mailto:${contact?.email || ""}`} className="focus-ring rounded-full hover:text-white">{contact?.email}</a>
+              {contact?.address ? <span>{contact.address}</span> : null}
+              {contact?.phone ? <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="focus-ring rounded-full hover:text-white">{contact.phone}</a> : null}
+              {contact?.email ? <a href={`mailto:${contact.email}`} className="focus-ring rounded-full hover:text-white">{contact.email}</a> : null}
             </address>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
@@ -27,7 +27,7 @@ export function Footer({ footer, contact, brand }: { footer: FooterConfig; conta
                 <ul className="mt-5 grid gap-3 text-sm text-white/65">
                   {safeArray(column.links).map((link) => (
                     <li key={`${tr(column.title)}-${tr(link.label)}`}>
-                      <Link href={link.href || "#"} className="focus-ring rounded-full hover:text-white">{tr(link.label)}</Link>
+                      <Link href={link.href} className="focus-ring rounded-full hover:text-white">{tr(link.label)}</Link>
                     </li>
                   ))}
                 </ul>

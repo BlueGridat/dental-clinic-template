@@ -33,6 +33,7 @@ function ServiceIcon({ service }: { service: ServiceItem }) {
 
 export function Services({ services }: { services: ServicesConfig }) {
   const tr = useT();
+  if (!safeArray(services?.items).length) return null;
   return (
     <section id="services" data-sanity={dataSanity("services")} className="section-pad hidden pt-8 md:block">
       <div className="container-page rounded-[2rem] bg-[var(--color-white)] p-5 shadow-sm sm:p-8 lg:p-10">
@@ -60,7 +61,7 @@ export function Services({ services }: { services: ServicesConfig }) {
                     </li>
                   ))}
                 </ul>
-                <a href={service.href || "#"} className="focus-ring group mt-auto inline-flex items-center justify-between gap-3 rounded-full border border-[var(--color-primary)] px-4 py-2.5 text-sm font-bold transition duration-300 ease-out active:scale-[0.98]">
+                <a href={service.href || "#book"} className="focus-ring group mt-auto inline-flex items-center justify-between gap-3 rounded-full border border-[var(--color-primary)] px-4 py-2.5 text-sm font-bold transition duration-300 ease-out active:scale-[0.98]">
                   {tr({ de: "Beratung anfragen", en: "Request consultation" })}
                   <span className="grid size-6 place-items-center rounded-full bg-[var(--color-primary)] text-[var(--color-white)] transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:rotate-12">
                     <ArrowUpRight className="size-3.5" aria-hidden="true" />

@@ -58,7 +58,7 @@ export function ArrowButton({
   return (
     <MagneticButton className="inline-flex">
       <Link
-        href={href || "#"}
+        href={href || "#book"}
         aria-label={tr(ariaLabel) || renderedLabel}
         className={cx(
           "focus-ring group inline-flex min-h-12 items-center gap-3 rounded-full px-5 py-2.5 text-sm font-bold transition duration-300 ease-out hover:-translate-y-0.5",

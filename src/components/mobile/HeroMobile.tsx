@@ -26,7 +26,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
         </div>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_0.92fr]">
-          <article className="rounded-[1.35rem] bg-[var(--color-surface)] p-4">
+          {safeArray(contact?.workingHours).length ? <article className="rounded-[1.35rem] bg-[var(--color-surface)] p-4">
             <h2 className="text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
             <dl className="mt-3 grid gap-2 text-sm leading-5">
               {safeArray(contact?.workingHours).map((item) => (
@@ -36,7 +36,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
                 </div>
               ))}
             </dl>
-          </article>
+          </article> : null}
 
           <a href={hero?.cta?.href || "#book"} className="focus-ring flex flex-col items-center justify-center rounded-[1.35rem] bg-[var(--color-accent)] p-4 text-center font-bold text-[var(--color-primary)] active:scale-[0.98]">
             <span className="mb-4 grid size-14 place-items-center rounded-full bg-[var(--color-white)]">
@@ -46,7 +46,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
           </a>
         </div>
 
-        <div className="mt-3">
+        {safeArray(contact?.workingHours).length ? <div className="mt-3">
           <button type="button" onClick={() => setOpen((value) => !value)} className="focus-ring flex min-h-12 w-full items-center justify-between rounded-full border border-black/10 bg-[var(--color-white)] px-5 text-sm font-bold text-[var(--color-text-muted)] active:scale-[0.98]" aria-expanded={open}>
             <TodayClock />
             <ChevronDown className={`size-5 transition ${open ? "rotate-180" : ""}`} />
@@ -61,7 +61,7 @@ export function HeroMobile({ hero, contact }: { hero: HeroConfig; contact: Conta
               ))}
             </div>
           ) : null}
-          </div>
+          </div> : null}
       </div>
     </section>
   );

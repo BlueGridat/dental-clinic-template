@@ -11,6 +11,11 @@ import { dataSanity } from "@/lib/sanityData";
 import { SectionHeading } from "./ui";
 import { SpotlightCard } from "./motion/SpotlightCard";
 
+function initials(name: string) {
+  const parts = name.replace(/\b(Dr|med|medic|dent|univ|DDr|Prof|MSc|MDSc)\.?(?=\s|$)/gi, "").trim().split(/\s+/).filter(Boolean);
+  return ((parts[0]?.[0] ?? "") + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase();
+}
+
 export function TeamCarousel({ team }: { team: TeamConfig }) {
   const filters = safeArray(team?.filters);
   const tr = useT();
@@ -22,6 +27,7 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
   }, [activeFilterIndex, filters, team?.doctors, tr]);
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: doctors.length > 2 });
 
+  const total = safeArray(team?.doctors).length;
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
@@ -35,6 +41,8 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi, doctors.length]);
+
+  if (!total) return null;
 
   return (
     <section id="doctors" data-sanity={dataSanity("team")} className="section-pad">
@@ -65,7 +73,13 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
             {doctors.map((doctor) => (
               <SpotlightCard key={`${doctor.name}-${tr(doctor.role)}`} className="min-w-0 flex-[0_0_82%] rounded-[1.7rem] p-2 transition duration-300 ease-out hover:-translate-y-1 hover:bg-[var(--color-white)] hover:shadow-xl sm:flex-[0_0_38%] lg:flex-[0_0_24%]">
                 <div className="relative aspect-[1.03] overflow-hidden rounded-[1.55rem] bg-[var(--color-surface)]">
-                  <Image src={fallbackImage(doctor.image)} alt={doctor.name} fill className="object-cover transition duration-500 ease-out hover:scale-105" sizes="(min-width: 1024px) 360px, 85vw" />
+                  {doctor.image ? (
+                    <Image src={fallbackImage(doctor.image)} alt={doctor.name} fill className="object-cover transition duration-500 ease-out hover:scale-105" sizes="(min-width: 1024px) 360px, 85vw" />
+                  ) : (
+                    <span className="absolute inset-0 grid place-items-center font-heading text-5xl font-bold text-[var(--color-primary)]" aria-hidden="true">
+                      {initials(doctor.name)}
+                    </span>
+                  )}
                 </div>
                 <div className="pt-4 text-center">
                   <h3 className="text-base font-bold">{doctor.name}</h3>
@@ -76,7 +90,7 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
           </div>
         </div>
 
-        <div className="mt-7 flex items-center justify-between">
+        {doctors.length > 1 ? <div className="mt-7 flex items-center justify-between">
           <p className="font-heading text-xl font-bold">{doctors.length ? `${selectedIndex + 1} / ${doctors.length}` : "0 / 0"}</p>
           <div className="flex gap-3">
             <button type="button" onClick={scrollPrev} className="focus-ring grid size-12 place-items-center rounded-full bg-[var(--color-white)]" aria-label={tr({ de: "Vorherige Ärzt:innen", en: "Previous doctors" })}>
@@ -86,7 +100,7 @@ export function TeamCarousel({ team }: { team: TeamConfig }) {
               <ArrowRight className="size-5" />
             </button>
           </div>
-        </div>
+        </div> : null}
       </div>
     </section>
   );

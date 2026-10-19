@@ -16,14 +16,14 @@ export function AboutStats({ about }: { about: AboutConfig }) {
       <div className="container-page grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <MotionReveal className="space-y-8">
           <SectionHeading tag={about?.tag} title={about?.heading || { de: "Klarheit vor jeder Behandlung", en: "Clarity before every treatment" }} />
-          <Stagger className="grid gap-4 sm:grid-cols-2">
+          {safeArray(about?.stats).length ? <Stagger className="grid gap-4 sm:grid-cols-2">
             {safeArray(about?.stats).map((stat) => (
               <StaggerItem key={`${stat.value}-${tr(stat.label)}`} className="rounded-[2rem] bg-[var(--color-white)] p-6 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
                 <p className="font-heading text-4xl font-bold"><CountUpValue value={stat.value} /></p>
                 <p className="mt-3 text-sm font-semibold leading-6 text-[var(--color-text-muted)]">{tr(stat.label)}</p>
               </StaggerItem>
             ))}
-          </Stagger>
+          </Stagger> : null}
         </MotionReveal>
         <MotionReveal className="relative mx-auto w-full max-w-xl">
           <div className="aspect-square overflow-hidden rounded-full bg-[var(--color-accent)] p-4">
@@ -31,13 +31,13 @@ export function AboutStats({ about }: { about: AboutConfig }) {
               <Image src={fallbackImage(about?.image)} alt="" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
             </div>
           </div>
-          <div className="absolute bottom-8 left-0 rounded-[1.5rem] bg-[var(--color-white)] p-5 shadow-lg">
+          {about?.rating?.value ? <div className="absolute bottom-8 left-0 rounded-[1.5rem] bg-[var(--color-white)] p-5 shadow-lg">
             <p className="text-sm font-bold">{tr(about?.rating?.label) || tr({ de: "Patient:innenstimmen", en: "Patient feedback" })}</p>
             <div className="mt-1 flex items-center gap-3">
-              <span className="font-heading text-2xl font-bold">{about?.rating?.value || "5/5"}</span>
-              <RatingStars rating={about?.rating?.stars || 5} />
+              <span className="font-heading text-2xl font-bold">{about.rating.value}</span>
+              <RatingStars rating={about.rating.stars || 0} />
             </div>
-          </div>
+          </div> : null}
           <div className="absolute right-2 top-10 rounded-full bg-[var(--color-accent)] px-5 py-3 text-sm font-bold">{tr(about?.badge) || tr({ de: "Ruhig begleitet", en: "Calmly guided" })}</div>
         </MotionReveal>
       </div>

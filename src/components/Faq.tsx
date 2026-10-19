@@ -12,6 +12,7 @@ export function Faq({ faq }: { faq: FaqConfig }) {
   const [openIndex, setOpenIndex] = useState(0);
   const items = safeArray(faq?.items);
   const tr = useT();
+  if (!items.length) return null;
 
   return (
     <section className="section-pad pt-0">

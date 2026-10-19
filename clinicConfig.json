@@ -1,14 +1,14 @@
 {
   "meta": {
     "siteTitle": {
-      "de": "Lume Dental - Ruhige Zahnmedizin in Wien",
-      "en": "Lume Dental - Calm Dental Care in Vienna"
+      "de": "Zahnarztpraxis – Demo-Vorlage",
+      "en": "Dental practice – demo template"
     },
     "description": {
-      "de": "Ruhige, transparente Zahnmedizin in Wien. Wir erklären jeden Schritt, nehmen Ihre Sorge ernst und planen Ihren Termin ohne Druck.",
-      "en": "Calm, transparent dental care in Vienna. We explain each step, take your concerns seriously, and plan your visit without pressure."
+      "de": "Ruhige, transparente Zahnmedizin. Wir erklären jeden Schritt, nehmen Ihre Sorge ernst und planen Ihren Termin ohne Druck.",
+      "en": "Calm, transparent dental care. We explain each step, take your concerns seriously, and plan your visit without pressure."
     },
-    "siteUrl": "https://lumedental.com",
+    "siteUrl": "https://dental-clinic-template-psi.vercel.app",
     "ogImage": "/images/og.jpg",
     "favicon": "/favicon.ico"
   },
@@ -34,44 +34,17 @@
     }
   },
   "contact": {
-    "phone": "+43 1 934 68 20",
-    "email": "servus@lumedental.at",
-    "address": "Mariahilfer Straße 88A, 1060 Wien",
-    "workingHours": [
-      {
-        "days": {
-          "de": "Montag - Freitag",
-          "en": "Monday - Friday"
-        },
-        "hours": "8:00 - 19:00"
-      },
-      {
-        "days": {
-          "de": "Samstag",
-          "en": "Saturday"
-        },
-        "hours": "9:00 - 14:00"
-      }
-    ]
+    "phone": "",
+    "email": "",
+    "address": "",
+    "workingHours": []
   },
   "trust": {
-    "ratingLabel": {
-      "de": "Google Bewertung",
-      "en": "Google rating"
-    },
-    "ratingValue": "4.8/5",
-    "reviewCount": {
-      "de": "1.200+ ruhige Erfahrungen",
-      "en": "1,200+ calm patient experiences"
-    },
-    "openNowLabel": {
-      "de": "Heute für Sie da",
-      "en": "Open today"
-    },
-    "sinceLabel": {
-      "de": "Seit 2011 in Wien",
-      "en": "In Vienna since 2011"
-    },
+    "ratingLabel": null,
+    "ratingValue": null,
+    "reviewCount": null,
+    "openNowLabel": null,
+    "sinceLabel": null,
     "credentials": [
       {
         "de": "Behandlung mit klarer Erklärung",
@@ -88,10 +61,10 @@
     ],
     "directionsCta": {
       "label": {
-        "de": "Ruhig ankommen",
-        "en": "Plan your visit"
+        "de": "Route planen",
+        "en": "Get directions"
       },
-      "href": "https://www.google.com/maps/search/?api=1&query=Mariahilfer+Stra%C3%9Fe+88A+1060+Wien"
+      "href": ""
     }
   },
   "nav": {
@@ -109,13 +82,6 @@
           "en": "Doctors"
         },
         "href": "#doctors"
-      },
-      {
-        "label": {
-          "de": "Preise",
-          "en": "Pricing"
-        },
-        "href": "#pricing"
       },
       {
         "label": {
@@ -146,8 +112,8 @@
       "en": "Dental care that helps you feel at ease"
     },
     "subtitle": {
-      "de": "Bei Lume Dental in Wien nehmen wir uns Zeit, erklären jeden Schritt verständlich und planen Behandlungen erst, wenn Sie sich sicher fühlen.",
-      "en": "At Lume Dental in Vienna, we take time, explain each step clearly, and only plan treatment once you feel ready."
+      "de": "Wir nehmen uns Zeit, erklären jeden Schritt verständlich und planen Behandlungen erst, wenn Sie sich sicher fühlen.",
+      "en": "We take time, explain each step clearly, and only plan treatment once you feel ready."
     },
     "image": "/images/hero.png",
     "cta": {
@@ -425,48 +391,12 @@
       "en": "Nothing happens before it is explained"
     },
     "image": "/images/about-doctor.jpg",
-    "rating": {
-      "value": "4.8/5",
-      "label": {
-        "de": "Patient:innenstimmen",
-        "en": "Patient feedback"
-      },
-      "stars": 4
-    },
+    "rating": null,
     "badge": {
       "de": "Ruhig begleitet",
       "en": "Calmly guided"
     },
-    "stats": [
-      {
-        "value": "20+",
-        "label": {
-          "de": "Jahre gemeinsame Erfahrung",
-          "en": "years of combined experience"
-        }
-      },
-      {
-        "value": "4",
-        "label": {
-          "de": "ruhige Schritte vor jeder Behandlung",
-          "en": "calm steps before treatment"
-        }
-      },
-      {
-        "value": "15",
-        "label": {
-          "de": "Jahre Praxis in Wien",
-          "en": "years in Vienna"
-        }
-      },
-      {
-        "value": "99%",
-        "label": {
-          "de": "wünschen klare Erklärungen",
-          "en": "want clear explanations"
-        }
-      }
-    ]
+    "stats": []
   },
   "appointmentBanner": {
     "heading": {
@@ -499,67 +429,13 @@
       "de": "Unser Team verbindet zahnmedizinische Erfahrung mit einer Gesprächskultur, die Fragen ausdrücklich willkommen heißt.",
       "en": "Our team combines dental experience with a way of communicating that actively welcomes questions."
     },
-    "filters": [
-      {
-        "de": "Alle",
-        "en": "All"
-      },
-      {
-        "de": "Zahnärzt:innen",
-        "en": "Dentists"
-      },
-      {
-        "de": "Chirurgie",
-        "en": "Surgery"
-      },
-      {
-        "de": "Kieferorthopädie",
-        "en": "Orthodontics"
-      }
-    ],
-    "doctors": [
-      {
-        "name": "Austin Camacho",
-        "role": {
-          "de": "Chirurg",
-          "en": "Surgeon"
-        },
-        "category": {
-          "de": "Chirurgie",
-          "en": "Surgeons"
-        },
-        "image": "/images/dr-austin.jpg"
-      },
-      {
-        "name": "Fletcher Morse",
-        "role": {
-          "de": "Zahnarzt",
-          "en": "Dentist"
-        },
-        "category": {
-          "de": "Zahnärzt:innen",
-          "en": "Dentists"
-        },
-        "image": "/images/dr-fletcher.jpg"
-      },
-      {
-        "name": "Aysha Hayes",
-        "role": {
-          "de": "Kieferorthopädin",
-          "en": "Orthodontist"
-        },
-        "category": {
-          "de": "Kieferorthopädie",
-          "en": "Orthodontists"
-        },
-        "image": "/images/dr-aysha.jpg"
-      }
-    ]
+    "filters": [],
+    "doctors": []
   },
   "whyChooseUs": {
     "tag": {
-      "de": "Warum Lume",
-      "en": "Why Lume"
+      "de": "Warum wir",
+      "en": "Why us"
     },
     "heading": {
       "de": "Für Patient:innen, die Klarheit vor der Behandlung brauchen",
@@ -640,119 +516,10 @@
       "en": "What calm care changes"
     },
     "subheading": {
-      "de": "Demo-Stimmen mit konkreten Situationen, wie sie Patient:innen in Wien häufig erleben.",
-      "en": "Demo stories based on common situations patients experience in Vienna."
+      "de": "Echte Bewertungen mit Quellenangabe.",
+      "en": "Real reviews with their source."
     },
-    "items": [
-      {
-        "name": "Sophie Bauer",
-        "rating": 5,
-        "image": "/images/patient-1.jpg",
-        "treatment": {
-          "de": "Mundhygiene",
-          "en": "Cleaning"
-        },
-        "date": {
-          "de": "März 2025",
-          "en": "March 2025"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Ich war nervös, weil Mundhygiene früher oft unangenehm war. Diesmal wurde jeder Schritt angekündigt, und ich konnte jederzeit kurz pausieren.",
-          "en": "I was nervous because cleanings had often felt uncomfortable before. This time, every step was announced and I could pause whenever I needed."
-        }
-      },
-      {
-        "name": "Lukas Gruber",
-        "rating": 5,
-        "image": "/images/patient-2.jpg",
-        "treatment": {
-          "de": "Implantat",
-          "en": "Implant"
-        },
-        "date": {
-          "de": "Jänner 2025",
-          "en": "January 2025"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Beim Implantat wollte ich vor allem wissen, was genau passiert. Die Planung am Bildschirm und die ehrliche Kostenübersicht haben mir viel Druck genommen.",
-          "en": "With my implant, I mainly wanted to know exactly what would happen. The screen-based planning and honest cost overview took a lot of pressure off."
-        }
-      },
-      {
-        "name": "Elena Wagner",
-        "rating": 5,
-        "image": "/images/placeholder.jpg",
-        "treatment": {
-          "de": "Aligner",
-          "en": "Aligners"
-        },
-        "date": {
-          "de": "November 2024",
-          "en": "November 2024"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Die Aligner-Beratung war angenehm unaufgeregt. Kein Verkaufsdruck, sondern ein realistischer Plan mit klaren Zwischenschritten.",
-          "en": "The aligner consultation felt pleasantly calm. No sales pressure, just a realistic plan with clear milestones."
-        }
-      },
-      {
-        "name": "Thomas Huber",
-        "rating": 4,
-        "image": "/images/patient-1.jpg",
-        "treatment": {
-          "de": "Wurzelbehandlung",
-          "en": "Root canal"
-        },
-        "date": {
-          "de": "September 2024",
-          "en": "September 2024"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Ich kam mit Schmerzen und ziemlich viel Angst. Mir wurde zuerst erklärt, was dringend ist und was später Zeit hat. Das hat die Situation sofort geordnet.",
-          "en": "I came in with pain and quite a bit of fear. They first explained what was urgent and what could wait. That immediately made the situation feel manageable."
-        }
-      },
-      {
-        "name": "Julia Steiner",
-        "rating": 5,
-        "image": "/images/patient-2.jpg",
-        "treatment": {
-          "de": "Veneers",
-          "en": "Veneers"
-        },
-        "date": {
-          "de": "Juni 2024",
-          "en": "June 2024"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Bei den Veneers ging es nie um ein künstliches Lächeln. Wir haben lange über Natürlichkeit gesprochen, und genau deshalb fühle ich mich damit wohl.",
-          "en": "With my veneers, it was never about an artificial smile. We spent time talking about a natural result, which is exactly why I feel comfortable with it."
-        }
-      },
-      {
-        "name": "Markus Hofer",
-        "rating": 5,
-        "image": "/images/placeholder.jpg",
-        "treatment": {
-          "de": "Kontrolle",
-          "en": "Check-up"
-        },
-        "date": {
-          "de": "April 2024",
-          "en": "April 2024"
-        },
-        "verified": true,
-        "quote": {
-          "de": "Ich hatte jahrelang Termine aufgeschoben. Beim ersten Besuch wurde nichts überstürzt, sondern zuerst ein überschaubarer Plan gemacht.",
-          "en": "I had postponed appointments for years. At the first visit, nothing was rushed; we started with a manageable plan."
-        }
-      }
-    ]
+    "items": []
   },
   "faq": {
     "tag": {
@@ -769,7 +536,7 @@
         "de": "Frage im Erstgespräch klären",
         "en": "Ask at your first consultation"
       },
-      "href": "#"
+      "href": "#book"
     },
     "items": [
       {
@@ -892,10 +659,7 @@
         "de": "Anliegen auswählen",
         "en": "Select a concern"
       },
-      "badgePrimary": {
-        "de": "Antwort innerhalb von 24h",
-        "en": "Reply within 24h"
-      },
+      "badgePrimary": null,
       "badgeSecondary": {
         "de": "Erst beraten, dann entscheiden",
         "en": "Talk first, decide after"
@@ -903,116 +667,7 @@
     }
   },
   "footer": {
-    "columns": [
-      {
-        "title": {
-          "de": "Praxis",
-          "en": "Clinic"
-        },
-        "links": [
-          {
-            "label": {
-              "de": "Über die Klinik",
-              "en": "About Clinic"
-            },
-            "href": "/datenschutz"
-          },
-          {
-            "label": {
-              "de": "Unser Team",
-              "en": "Our Doctors"
-            },
-            "href": "#"
-          },
-          {
-            "label": {
-              "de": "Technologie",
-              "en": "Technology"
-            },
-            "href": "#"
-          },
-          {
-            "label": {
-              "de": "Bewertungen",
-              "en": "Reviews"
-            },
-            "href": "#"
-          }
-        ]
-      },
-      {
-        "title": {
-          "de": "Leistungen",
-          "en": "Services"
-        },
-        "links": [
-          {
-            "label": {
-              "de": "Prophylaxe & Mundhygiene",
-              "en": "Prophylaxis & Cleaning"
-            },
-            "href": "#services"
-          },
-          {
-            "label": {
-              "de": "Zahnerhaltung & Füllungen",
-              "en": "Restorative & Fillings"
-            },
-            "href": "#services"
-          },
-          {
-            "label": {
-              "de": "Wurzelbehandlung",
-              "en": "Root Canal Treatment"
-            },
-            "href": "#services"
-          },
-          {
-            "label": {
-              "de": "Implantologie",
-              "en": "Implants"
-            },
-            "href": "#services"
-          }
-        ]
-      },
-      {
-        "title": {
-          "de": "Rechtliches",
-          "en": "Legal"
-        },
-        "links": [
-          {
-            "label": {
-              "de": "Datenschutz",
-              "en": "Privacy policy"
-            },
-            "href": "/datenschutz"
-          },
-          {
-            "label": {
-              "de": "Nutzungsbedingungen",
-              "en": "Term of use"
-            },
-            "href": "#"
-          },
-          {
-            "label": {
-              "de": "Cookie-Richtlinie",
-              "en": "Cookie policy"
-            },
-            "href": "#"
-          },
-          {
-            "label": {
-              "de": "Impressum",
-              "en": "Legal notice"
-            },
-            "href": "/impressum"
-          }
-        ]
-      }
-    ],
+    "columns": [],
     "wordmark": {
       "de": "Lume Dental",
       "en": "Lume Dental"
@@ -1029,12 +684,8 @@
     },
     "impressumBody": [
       {
-        "de": "Lume Dental, Mariahilfer Straße 88A, 1060 Wien. Verantwortlich für den Inhalt: Praxisleitung Lume Dental.",
-        "en": "Lume Dental, Mariahilfer Straße 88A, 1060 Vienna. Responsible for content: Lume Dental practice management."
-      },
-      {
-        "de": "Diese Vorlage dient als Beispiel. Ersetzen Sie alle rechtlichen Angaben vor dem Einsatz in Österreich durch geprüfte Kanzlei- und Praxisdaten.",
-        "en": "This template is sample content. Replace all legal information with verified clinic and legal details before use."
+        "de": "Dies ist eine Demo-Vorlage von BlueGrid (bluegrid.at). Es handelt sich um keine echte Ordination. Die rechtlichen Angaben werden pro Praxis ergänzt.",
+        "en": "This is a BlueGrid (bluegrid.at) demo template, not a real practice. Legal details are added per practice."
       }
     ],
     "privacyTitle": {
@@ -1136,7 +787,7 @@
         "de": "Praxis anrufen",
         "en": "Call the clinic"
       },
-      "href": "tel:+4319346820"
+      "href": "#contacts"
     }
   },
   "integrations": {

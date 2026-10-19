@@ -106,6 +106,9 @@ export function FinalCta({
     }
   }
 
+  const canSubmit = Boolean(integrations?.formEndpoint?.trim() || contact?.email);
+  const phoneHref = contact?.phone ? `tel:${contact.phone.replace(/[^+\d]/g, "")}` : "";
+
   const fieldClass =
     "focus-ring min-h-12 w-full rounded-2xl border border-transparent bg-[var(--color-surface)] px-4 text-base text-[var(--color-primary)] outline-none transition placeholder:text-[var(--color-text-muted)] focus:border-[var(--color-primary)]";
   const errorClass = "border-red-500 bg-red-50";
@@ -123,6 +126,16 @@ export function FinalCta({
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 md:text-lg md:leading-8">{tr(finalCta?.description)}</p>
           </div>
 
+          {!canSubmit ? (
+            <div className="grid gap-4 rounded-[1.6rem] bg-[var(--color-white)] p-6 text-[var(--color-primary)] shadow-sm">
+              <p className="text-lg font-bold">{tr({ de: "Termine bitte telefonisch vereinbaren.", en: "Please book appointments by phone." })}</p>
+              {phoneHref ? (
+                <a href={phoneHref} className="focus-ring inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--color-primary)] px-7 font-bold text-[var(--color-white)]">
+                  {contact.phone}
+                </a>
+              ) : null}
+            </div>
+          ) : (
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="grid gap-4 rounded-[1.6rem] bg-[var(--color-white)] p-4 text-[var(--color-primary)] shadow-sm sm:p-5">
             <div className="grid gap-4 md:grid-cols-2">
               <div>
@@ -213,6 +226,7 @@ export function FinalCta({
               </p>
             ) : null}
           </form>
+          )}
         </div>
       </div>
     </section>

@@ -3,16 +3,21 @@ import { presentationTool } from "sanity/presentation";
 import { structureTool, type StructureResolver } from "sanity/structure";
 import { schemaTypes } from "./sanity/schemaTypes";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
+// Public identifiers: safe as code defaults so /studio works without Vercel env vars.
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xvyxwo8y";
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-const previewUrl = process.env.NEXT_PUBLIC_SANITY_STUDIO_PREVIEW_URL || "http://localhost:3000";
+const previewUrl =
+  process.env.NEXT_PUBLIC_SANITY_STUDIO_PREVIEW_URL ||
+  (typeof window !== "undefined" ? window.location.origin : "https://dental-clinic-template-psi.vercel.app");
 
-// Expose the single clinicConfig document as a clean "Website content" singleton
-// instead of a document-type list (no "create new" clutter).
+// "Clinic demos" lists one document per clinic (served at /<slug>);
+// "Website content" is the legacy singleton used as fallback for "/".
 const structure: StructureResolver = (S) =>
   S.list()
     .title("Content")
     .items([
+      S.documentTypeListItem("clinic").title("Clinic demos"),
+      S.divider(),
       S.listItem()
         .title("Website content")
         .id("clinicConfig")
@@ -33,7 +38,8 @@ export default defineConfig({
       previewUrl: {
         initial: previewUrl,
         previewMode: {
-          enable: "/api/draft-mode?secret=my-preview-secret-123",
+          // No secret in code: /api/draft refuses unless SANITY_PREVIEW_SECRET is set on the server.
+          enable: "/api/draft",
           disable: "/api/disable-draft"
         }
       }
