@@ -45,8 +45,8 @@ When `integrations.formEndpoint` is empty, the booking form falls back to a `mai
 - `src/config/resolve.ts` layers the doc over `clinicConfig.json` and derives trust bar, reviews, team, Impressum, nav and footer.
   Missing/null values never fall back to invented content; the section hides (hours, reviews, rating, team, services, FAQ, Kassen, map).
   Testimonials without a source URL are never rendered.
-- `/` renders the clinic with slug `NEXT_PUBLIC_ROOT_CLINIC_SLUG` (default `zahnvital-linz`) if present, else the
-  legacy `clinicConfig` singleton, else `clinicConfig.json` (placeholder-free).
+- `/` renders the neutral sample "Ihre Zahnarztpraxis" from `clinicConfig.json` (or the legacy `clinicConfig` singleton).
+  It never shows a real practice unless `NEXT_PUBLIC_ROOT_CLINIC_SLUG` is explicitly set (only with the practice's consent).
 - Clinic pages are `noindex, nofollow` (private previews). Legal pages: `/<slug>/impressum`, `/<slug>/datenschutz`.
 - Sanity project `xvyxwo8y` / dataset `production` are code defaults (public IDs), so no Vercel env vars are needed for reads.
 - Document IDs must not contain a `.` (Sanity hides dotted IDs from tokenless reads) — the injector uses `clinic-<slug>`.

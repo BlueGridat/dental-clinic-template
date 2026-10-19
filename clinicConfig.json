@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteTitle": {
-      "de": "Zahnarztpraxis – Demo-Vorlage",
-      "en": "Dental practice – demo template"
+      "de": "Ihre Zahnarztpraxis – Website-Beispiel von BlueGrid",
+      "en": "Your dental practice – sample website by BlueGrid"
     },
     "description": {
       "de": "Ruhige, transparente Zahnmedizin. Wir erklären jeden Schritt, nehmen Ihre Sorge ernst und planen Ihren Termin ohne Druck.",
@@ -13,10 +13,10 @@
     "favicon": "/favicon.ico"
   },
   "brand": {
-    "name": "Lume Dental",
+    "name": "Ihre Zahnarztpraxis",
     "logoText": {
-      "de": "Lume Dental",
-      "en": "Lume Dental"
+      "de": "Ihre Zahnarztpraxis",
+      "en": "Your dental practice"
     },
     "logoIcon": "tooth",
     "logoImage": "",
@@ -669,12 +669,12 @@
   "footer": {
     "columns": [],
     "wordmark": {
-      "de": "Lume Dental",
-      "en": "Lume Dental"
+      "de": "Ihre Zahnarztpraxis",
+      "en": "Your dental practice"
     },
     "copyright": {
-      "de": "© 2026 Lume Dental. Alle Rechte vorbehalten",
-      "en": "© 2026 Lume Dental. All rights reserved"
+      "de": "© 2026 BlueGrid · Beispielseite für Zahnarztpraxen",
+      "en": "© 2026 BlueGrid · Sample site for dental practices"
     }
   },
   "legal": {

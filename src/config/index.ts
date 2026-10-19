@@ -13,8 +13,11 @@ const apiVersion = "2024-01-01";
 // Env vars can override them (e.g. for another project) but are not required on Vercel.
 export const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xvyxwo8y";
 export const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-/** Slug rendered on "/" when it exists in Sanity. */
-export const ROOT_CLINIC_SLUG = process.env.NEXT_PUBLIC_ROOT_CLINIC_SLUG || "zahnvital-linz";
+/**
+ * Optional slug rendered on "/". Unset by default: the root must never show a real practice
+ * without its consent, so "/" renders the neutral sample from clinicConfig.json.
+ */
+export const ROOT_CLINIC_SLUG = process.env.NEXT_PUBLIC_ROOT_CLINIC_SLUG?.trim() || "";
 export const REVALIDATE_SECONDS = 60;
 
 const fallbackConfig = rawConfig as unknown as ClinicConfig;
@@ -102,12 +105,14 @@ export async function getClinicBySlug(clinicSlug: string): Promise<ClinicConfig 
 }
 
 /**
- * Config for "/" (and the root legal pages): the ROOT_CLINIC_SLUG clinic if it exists,
+ * Config for "/" (and the root legal pages): the ROOT_CLINIC_SLUG clinic only if that env var is set and the doc exists,
  * else the legacy clinicConfig singleton, else the placeholder-free clinicConfig.json.
  */
 export async function getClinicConfig(): Promise<ClinicConfig> {
   try {
-    const rootDoc = await sanityFetch<unknown>(clinicBySlugQuery, { clinicSlug: ROOT_CLINIC_SLUG }, ["clinic", `clinic:${ROOT_CLINIC_SLUG}`]);
+    const rootDoc = ROOT_CLINIC_SLUG
+      ? await sanityFetch<unknown>(clinicBySlugQuery, { clinicSlug: ROOT_CLINIC_SLUG }, ["clinic", `clinic:${ROOT_CLINIC_SLUG}`])
+      : null;
     if (rootDoc) return resolveClinicConfig(fallbackConfig, normalizeSanityValue(rootDoc) as Partial<ClinicConfig>, { basePath: "", isClinicDemo: true });
     const singleton = await sanityFetch<unknown>(clinicConfigQuery, {}, ["clinicConfig"]);
     if (singleton) return resolveClinicConfig(fallbackConfig, normalizeSanityValue(singleton) as Partial<ClinicConfig>, { basePath: "", isClinicDemo: false });
