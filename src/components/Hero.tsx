@@ -54,7 +54,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
           </div>
 
           <motion.div className="grid gap-4 sm:grid-cols-[0.9fr_1fr]" style={enabled && !reduced && pointerFine ? { x: cardX, y: cardY } : undefined}>
-            <article className="rounded-[2rem] bg-[var(--color-surface)] p-5">
+            {safeArray(contact?.workingHours).length ? <article className="rounded-[2rem] bg-[var(--color-surface)] p-5">
               <h2 className="mb-4 text-lg font-bold">{tr({ de: "Öffnungszeiten", en: "Working Hours" })}</h2>
               <dl className="grid gap-2.5">
                 {safeArray(contact?.workingHours).map((item) => (
@@ -67,7 +67,7 @@ export function Hero({ hero, contact }: { hero: HeroConfig; contact: ContactConf
               <div className="mt-5 rounded-full bg-[var(--color-white)] p-1 text-center">
                 <TodayClock />
               </div>
-            </article>
+            </article> : null}
 
             <article className="flex min-h-44 flex-col items-center justify-center rounded-[2rem] bg-[var(--color-accent)] p-6 text-center">
               <ArrowButton href={hero?.cta?.href || "#book"} label="" ariaLabel={hero?.cta?.label || { de: "Erstgespräch anfragen", en: "Request a first consultation" }} variant="white" className="mb-5 !gap-0 !p-2 [&>span:first-child]:hidden" />

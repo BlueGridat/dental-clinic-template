@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { BadgeCheck } from "lucide-react";
 import type { TestimonialsConfig } from "@/config/types";
 import { useT } from "@/i18n/LocaleProvider";
-import { fallbackImage, safeArray } from "@/lib/utils";
+import { safeArray } from "@/lib/utils";
 import { dataSanity } from "@/lib/sanityData";
 import { SpotlightCard } from "./motion/SpotlightCard";
 import { Stagger, StaggerItem } from "./motion/Stagger";
@@ -12,8 +11,9 @@ import { RatingStars, SectionHeading } from "./ui";
 
 export function Testimonials({ testimonials }: { testimonials: TestimonialsConfig }) {
   const tr = useT();
+  if (!safeArray(testimonials?.items).length) return null;
   return (
-    <section data-sanity={dataSanity("testimonials")} className="section-pad hidden pt-0 md:block">
+    <section id="reviews" data-sanity={dataSanity("testimonials")} className="section-pad hidden pt-0 md:block">
       <div className="container-page">
         <SectionHeading tag={testimonials?.tag} title={testimonials?.heading || { de: "Was ruhige Behandlung verändert", en: "What calm care changes" }} description={testimonials?.subheading} align="center" />
         <Stagger className="mt-10 grid gap-5 md:grid-cols-2">
@@ -21,7 +21,7 @@ export function Testimonials({ testimonials }: { testimonials: TestimonialsConfi
             <StaggerItem key={`${item.name}-${tr(item.quote)}`}>
               <SpotlightCard className="flex h-full flex-col rounded-[2rem] bg-[var(--color-white)] p-7 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <RatingStars rating={item.rating} />
+                  {item.rating ? <RatingStars rating={item.rating} /> : null}
                   {item.verified ? (
                     <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-surface)] px-3 py-1 text-xs font-bold text-[var(--color-primary)]">
                       <BadgeCheck className="size-3.5" />
@@ -37,8 +37,7 @@ export function Testimonials({ testimonials }: { testimonials: TestimonialsConfi
                 ) : null}
                 <blockquote className="mt-6 text-xl font-semibold leading-9 text-[var(--color-text)]">&ldquo;{tr(item.quote)}&rdquo;</blockquote>
                 <div className="mt-auto flex items-center gap-4 pt-8">
-                  <Image src={fallbackImage(item.image)} alt={item.name} width={58} height={58} className="size-14 rounded-full object-cover" />
-                  <p className="font-heading font-bold">{item.name}</p>
+                  <div><p className="font-heading font-bold">{item.name}</p>{item.sourceUrl ? <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-xs font-semibold text-[var(--color-text-muted)] underline">{tr({ de: "Quelle", en: "Source" })}: {item.sourceLabel || item.sourceUrl}</a> : null}</div>
                 </div>
               </SpotlightCard>
             </StaggerItem>

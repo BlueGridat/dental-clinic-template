@@ -14,7 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const metaDescription = t(config.meta?.description, i18n.defaultLocale);
 
   return {
-    metadataBase: new URL(config.meta?.siteUrl || "http://localhost:3000"),
+    metadataBase: new URL(config.meta?.siteUrl || "https://dental-clinic-template-psi.vercel.app"),
+    // Real-practice demos are private previews: keep them out of search engines.
+    robots: config.isClinicDemo ? { index: false, follow: false } : undefined,
     title: metaTitle || config.brand?.name || "Dental Clinic",
     description: metaDescription || "",
     alternates: {

@@ -15,11 +15,7 @@ const localeArrayField = (name: string, title?: string) =>
 const stringArrayField = (name: string, title?: string) =>
   defineField({ name, title, type: "array", of: [defineArrayMember({ type: "string" })] });
 
-export const clinicConfig = defineType({
-  name: "clinicConfig",
-  title: "Website content",
-  type: "document",
-  groups: [
+export const clinicConfigGroups = [
     { name: "general", title: "General & SEO", default: true },
     { name: "brand", title: "Brand & Contact" },
     { name: "header", title: "Header / Nav" },
@@ -32,8 +28,10 @@ export const clinicConfig = defineType({
     { name: "appointment", title: "Appointment & CTA" },
     { name: "footer", title: "Footer & Legal" },
     { name: "advanced", title: "Advanced & Effects" }
-  ],
-  fields: [
+];
+
+/** Every key of the site config. Shared by the `clinicConfig` singleton and per-clinic `clinic` docs. */
+export const clinicConfigFields = [
     defineField({
       name: "meta",
       title: "SEO / Meta",
@@ -438,7 +436,14 @@ export const clinicConfig = defineType({
         })
       ]
     })
-  ],
+];
+
+export const clinicConfig = defineType({
+  name: "clinicConfig",
+  title: "Website content",
+  type: "document",
+  groups: clinicConfigGroups,
+  fields: clinicConfigFields,
   preview: {
     select: {
       title: "brand.name"

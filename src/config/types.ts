@@ -25,6 +25,45 @@ export interface ClinicConfig {
   effects?: EffectsConfig;
   mobile?: MobileConfig;
   i18n?: I18nConfig;
+
+  // ---- Multi-tenant clinic fields (Sanity `clinic` documents) ----
+  // All optional/nullable: a missing value hides the matching section.
+  slug?: string | { current?: string } | null;
+  clinicName?: string | null;
+  doctorNameWithTitle?: string | null;
+  city?: string | null;
+  district?: string | null;
+  kassenList?: string[] | null;
+  openingHours?: WorkingHour[] | null;
+  reviews?: ReviewItem[] | null;
+  rating?: number | null;
+  reviewCount?: number | null;
+  reviewSource?: string | null;
+  mapQuery?: string | null;
+  address?: string | null;
+  impressum?: ImpressumConfig | null;
+  /** Set by the resolver: true for per-clinic demo pages (noindex). */
+  isClinicDemo?: boolean;
+  /** Set by the resolver: "" for root, "/<slug>" for clinic pages. */
+  basePath?: string;
+}
+
+export interface ReviewItem {
+  author: string;
+  text: string;
+  rating?: number | null;
+  source: string;
+  url: string;
+}
+
+export interface ImpressumConfig {
+  kammer?: string | null;
+  uid?: string | null;
+  address?: string | null;
+  responsible?: string | null;
+  berufsbezeichnung?: string | null;
+  aufsichtsbehoerde?: string | null;
+  extra?: string[] | null;
 }
 
 export interface MetaConfig {
@@ -74,6 +113,7 @@ export interface LinkItem {
 export interface NavConfig {
   links: LinkItem[];
   cta: LinkItem;
+  homeHref?: string;
 }
 
 export interface HeroConfig {
@@ -104,11 +144,11 @@ export interface AboutConfig {
   tag: Localized;
   heading: Localized;
   image: string;
-  rating: {
+  rating?: {
     value: string;
     label: Localized;
     stars: number;
-  };
+  } | null;
   badge: Localized;
   stats: StatItem[];
 }
@@ -170,6 +210,8 @@ export interface TestimonialItem {
   treatment?: Localized;
   date?: Localized;
   verified?: boolean;
+  sourceLabel?: string;
+  sourceUrl?: string;
 }
 
 export interface FaqConfig {
@@ -206,7 +248,7 @@ export interface FinalCtaConfig {
     errorMessage?: Localized;
     loadingLabel?: Localized;
     selectPlaceholder?: Localized;
-    badgePrimary?: Localized;
+    badgePrimary?: Localized | null;
     badgeSecondary?: Localized;
   };
 }
@@ -252,11 +294,11 @@ export interface I18nConfig {
 }
 
 export interface TrustConfig {
-  ratingLabel?: Localized;
-  ratingValue?: string;
-  reviewCount?: Localized;
-  openNowLabel?: Localized;
-  sinceLabel?: Localized;
+  ratingLabel?: Localized | null;
+  ratingValue?: string | null;
+  reviewCount?: Localized | null;
+  openNowLabel?: Localized | null;
+  sinceLabel?: Localized | null;
   credentials?: Localized[];
   directionsCta?: LinkItem;
 }

@@ -35,6 +35,24 @@ New UI primitives and 3D sections rely on these runtime packages:
 
 When `integrations.formEndpoint` is empty, the booking form falls back to a `mailto:` link using `contact.email`.
 
+## Multi-tenant clinic demos (Sanity `clinic` documents)
+
+- Every Sanity document of type `clinic` is served at `/<slug>` (e.g. `/zahnvital-linz`) via `src/app/[clinicSlug]/page.tsx`
+  (ISR, `revalidate = 60`, `dynamicParams = true`): new clinics appear within ~60 s without a rebuild. Unknown slugs → 404.
+- A `clinic` doc contains every `clinicConfig` key (drop-in replacement) plus flat facts: `slug`, `clinicName`,
+  `doctorNameWithTitle`, `city`, `district`, `address`, `mapQuery`, `kassenList[]`, `openingHours[]`,
+  `reviews[] {author,text,rating,source,url}`, `rating`, `reviewCount`, `reviewSource`, `impressum {kammer, uid, address, …}`.
+- `src/config/resolve.ts` layers the doc over `clinicConfig.json` and derives trust bar, reviews, team, Impressum, nav and footer.
+  Missing/null values never fall back to invented content; the section hides (hours, reviews, rating, team, services, FAQ, Kassen, map).
+  Testimonials without a source URL are never rendered.
+- `/` renders the neutral sample "Ihre Zahnarztpraxis" from `clinicConfig.json` (or the legacy `clinicConfig` singleton).
+  It never shows a real practice unless `NEXT_PUBLIC_ROOT_CLINIC_SLUG` is explicitly set (only with the practice's consent).
+- Clinic pages are `noindex, nofollow` (private previews). Legal pages: `/<slug>/impressum`, `/<slug>/datenschutz`.
+- Sanity project `xvyxwo8y` / dataset `production` are code defaults (public IDs), so no Vercel env vars are needed for reads.
+- Document IDs must not contain a `.` (Sanity hides dotted IDs from tokenless reads) — the injector uses `clinic-<slug>`.
+- Draft mode (optional): set `SANITY_PREVIEW_SECRET` (+ `SANITY_API_TOKEN` for drafts) in Vercel, then open
+  `/api/draft?secret=…&path=/<slug>`. Without the env var the route returns 404.
+
 ## Services, Testimonials, And Booking
 
 Services live in `services.items`. Each item supports:

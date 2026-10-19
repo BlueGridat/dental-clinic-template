@@ -32,6 +32,7 @@ function ServiceIcon({ service }: { service: ServiceItem }) {
 
 export function ServicesMobile({ services }: { services: ServicesConfig }) {
   const tr = useT();
+  if (!safeArray(services?.items).length) return null;
   return (
     <section id="services-mobile" data-sanity={dataSanity("services")} className="section-pad md:hidden">
       <div className="px-4">

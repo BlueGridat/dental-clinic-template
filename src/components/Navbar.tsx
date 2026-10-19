@@ -37,7 +37,7 @@ export function Navbar({ brand, nav, contact }: { brand: BrandConfig; nav: NavCo
         <div className="absolute inset-x-5 -bottom-px h-px origin-left scale-x-[var(--scroll-progress,0)] bg-[var(--color-accent)]" />
       </div>
       <nav className={`container-page flex items-center justify-between gap-4 rounded-[1.7rem] bg-transparent px-0 transition-all duration-300 md:bg-[var(--color-white)] md:px-5 ${scrolled ? "min-h-14 md:shadow-lg md:shadow-black/10" : "min-h-16 md:shadow-sm"}`} aria-label="Primary navigation">
-        <Link href="#" className="focus-ring flex items-center gap-3 rounded-full">
+        <Link href={nav?.homeHref || "/"} className="focus-ring flex items-center gap-3 rounded-full">
           <span className={`grid place-items-center rounded-full bg-[var(--color-white)] text-[var(--color-primary)] shadow-sm transition-all duration-300 md:bg-[var(--color-surface)] md:shadow-none ${scrolled ? "size-9" : "size-10"}`}>
             {brand.logoImage ? (
               <Image src={fallbackImage(brand.logoImage)} width={28} height={28} alt="" />

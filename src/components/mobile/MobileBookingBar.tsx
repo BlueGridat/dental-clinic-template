@@ -8,7 +8,7 @@ import { useT } from "@/i18n/LocaleProvider";
 export function MobileBookingBar({ cta, contact, mobile }: { cta: LinkItem; contact: ContactConfig; mobile?: MobileConfig }) {
   const [visible, setVisible] = useState(false);
   const enabled = mobile?.stickyBookingBar ?? true;
-  const showCall = mobile?.showCallButton ?? true;
+  const showCall = (mobile?.showCallButton ?? true) && Boolean(contact?.phone);
   const tr = useT();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function MobileBookingBar({ cta, contact, mobile }: { cta: LinkItem; cont
           {tr(cta?.label) || tr({ de: "Beratung anfragen", en: "Request consultation" })}
         </a>
         {showCall ? (
-          <a href={`tel:${contact?.phone || ""}`} className="focus-ring grid size-12 place-items-center rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] active:scale-[0.98]" aria-label={tr({ de: "Praxis anrufen", en: "Call clinic" })}>
+          <a href={`tel:${(contact?.phone || "").replace(/[^+\d]/g, "")}`} className="focus-ring grid size-12 place-items-center rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] active:scale-[0.98]" aria-label={tr({ de: "Praxis anrufen", en: "Call clinic" })}>
             <Phone className="size-5" />
           </a>
         ) : null}
